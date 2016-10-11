@@ -1,0 +1,106 @@
+{
+	"it_education" : {
+		"preview" : {
+			"html" : {
+				"img" : "",
+				"title" : "Профессия HTML-верстальшик",
+				"text" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh."
+			},
+			"design" : {
+				"img" : "",
+				"title" : "Профессия WEB-дизайнер",
+				"text" : "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh."
+			}
+		},
+		"body" : {
+			"html" : {
+				"main" : {
+					"title" : "ПРОФЕССИЯ HTML-верстальщик за 42 дня",
+					"img" : ""
+				},
+				"job" : {
+					"title" : "",
+					"subtitle" : "",
+					"advanatges" : [],
+					"chart" : []
+				},
+				"author" : {
+					"name" : "",
+					"photo" : "",
+					"about" : "",
+					"portfolio" : [],
+					"works" : [],
+					"courses" : [],
+					"socials" : [
+						{
+							"type" : "facebook",
+							"link" : ""
+						},
+						{
+							"type" : "vk",
+							"link" : ""
+						}
+					]
+				},
+				"description" : {
+					"title" : "Уровень — обучение с НУЛЯ",
+					"about" : ""
+				},
+				"lessons" : {},
+				"faq" : [
+					{
+						"question" : "",
+						"answer" : ""
+					},
+					{
+						"question" : "",
+						"answer" : ""
+					},
+					{
+						"question" : "",
+						"answer" : ""
+					}
+				],
+				"desigion" : {
+					"yes" : [],
+					"no" : []
+				}
+			},
+			"design" : {}
+		},
+		"faq" : [
+			{
+				"question" : "",
+				"answer" : ""
+			},
+			{
+				"question" : "",
+				"answer" : ""
+			},
+			{
+				"question" : "",
+				"answer" : ""
+			}
+		]
+	},
+	"personal_coaching" : {
+		"title" : "Стоимость коучинга — 5000 руб/час",
+		"subtitle" : "Количество часов — Индивидуально. Составляется персональный план обучения. Доведение до заработка в 100.000 руб на Фрилансе или 100% гарантия Трудоустройства."
+	},
+	"corporate_training" : {
+		"title" : "Корпоративное обучение",
+		"subtitle" : "Делимся опытом и Улыбаемся (:",
+		"services" : [
+			{
+				"icon" : "", 
+				"title" : "Рефакторинг", 
+				"text" : "Геймофикация производственных процессов отдела разработки, улучшение и упрощение поддержки Конечного продукта, создание детального плана развития на 6 мес."
+			},
+			{
+				"icon" : "", 
+				"title" : "Тренинги SCRUM", 
+				"text" : "TEAM BUILDING в экстремальных условиях! Обучение SCRUM-команд по мотивам игры Квесты в Реальности — сюжет создается под особенности психотипа команды."
+			}
+		]
+	}
+}

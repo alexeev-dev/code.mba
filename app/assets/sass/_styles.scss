@@ -1,0 +1,87 @@
+/* titles */
+.title {
+	text-align: center;
+	> hgroup,
+	> section,
+	> article,
+	> blockquote,
+	> form,
+	> aside,
+	> nav {text-align: left;}
+	
+	// hgroup
+	h2 {}
+	h3 {}
+	p {}
+
+	// single
+	.title {}
+	
+	// decoration
+	&:hover {
+		.heading-line {
+
+			.short-line {
+				width: 0;
+				animation: move-short 1.5s infinite linear;
+
+				@keyframes move-short {
+
+					100% {
+						width: 140px;
+						margin-right: 0;
+					}
+
+				}
+			}
+
+			.long-line {
+				width: 130px;
+				animation: move 1.5s infinite linear;
+
+				@keyframes move {
+
+					100% {
+						width: 0;
+					}
+				}
+			}
+		}
+	}
+	
+
+	// CLONES
+	&--coaching {}
+
+	// THEMES
+	.venge & {}
+	.adajio & {}
+}
+
+/* wrappers */
+.base {
+	background: #fff url() 0 0 no-repeat;
+	@include paddings-respond();
+
+	@extend .title;
+	text-align: left;
+
+	> hgroup,
+	> section,
+	> article,
+	> blockquote,
+	> form,
+	> aside,
+	> nav {
+		// modules positions
+		&:nth(1) {margin: 0 auto;}
+	}
+
+	// decoration
+	& .decor {}
+
+
+	// THEMES
+	.venge & {color: #fff;}
+	.adajio & {color: #fff;}
+}

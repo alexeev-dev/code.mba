@@ -1,0 +1,49 @@
+// блок для отзывов
+.testimonials {
+	
+
+	
+	// inside carousel
+	.carousel & {
+		&-item {}
+		&-arrows {}
+		&-dots {}
+
+	}
+
+	&.promo {
+		.carousel & {
+			&-item {}
+			&-arrows {}
+			&-dots {}
+		}
+	}
+
+	&.brand {}
+	&.lux {}
+	&.list {}
+}
+
+// блок для нейтрального содержания
+.content {
+	h2 {}
+	p {}
+
+	&.author {
+
+	}
+}
+
+// все формы на сайте тут
+.forms {
+	
+	&.free {}
+	&.start {}
+	&.coaching {}
+	&.subscribe {}
+}
+
+
+
+
+

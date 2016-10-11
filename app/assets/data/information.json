@@ -1,0 +1,79 @@
+{
+	"about" : {
+		"our_mission" : "Увеличить популяцию IT-специалистов, осуществить переход на Третьею Платформу и стать лучшим ON-LINE образовательным Центром своего времени.",
+		"our_team" : {
+			"title" : "",
+			"subtitle" : "",
+			"members" : [
+				{
+					"photo" : "",
+					"name" : "",
+					"status" : "",
+					"links" : []
+				},
+				{
+					"photo" : "",
+					"name" : "",
+					"status" : "",
+					"links" : []
+				}
+			]
+		}
+	},
+	"process" : {
+		"any_time" : {
+			"title" : ""
+		},
+		"with_love" : {
+			"text" : "",
+			"label" : ""
+		},
+		"for_you" : [
+			{
+				"img" : "",
+				"title" : "",
+				"text" : ""
+			},
+			{
+				"img" : "",
+				"title" : "",
+				"text" : ""
+			},
+			{
+				"img" : "",
+				"title" : "",
+				"text" : ""
+			}
+		]
+	},
+	"promo" : {
+		"possible_future" : [
+			{
+				"img" : "",
+				"date" : "",
+				"title" : "",
+				"text" : ""
+			},
+			{
+				"img" : "",
+				"date" : "",
+				"title" : "",
+				"text" : ""
+			}
+		],
+		"we_help" : [
+			{
+				"img" : "",
+				"title" : "",
+				"text" : "",
+				"link" : {}
+			},
+			{
+				"img" : "",
+				"title" : "",
+				"text" : "",
+				"link" : {}
+			}
+		]
+	}
+}

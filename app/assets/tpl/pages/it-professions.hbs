@@ -1,0 +1,124 @@
+{{#extend 'base'}}
+	{{#content 'wr'}}
+		<div class="offer-money_back">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-md-6">
+						
+						<h1>{{learn_profession.html.main.title}}</h1>
+
+					</div>
+					<div class="col-md-6">
+						
+						<figure><img src="{{learn_profession.html.main.img}}" alt=""></figure>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sale-you">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						
+						<h2>{{sale.you.title}}</h2>
+
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+						
+						<p>{{sale.you.subtitle}}</p>
+						<ul class="listing">
+							{{#each sale.you.reasons}}
+							<li>{{.}}</li>
+							{{/each}}
+						</ul>
+
+					</div>
+					<div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+						
+						<figure><img src="{{sale.you.img}}" alt=""></figure>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sale-need">
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 no-padding">
+						
+						{{> modules/video}}
+
+					</div>
+					<div class="col-lg-4 col-lg-offset-1 col-md-4 col-md-offset-1 col-sm-12 col-xs-12 no-padding">
+						
+						{{> modules/course/item}}
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="sale-it">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-12 col-xs-12">
+						
+						<h2>Завершив обучение</h2>
+						<p>по 1-му из курсов — ты получишь то, что гарантировано улучшит и наполнит твою жизнь!</p>
+
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+						
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+						
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+						
+					</div>
+					<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+						
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="testimonials-promo">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+						
+						{{> modules/course/item}}
+
+					</div>
+					<div class="col-lg-7 col-lg-offset-1 col-md-8 col-sm-12 col-xs-12">
+						
+						{{> modules/course/item}}
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="promo-our_courses">
+			<div class="container">
+				<div class="row">
+					{{#each learn_profession.preview}}
+					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+						
+						{{> course_preview}}
+
+					</div>
+					{{/each}}
+				</div>
+			</div>
+		</div>
+	{{/content}}
+{{/extend}}

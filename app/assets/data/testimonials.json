@@ -1,0 +1,57 @@
+{
+	"_comment" : "Вот тут пишите отзывы и др рекомендации",
+	"testimonials" : {
+		"base" : [
+			{
+				"id" : "",
+				"title" : "111111",
+				"user" : {
+					"photo" : "",
+					"name" : "",
+					"place" : "",
+					"link" : ""
+				}
+			},
+			{
+				"id" : "",
+				"title" : "222222",
+				"user" : {
+					"photo" : "",
+					"name" : "",
+					"place" : "",
+					"link" : ""
+				}
+			},
+			{
+				"id" : "",
+				"title" : "333333",
+				"user" : {
+					"photo" : "",
+					"name" : "",
+					"place" : "",
+					"link" : ""
+				}
+			},
+			{
+				"id" : "",
+				"title" : "4444444",
+				"user" : {
+					"photo" : "",
+					"name" : "",
+					"place" : "",
+					"link" : ""
+				}
+			},
+			{
+				"id" : "",
+				"title" : "555555",
+				"user" : {
+					"photo" : "",
+					"name" : "",
+					"place" : "",
+					"link" : ""
+				}
+			}
+		]
+	}
+}
