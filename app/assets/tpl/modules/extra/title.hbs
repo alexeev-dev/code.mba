@@ -15,5 +15,11 @@
 		{{#if title.length}}<{{single}} class="title">{{title}}</{{single}}>{{/if}}
 		{{#if subtitle.length}}<{{single}} class="title">{{subtitle}}</{{single}}>{{/if}}
 		{{#if text.length}}<{{single}} class="title">{{text}}</{{single}}>{{/if}}
+	{{else}}
+		<hgroup {{#if class}}class="{{class}}"{{/if}}>
+			{{#if title.length}}<h2>{{title}}</h2>{{/if}}
+			{{#if subtitle.length}}<h3>{{subtitle}}</h3>{{/if}}
+			{{#if text.length}}<p>{{text}}</p>{{/if}}
+		</hgroup>
 	{{/if}}
 {{/if}}
