@@ -110,7 +110,7 @@ gulp.task('handlebars', ['merge'], () => {
     }
 
     return gulp.src([
-			dir.src + 'assets/tpl/pages/index.{hbs,handlebars}'
+			dir.src + 'assets/tpl/pages/**/*.{hbs,handlebars}'
 		])
 		.pipe(handlebarsCompile(data, options))
 		.pipe(rename({
@@ -130,7 +130,3 @@ gulp.task('default', ['browser-sync', 'handlebars'], () => {
         }))
         .pipe(gulp.dest('dist'));
 });
-
-
-
-

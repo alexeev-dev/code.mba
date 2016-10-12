@@ -85,3 +85,168 @@
 	.venge & {color: #fff;}
 	.adajio & {color: #fff;}
 }
+
+.offer {
+	&-money_back,
+	&-coaching,
+	&-learn_html,
+	&-about,
+	&-free {
+		padding: 120px 0;
+	}
+
+	&-money_back {
+		background: url('../img/background-element.png') center center repeat;
+	}
+	&-coaching {
+		background: url('../img/pattern-bg-olive.jpg') center center repeat;
+	}
+	&-learn_html {
+		background: url('../img/05-1.jpg') center center repeat;
+	}
+	&-about {
+		background: url('../img/bg-boxed-black.jpg') center center repeat;
+	}
+	&-free {
+		background: url('../img/pattern-bg-gray.jpg') center center repeat;
+	}
+}
+
+/* --- 404.hbs --- */
+.page-not-found {
+	padding: 350px 0 510px;
+	background: #F7F9F9;
+}
+
+/* --- about.hbs --- */
+.how-work {
+	padding: 120px 0 0;
+}
+.time-line {
+	padding: 0;
+}
+.events {
+	padding: 0;
+}
+.how-work,
+.time-line,
+.events {
+	background: #ffffff;
+}
+.our-mission {
+	padding: 120px 0;
+	background: #ff9700;
+}
+.our-team {
+	padding: 120px 0;
+	background: #ffffff;
+}
+.about-us {
+	padding: 120px 0;
+	background: #f7f9f9;
+}
+.posts {
+	padding: 120px 0;
+	background: #ffffff;
+}
+.about-info {
+	padding: 120px 0;
+	background: #fcb03b;
+}
+
+/* --- free.hbs --- */
+.consideration-time {
+	padding: 120px 0;
+	background: #ffffff;
+}
+.without-waiting {
+	padding: 80px 0;
+	background: url('../img/bg-boxed-blue.jpg') center center repeat;
+}
+
+/* --- individual.hbs --- */
+.coaching-cost {
+	padding: 100px 0 0;
+	background: #ffffff;
+}
+.coaching-form {
+	padding: 120px 0;
+	background: url('../img/bg-boxed-black.jpg') center center repeat;
+}
+.recommendation {
+	padding: 120px 0;
+	background: #ffffff;
+}
+
+/* --- it-professions.hbs --- */
+.sale-you,
+.sale-it {
+	padding: 120px 0;
+}
+.sale-need {
+	padding: 0;
+}
+.sale{
+	&-you,
+	&-need,
+	&-it {
+		background: #ffffff;
+	}
+}
+.testimonials-promo {
+	padding: 120px 0 80px;
+	background: #fcb03b;
+}
+.promo-our_courses {
+	padding: 120px 0 30px;
+	background: #ffffff;
+}
+
+/* --- learn_html.hbs --- */
+.work-are {
+	padding: 120px 0;
+	background: #f7f9f9;
+}
+.ready-to-start {
+	padding: 130px 0 200px;
+	background: #2f2c2c;
+}
+.author {
+	padding: 120px 0;
+	background: #ffffff;
+}
+.course-details {
+	padding: 0;
+	background: #f7f9f9;
+}
+.price {
+	padding: 80px 0 120px;
+	background: #f7f9f9;
+}
+.course {
+	&-statistics{
+		padding: 120px 0;
+		background: url('../img/bg-boxed-red.jpg') center center repeat;
+	}
+	&-programm {
+		padding: 120px 0;
+		background: #ffffff;
+	}
+	&-testimonials {
+		padding: 120px 0 80px;
+		&.testi-1 {
+			background: #fcb03b;
+		}
+		&.testi-2 {
+			background: url('../img/bg-boxed-dark.jpg') center center repeat;
+		}
+	}
+	&-advantages {
+		padding: 120px 0;
+		background: #f7f9f9;
+	}
+}
+.questions {
+	padding: 120px 0 80px;
+	background: #f7f9f9;
+}
