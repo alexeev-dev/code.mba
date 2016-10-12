@@ -105,7 +105,7 @@ gulp.task('handlebars', ['merge'], () => {
         ignorePartials: true,
         batch : [
         	dir.src + 'assets/tpl/layouts', 
-      		dir.src + 'assets/tpl/includes'
+      		dir.src + 'assets/tpl/modules'
         ]
     }
 
