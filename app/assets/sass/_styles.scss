@@ -91,7 +91,8 @@
 	&-coaching,
 	&-learn_html,
 	&-about,
-	&-free {
+	&-free,
+	&-testimonials {
 		padding: 120px 0;
 	}
 
@@ -110,6 +111,9 @@
 	&-free {
 		background: url('../img/pattern-bg-gray.jpg') center center repeat;
 	}
+	&-testimonials {
+		background: url('../img/pattern-bg-lightgray.jpg') center center repeat;
+	}
 }
 
 /* --- 404.hbs --- */
@@ -119,61 +123,52 @@
 }
 
 /* --- about.hbs --- */
-.how-work {
+.content-about_us {
 	padding: 120px 0 0;
 }
-.time-line {
+.promo-possible_future {
 	padding: 0;
 }
-.events {
-	padding: 0;
-}
-.how-work,
-.time-line,
-.events {
+.content-about_us,
+.promo-possible_future {
 	background: #ffffff;
 }
-.our-mission {
+.about-our_mission {
 	padding: 120px 0;
 	background: #ff9700;
 }
-.our-team {
+.about-our_team {
 	padding: 120px 0;
 	background: #ffffff;
 }
-.about-us {
+.testimonial-slider {
 	padding: 120px 0;
-	background: #f7f9f9;
 }
-.posts {
-	padding: 120px 0;
-	background: #ffffff;
-}
-.about-info {
+.corporate_training {
 	padding: 120px 0;
 	background: #fcb03b;
 }
 
 /* --- free.hbs --- */
-.consideration-time {
+.about-consideration_time {
 	padding: 120px 0;
 	background: #ffffff;
 }
-.without-waiting {
+.promo-download_now {
 	padding: 80px 0;
 	background: url('../img/bg-boxed-blue.jpg') center center repeat;
 }
 
 /* --- individual.hbs --- */
-.coaching-cost {
+.personal_coaching {
 	padding: 100px 0 0;
 	background: #ffffff;
 }
-.coaching-form {
+.order_coaching {
 	padding: 120px 0;
 	background: url('../img/bg-boxed-black.jpg') center center repeat;
 }
-.recommendation {
+.testimonial-section {
 	padding: 120px 0;
 	background: #ffffff;
 }
@@ -203,50 +198,54 @@
 }
 
 /* --- learn_html.hbs --- */
-.work-are {
+.it_education-job {
 	padding: 120px 0;
 	background: #f7f9f9;
 }
-.ready-to-start {
+.order_education {
 	padding: 130px 0 200px;
 	background: #2f2c2c;
 }
-.author {
+.it_education-author {
 	padding: 120px 0;
 	background: #ffffff;
 }
-.course-details {
+.it_education-description {
 	padding: 0;
 	background: #f7f9f9;
 }
-.price {
+.it_education-price {
 	padding: 80px 0 120px;
 	background: #f7f9f9;
 }
-.course {
-	&-statistics{
-		padding: 120px 0;
-		background: url('../img/bg-boxed-red.jpg') center center repeat;
+.counter_red {
+	padding: 120px 0;
+	background: url('../img/bg-boxed-red.jpg') center center repeat;
+}
+.it_education-lessons {
+	padding: 120px 0;
+	background: #ffffff;
+}
+.testimonials-slider {
+	padding: 120px 0 80px;
+	&.testi-1 {
+		background: #fcb03b;
 	}
-	&-programm {
-		padding: 120px 0;
-		background: #ffffff;
-	}
-	&-testimonials {
-		padding: 120px 0 80px;
-		&.testi-1 {
-			background: #fcb03b;
-		}
-		&.testi-2 {
-			background: url('../img/bg-boxed-dark.jpg') center center repeat;
-		}
-	}
-	&-advantages {
-		padding: 120px 0;
-		background: #f7f9f9;
+	&.testi-2 {
+		background: url('../img/bg-boxed-dark.jpg') center center repeat;
 	}
 }
-.questions {
+.it_education-advantages {
+	padding: 120px 0;
+	background: #f7f9f9;
+}
+.it_education-faq {
 	padding: 120px 0 80px;
 	background: #f7f9f9;
+}
+
+/* --- testimonials.hbs --- */
+.counter_green {
+	padding: 80px 0;
+	background: #3cb878;
 }
