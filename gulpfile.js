@@ -9,6 +9,7 @@ const Handlebars = require('handlebars');
 const handlebarsLayouts = require('handlebars-layouts');
 const handlebarsCompile = require('gulp-compile-handlebars');
 const rename = require('gulp-rename');
+const sass = require('gulp-sass');
 
 // APP config
 let dir = {
@@ -23,6 +24,13 @@ gulp.task('browser-sync', () => {
             baseDir: dir.src
         }
     });
+});
+
+// SASS
+gulp.task('sass', () => {
+    return gulp.src(dir.src + 'assets/sass/**/*.scss')
+    .pipe(sass.sync().on('error', sass.logError))
+    .pipe(gulp.dest(dir.src + 'css'));
 });
 
 handlebarsLayouts.register(Handlebars);
@@ -120,9 +128,10 @@ gulp.task('handlebars', ['merge'], () => {
 });
 
 // Watch for file changes 
-gulp.task('default', ['browser-sync', 'handlebars'], () => {
+gulp.task('default', ['browser-sync', 'handlebars', 'sass'], () => {
 	gulp.watch(dir.src + 'assets/tpl/**/*.{hbs,handlebars}', ['handlebars', reload]);
 	gulp.watch(dir.src + '*.html', reload);
+    gulp.watch(dir.src + 'assets/sass/**/*.scss', ['sass', reload]);
 
 	return gulp.src('app/js/main.js')
         .pipe(babel({

@@ -61,7 +61,7 @@
 /* wrappers */
 .base {
 	background: #fff url() 0 0 no-repeat;
-	@include paddings-respond();
+	// @include paddings-respond();
 
 	@extend .title;
 	text-align: left;
