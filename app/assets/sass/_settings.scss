@@ -4,7 +4,7 @@ body {-webkit-font-smoothing: subpixel-antialiased; line-height: 1.5; font-size:
 img {max-width: 100%;}
 textarea {resize: vertical;}
 fieldset {@extend %reset;}
-button, select {-webkit-appearance: none;}
+button, select {-webkit-appearance: none; border: none;}
 *, *:after, *:before {box-sizing: border-box;}
 
 /* fixes */
@@ -106,7 +106,8 @@ body {
 	h6 {@include font($font-base, 24px, $dark, 1.2, 0.4px);}
 
 	p {@include font($font-base, 14px, $gray, 1.2, 0.4px);margin: 0 0 0.75em;}
-	a {@include font($font-base, 14px, $red, 1.2, 0.4px);text-decoration: none;}
+	a {@include font($font-base, 14px, $dark, 1.2, 0.4px);text-decoration: none; &:hover {text-decoration: none;}}
+	b {font-family: $font-zz !important; font-weight: 400;}
 
 	span {@include font($font-base, 16px, $dark, 1.2, 0.4px);}
 	table {
