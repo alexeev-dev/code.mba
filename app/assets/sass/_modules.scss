@@ -301,6 +301,183 @@
 	}
 }
 
+// footer
+.footer {
+	padding-top: 110px;
+	background: #151414;
+
+	em {
+		font-size: 10px;
+		position: relative; top: -2px;
+	}
+
+	.about-us {
+		p {
+			color: #797676; font-size: 16px; line-height: 1.6; letter-spacing: 0.5px;
+			margin: 0 0 .75em;
+
+			a {
+				color: #ffffff; font-size: 16px;
+			}
+
+		}
+	}
+
+	.services {
+
+		&:after {
+			content: '';
+			display: block; width: 100%;
+			clear: both;
+		}
+
+		ul {
+			line-height: 1.2;
+			width: 50%;
+
+			&:first-of-type {
+				float: right;
+			}
+			&:last-of-type {
+				float: left;
+			}
+
+			li {
+				font-size: 18px; 
+				margin-bottom: 18px;
+				transition: all .3s ease;
+
+				&:hover {
+					i, a, span {
+						color: #4cc2c0;
+					}
+					i {margin-left: 10px;}
+				}
+
+				i {
+					color: #504c4c; font-size: 12px;
+					float: left; margin-right: 15px; margin-top: 3px;
+					transition: all .3s ease;
+				}
+
+				a {
+					color: #504c4c; font-size: 14px;
+					display: block;
+					overflow: hidden;
+					transition: all .3s ease;
+
+					span {
+						color: #504c4c; font-size: 16px;
+						transition: all .3s ease;
+					}
+				}
+			}
+		}
+	}
+
+	.contacts {
+		margin-top: 110px; padding: 40px 0;
+		border-top: 2px solid #1c1b1b;
+
+		&:after {
+			content: '';
+			display: block; width: 100%;
+			clear: both;
+		}
+
+		.contacts-item {
+			i {
+				float: left; width: 70px; height: 70px; margin-right: 30px;
+			}
+
+			address {
+				margin-left: auto; margin-bottom: 0;
+				overflow: hidden;
+
+				a {
+					color: #ffffff; font-size: 22px; line-height: 1.5;
+
+					&:hover {color: #4cc2c0;}
+				}
+
+				p {
+					color: #504c4c; font-size: 16px; line-height: 26px;
+					margin: 0 0 .75em;
+				}
+			}
+		}
+	}
+
+	.sub-footer {
+		padding: 60px 0;
+		background: #121111;
+
+		ul {
+			li {
+				color: #504c4c; font-size: 14px;
+				display: inline-block; margin-right: 30px;
+
+				a {
+					color: #797676;
+					transition: all .3s ease;
+
+					&:hover {color: #4cc2c0;}
+				}
+			}
+		}
+	}
+
+	.back-to-top {
+		float: right; display: block; position: relative; top: -4px; width: 50px; height: 50px; z-index: 999;
+		transition: all .3s ease;
+		fill: #222121; stroke: inherit; 
+
+		&:hover {
+			fill: #4cc2c0;
+		}
+	}
+}
+
+.subscribe-item {
+	padding: 72px 0;
+
+	&:after {
+		content: '';
+		display: block; width: 100%; clear: both;
+	}
+
+	h4 {
+		color: #fff; font-size: 30px;
+		margin-bottom: 23px;
+	}
+
+	p {
+		color: rgba(255, 255, 255, 0.5); font-size: 18px; line-height: 26px;
+		float: left; margin: 0 0 .75em;
+	}
+
+	form {
+		margin-bottom: 25px;
+
+		input {
+			color: #797676; font-size: 16px; line-height: 1.5;
+			float: left; width: 67%; padding: 16px 40px;
+			background-color: #fff; border-color: transparent; border-radius: 50px 0 0 50px;
+
+			&:focus {
+				box-shadow: 17px 0 60px #d3dcdc;
+			}
+		}
+
+		button {
+			color: #fff; font-size: 15px; text-transform: uppercase; text-align: center;
+			display: inline-block; position: relative; height: 56px; width: 33%; padding: 17px 0;
+			background-color: #2f2c2c; border-radius: 0 50px 50px 0;
+			cursor: pointer;
+		}
+	}
+}
+
 // блок для отзывов
 .testimonials {
 	
@@ -346,7 +523,28 @@
 	&.subscribe {}
 }
 
+// социальные кнопки
+.socials {
+	li {
+		display: inline-block; margin-left: 15px;
 
+		&:first-child {margin-left: 0;}
 
+		a {
+			img {
+				height: 24px;
+			}
+		}
+	}
+}
 
+// детальки дизайна
+.semicircle--right {
+	display: block; position: absolute; top: 12px; right: 12px; width: 18px; height: 18px; overflow: hidden;
 
+	&:after {
+		content: '';
+		display: block; position: absolute; right: 0; top: 0; width: 35px; height: 35px;
+		border: 2px solid #fff; border-radius: 100%;
+	}
+}

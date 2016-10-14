@@ -6,6 +6,7 @@ textarea {resize: vertical;}
 fieldset {@extend %reset;}
 button, select {-webkit-appearance: none; border: none;}
 *, *:after, *:before {box-sizing: border-box;}
+.container, .row {position: relative;}
 
 /* fixes */
 %reset {margin:0; padding:0; border: none; list-style: none;}
@@ -106,8 +107,9 @@ body {
 	h6 {@include font($font-base, 24px, $dark, 1.2, 0.4px);}
 
 	p {@include font($font-base, 14px, $gray, 1.2, 0.4px);margin: 0 0 0.75em;}
-	a {@include font($font-base, 14px, $dark, 1.2, 0.4px);text-decoration: none; &:hover {text-decoration: none;}}
+	a {@include font($font-base, 14px, $dark, 1.2, 0.4px);text-decoration: none;transition: all 0.15s linear; &:hover {text-decoration: none;} &:focus {text-decoration: none;}}
 	b {font-family: $font-zz !important; font-weight: 400;}
+	em, i, b {font-style: normal; font-weight: 400;}
 
 	span {@include font($font-base, 16px, $dark, 1.2, 0.4px);}
 	table {
@@ -142,6 +144,10 @@ body {
 			// OUTSIDE yourself
 			.list & {}
 		}
+
+		li {
+			@include font($font-base, 14px, $dark, 1.5, 0.2px);
+		}
 	}
 
 	/* forms */
@@ -154,6 +160,15 @@ body {
 		transition: all .3s ease;
 
 		&:focus {color: gray;}
+
+		textarea::-webkit-input-placeholder,
+		input::-webkit-input-placeholder,
+		textarea:-moz-placeholder,
+		input:-moz-placeholder,
+		textarea:-ms-input-placeholder,
+		input:-ms-input-placeholder {
+			color: #acacac !important;
+		}
 	}
 
 	/* buttons */

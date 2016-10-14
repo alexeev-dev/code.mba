@@ -116,6 +116,27 @@
 	}
 }
 
+.subscribe {
+	position: relative; padding: 0; overflow: hidden;
+	background: #3cb878;
+
+	.decor {
+		img {
+			position: absolute;
+
+			&.mail {
+				left: 0; bottom: 0;
+			}
+			&.mail-2 {
+				right: 20px; bottom: -50px;
+			}
+			&.gear {
+				right: 0; top: 50px;
+			}
+		}
+	}
+}
+
 /* --- 404.hbs --- */
 .page-not-found {
 	padding: 350px 0 510px;
