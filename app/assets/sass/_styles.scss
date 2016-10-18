@@ -10,8 +10,14 @@
 	> nav {text-align: left;}
 	
 	// hgroup
-	h2 {}
-	h3 {}
+	h2 {
+		color: #2f2c2c; font-size: 48px; font-weight: 400; line-height: 1.3; letter-spacing: 0.8px;
+		margin-bottom: 20px;
+	}
+	h3 {
+		color: #acacac; font-size: 24px; line-height: 30px; letter-spacing: 0.5px;
+		margin: 0 0 .75em;
+	}
 	p {}
 
 	// single
@@ -52,6 +58,105 @@
 
 	// CLONES
 	&--coaching {}
+	&--order {
+		text-align: center;
+		
+		h2 {
+			color: #fff; font-size: 48px; font-weight: 400; line-height: 1.3; letter-spacing: 0.8px;
+			margin-bottom: 10px;
+		}
+
+		h3 {
+			color: #797676; font-size: 24px; line-height: 30px; letter-spacing: 0.5px;
+			margin: 0 0 .75em;
+		}
+
+		.heading-line {display: none;}
+	}
+	&--testimonials {
+		h2 {
+			color: #2f2c2c; font-size: 48px; font-weight: 400; line-height: 1.3; letter-spacing: 0.8px;
+			margin-bottom: 20px;
+		}
+
+		h3 {
+			color: #fff; font-size: 24px; line-height: 30px; letter-spacing: 0.5px;
+			margin: 0 0 .75em;
+		}
+
+		.heading-line {
+			.short-line, .long-line {
+				background: #fcd846;
+			}
+		}
+
+		&:hover {
+			.heading-line {
+
+				.short-line {
+					width: 0;
+					animation: move-short 1.5s infinite linear;
+
+					@keyframes move-short {
+
+						100% {
+							width: 140px;
+							margin-right: 0;
+						}
+
+					}
+				}
+
+				.long-line {
+					width: 130px;
+					animation: move 1.5s infinite linear;
+
+					@keyframes move {
+
+						100% {
+							width: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+	&--footer {
+		h2 {
+			color: #fff; font-size: 36px; font-weight: 400; line-height: 1.3; letter-spacing: 0.8px;
+			margin-bottom: 20px;
+		}
+		&:hover {
+			.heading-line {
+
+				.short-line {
+					width: 0;
+					animation: move-short 1.5s infinite linear;
+
+					@keyframes move-short {
+
+						100% {
+							width: 140px;
+							margin-right: 0;
+						}
+
+					}
+				}
+
+				.long-line {
+					width: 130px;
+					animation: move 1.5s infinite linear;
+
+					@keyframes move {
+
+						100% {
+							width: 0;
+						}
+					}
+				}
+			}
+		}
+	}
 
 	// THEMES
 	.venge & {}
@@ -246,11 +351,22 @@
 .it_education-lessons {
 	padding: 120px 0;
 	background: #ffffff;
+
+	.title {
+		margin-bottom: 48px;
+	}
 }
 .testimonials-slider {
+	position: relative; overflow: hidden;
 	padding: 120px 0 80px;
+
 	&.testi-1 {
 		background: #fcb03b;
+
+		.decor {
+			position: absolute; left: 40%; bottom: -50px; transform: translate(-50%, 0);
+			opacity: 1;
+		}
 	}
 	&.testi-2 {
 		background: url('../img/bg-boxed-dark.jpg') center center repeat;
@@ -259,10 +375,18 @@
 .it_education-advantages {
 	padding: 120px 0;
 	background: #f7f9f9;
+
+	.title {
+		margin-bottom: 30px;
+	}
 }
 .it_education-faq {
 	padding: 120px 0;
 	background: #f7f9f9;
+
+	.title {
+		margin-bottom: 80px;
+	}
 }
 
 /* --- testimonials.hbs --- */

@@ -1,11 +1,19 @@
 {{#if class}}
 	{{#if single}}
 		{{#if title.length}}<{{single}} class="{{#if class}}{{class}}{{else}}title{{/if}}">{{title}}</{{single}}>{{/if}}
+		<div class="heading-line">
+			<span class="short-line"></span>
+			<span class="long-line"></span>
+		</div>
 		{{#if subtitle.length}}<{{single}} class="{{#if class}}{{class}}{{else}}title{{/if}}">{{subtitle}}</{{single}}>{{/if}}
 		{{#if text.length}}<{{single}} class="{{#if class}}{{class}}{{else}}title{{/if}}">{{text}}</{{single}}>{{/if}}
 	{{else}}
 	<hgroup {{#if class}}class="{{class}}"{{/if}}>
 		{{#if title.length}}<h2>{{title}}</h2>{{/if}}
+		<div class="heading-line">
+			<span class="short-line"></span>
+			<span class="long-line"></span>
+		</div>
 		{{#if subtitle.length}}<h3>{{subtitle}}</h3>{{/if}}
 		{{#if text.length}}<p>{{text}}</p>{{/if}}
 	</hgroup>
@@ -13,17 +21,21 @@
 {{else}}
 	{{#if single}}
 		{{#if title.length}}<{{single}} class="title">{{title}}</{{single}}>{{/if}}
+		<div class="heading-line">
+			<span class="short-line"></span>
+			<span class="long-line"></span>
+		</div>
 		{{#if subtitle.length}}<{{single}} class="title">{{subtitle}}</{{single}}>{{/if}}
 		{{#if text.length}}<{{single}} class="title">{{text}}</{{single}}>{{/if}}
 	{{else}}
 		<hgroup {{#if class}}class="{{class}}"{{/if}}>
 			{{#if title.length}}<h2>{{title}}</h2>{{/if}}
+			<div class="heading-line">
+				<span class="short-line"></span>
+				<span class="long-line"></span>
+			</div>
 			{{#if subtitle.length}}<h3>{{subtitle}}</h3>{{/if}}
 			{{#if text.length}}<p>{{text}}</p>{{/if}}
 		</hgroup>
 	{{/if}}
 {{/if}}
-<div class="heading-line">
-	<span class="short-line"></span>
-	<span class="long-line"></span>
-</div>

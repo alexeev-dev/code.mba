@@ -240,7 +240,7 @@
 					"img": ""
 				},
 				"job": {
-					"title": "",
+					"title": "Суть работы",
 					"subtitle": "",
 					"advanatges": [],
 					"chart": [],
@@ -269,7 +269,20 @@
 					"title": "Уровень — обучение с НУЛЯ",
 					"about": ""
 				},
-				"lessons": {},
+				"lessons": {
+					"title": "Модули курса",
+					"subtitle": "Каждый модуль включает в себя практические задания: <br>Предпроекную работу в начале, Тест и Профильное задание в конце модуля."
+				},
+				"testimonials-1": {
+					"title": "Happy Clients About Us",
+					"subtitle": "Claritas est etiam processus dynamicus, qui lectorum."
+				},
+				"advantages": {
+					"title": "Обучение включает в себя:"
+				},
+				"faq-title": {
+					"title": "Популярные вопросы"
+				},
 				"faq": [
 					{
 						"question": "",
@@ -380,5 +393,13 @@
 				}
 			}
 		]
+	},
+	"footer": {
+		"about": {
+			"title": "Про нашу компанию!"
+		},
+		"links": {
+			"title": "Быстрые Ссылки"
+		}
 	}
 }
