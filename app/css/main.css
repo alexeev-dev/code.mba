@@ -832,11 +832,11 @@ body {
     border: 2px solid #fff;
     border-radius: 100%; }
 
-.heading-line {
+.heading-line, .title:hover, .base:hover, .it_education-faq:hover, .title--testimonials hgroup:hover, .testimonials-slider.testi-1 hgroup:hover, .title--footer:hover {
   font-size: 16px;
   position: relative;
   margin-bottom: 20px; }
-  .heading-line .short-line, .heading-line .long-line {
+  .heading-line .short-line, .title:hover .short-line, .base:hover .short-line, .it_education-faq:hover .short-line, .title--testimonials hgroup:hover .short-line, .testimonials-slider.testi-1 hgroup:hover .short-line, .title--footer:hover .short-line, .heading-line .long-line, .title:hover .long-line, .base:hover .long-line, .it_education-faq:hover .long-line, .title--testimonials hgroup:hover .long-line, .testimonials-slider.testi-1 hgroup:hover .long-line, .title--footer:hover .long-line {
     display: inline-block;
     position: relative;
     height: 3px;
@@ -844,9 +844,9 @@ body {
     background-color: #4cc2c0;
     border-radius: 10px;
     transition: all .4s linear; }
-  .heading-line .short-line {
+  .heading-line .short-line, .title:hover .short-line, .base:hover .short-line, .it_education-faq:hover .short-line, .title--testimonials hgroup:hover .short-line, .testimonials-slider.testi-1 hgroup:hover .short-line, .title--footer:hover .short-line {
     width: 30px; }
-  .heading-line .long-line {
+  .heading-line .long-line, .title:hover .long-line, .base:hover .long-line, .it_education-faq:hover .long-line, .title--testimonials hgroup:hover .long-line, .testimonials-slider.testi-1 hgroup:hover .long-line, .title--footer:hover .long-line {
     width: 100px; }
 
 .faq-questions li {
@@ -1088,113 +1088,81 @@ body {
     transform: translateY(-50%); }
 
 /* titles */
-.title, .base {
+.heading-line .short-line, .title:hover .short-line, .base:hover .short-line, .it_education-faq:hover .short-line, .title--testimonials hgroup:hover .short-line, .testimonials-slider.testi-1 hgroup:hover .short-line, .title--footer:hover .short-line {
+  width: 0;
+  animation: move-short 1.5s infinite linear; }
+
+@keyframes move-short {
+  100% {
+    width: 140px;
+    margin-right: 0; } }
+
+.heading-line .long-line, .title:hover .long-line, .base:hover .long-line, .it_education-faq:hover .long-line, .title--testimonials hgroup:hover .long-line, .testimonials-slider.testi-1 hgroup:hover .long-line, .title--footer:hover .long-line {
+  width: 130px;
+  animation: move 1.5s infinite linear; }
+
+@keyframes move {
+  100% {
+    width: 0; } }
+
+.title hgroup h2, .base hgroup h2, .it_education-faq hgroup h2 {
+  color: #2f2c2c;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.8px;
+  margin-bottom: 20px; }
+
+.title hgroup h3, .base hgroup h3, .it_education-faq hgroup h3 {
+  color: #acacac;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.5px;
+  margin: 0 0 .75em; }
+
+.title--order hgroup, .order-education hgroup {
   text-align: center; }
-  .title > hgroup, .base > hgroup,
-  .title > section, .base > section,
-  .title > article, .base > article,
-  .title > blockquote, .base > blockquote,
-  .title > form, .base > form,
-  .title > aside, .base > aside,
-  .title > nav, .base > nav {
-    text-align: left; }
-  .title h2, .base h2 {
-    color: #2f2c2c;
+  .title--order hgroup h2, .order-education hgroup h2 {
+    color: #fff;
     font-size: 48px;
     font-weight: 400;
     line-height: 1.3;
     letter-spacing: 0.8px;
-    margin-bottom: 20px; }
-  .title h3, .base h3 {
-    color: #acacac;
+    margin-bottom: 10px; }
+  .title--order hgroup h3, .order-education hgroup h3 {
+    color: #797676;
     font-size: 24px;
     line-height: 30px;
     letter-spacing: 0.5px;
     margin: 0 0 .75em; }
-  .title:hover .heading-line .short-line, .base:hover .heading-line .short-line {
-    width: 0;
-    animation: move-short 1.5s infinite linear; }
+  .title--order hgroup .heading-line, .order-education hgroup .heading-line, .title--order hgroup .title:hover, .order-education hgroup .title:hover, .title--order hgroup .base:hover, .order-education hgroup .base:hover, .title--order hgroup .it_education-faq:hover, .order-education hgroup .it_education-faq:hover, .title--order hgroup .title--testimonials hgroup:hover, .title--testimonials .title--order hgroup hgroup:hover, .order-education hgroup .title--testimonials hgroup:hover, .title--testimonials .order-education hgroup hgroup:hover, .title--order hgroup .testimonials-slider.testi-1 hgroup:hover, .testimonials-slider.testi-1 .title--order hgroup hgroup:hover, .order-education hgroup .testimonials-slider.testi-1 hgroup:hover, .testimonials-slider.testi-1 .order-education hgroup hgroup:hover, .title--order hgroup .title--footer:hover, .order-education hgroup .title--footer:hover {
+    display: none; }
 
-@keyframes move-short {
-  100% {
-    width: 140px;
-    margin-right: 0; } }
-  .title:hover .heading-line .long-line, .base:hover .heading-line .long-line {
-    width: 130px;
-    animation: move 1.5s infinite linear; }
+.title--testimonials hgroup h2, .testimonials-slider.testi-1 hgroup h2 {
+  color: #2f2c2c;
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.8px;
+  margin-bottom: 20px; }
 
-@keyframes move {
-  100% {
-    width: 0; } }
-  .title--order {
-    text-align: center; }
-    .title--order h2 {
-      color: #fff;
-      font-size: 48px;
-      font-weight: 400;
-      line-height: 1.3;
-      letter-spacing: 0.8px;
-      margin-bottom: 10px; }
-    .title--order h3 {
-      color: #797676;
-      font-size: 24px;
-      line-height: 30px;
-      letter-spacing: 0.5px;
-      margin: 0 0 .75em; }
-    .title--order .heading-line {
-      display: none; }
-  .title--testimonials h2 {
-    color: #2f2c2c;
-    font-size: 48px;
-    font-weight: 400;
-    line-height: 1.3;
-    letter-spacing: 0.8px;
-    margin-bottom: 20px; }
-  .title--testimonials h3 {
-    color: #fff;
-    font-size: 24px;
-    line-height: 30px;
-    letter-spacing: 0.5px;
-    margin: 0 0 .75em; }
-  .title--testimonials .heading-line .short-line, .title--testimonials .heading-line .long-line {
-    background: #fcd846; }
-  .title--testimonials:hover .heading-line .short-line {
-    width: 0;
-    animation: move-short 1.5s infinite linear; }
+.title--testimonials hgroup h3, .testimonials-slider.testi-1 hgroup h3 {
+  color: #fff;
+  font-size: 24px;
+  line-height: 30px;
+  letter-spacing: 0.5px;
+  margin: 0 0 .75em; }
 
-@keyframes move-short {
-  100% {
-    width: 140px;
-    margin-right: 0; } }
-  .title--testimonials:hover .heading-line .long-line {
-    width: 130px;
-    animation: move 1.5s infinite linear; }
+.title--testimonials hgroup .heading-line .short-line, .testimonials-slider.testi-1 hgroup .heading-line .short-line, .title--testimonials hgroup .title:hover .short-line, .testimonials-slider.testi-1 hgroup .title:hover .short-line, .title--testimonials hgroup .base:hover .short-line, .testimonials-slider.testi-1 hgroup .base:hover .short-line, .title--testimonials hgroup .it_education-faq:hover .short-line, .testimonials-slider.testi-1 hgroup .it_education-faq:hover .short-line, .title--testimonials hgroup hgroup:hover .short-line, .testimonials-slider.testi-1 hgroup hgroup:hover .short-line, .title--testimonials hgroup .title--footer:hover .short-line, .testimonials-slider.testi-1 hgroup .title--footer:hover .short-line, .title--testimonials hgroup .heading-line .long-line, .testimonials-slider.testi-1 hgroup .heading-line .long-line, .title--testimonials hgroup .title:hover .long-line, .testimonials-slider.testi-1 hgroup .title:hover .long-line, .title--testimonials hgroup .base:hover .long-line, .testimonials-slider.testi-1 hgroup .base:hover .long-line, .title--testimonials hgroup .it_education-faq:hover .long-line, .testimonials-slider.testi-1 hgroup .it_education-faq:hover .long-line, .title--testimonials hgroup hgroup:hover .long-line, .testimonials-slider.testi-1 hgroup hgroup:hover .long-line, .title--testimonials hgroup .title--footer:hover .long-line, .testimonials-slider.testi-1 hgroup .title--footer:hover .long-line {
+  background: #fcd846; }
 
-@keyframes move {
-  100% {
-    width: 0; } }
-  .title--footer h2 {
-    color: #fff;
-    font-size: 36px;
-    font-weight: 400;
-    line-height: 1.3;
-    letter-spacing: 0.8px;
-    margin-bottom: 20px; }
-  .title--footer:hover .heading-line .short-line {
-    width: 0;
-    animation: move-short 1.5s infinite linear; }
-
-@keyframes move-short {
-  100% {
-    width: 140px;
-    margin-right: 0; } }
-  .title--footer:hover .heading-line .long-line {
-    width: 130px;
-    animation: move 1.5s infinite linear; }
-
-@keyframes move {
-  100% {
-    width: 0; } }
+.title--footer h2 {
+  color: #fff;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1.3;
+  letter-spacing: 0.8px;
+  margin-bottom: 20px; }
 
 /* wrappers */
 .base {
@@ -1213,6 +1181,7 @@ body {
   .adajio .base {
     color: #fff; }
 
+/* MARKETING */
 .offer-money_back, .offer-coaching, .offer-learn_html, .offer-about, .offer-free, .offer-testimonials {
   padding: 120px 0; }
 
@@ -1233,6 +1202,74 @@ body {
 
 .offer-testimonials {
   background: url("../img/pattern-bg-lightgray.jpg") center center repeat; }
+
+.sale-you, .sale-need, .sale-it {
+  padding: 120px 0;
+  background: #ffffff; }
+
+.sale-need {
+  padding: 0; }
+
+.counter-red {
+  padding: 120px 0;
+  background: url("../img/bg-boxed-red.jpg") center center repeat; }
+
+.counter-green {
+  padding: 80px 0;
+  background: #3cb878; }
+
+/* INFORMATION */
+/* SERVICES */
+.it_education-job {
+  padding: 120px 0;
+  background: #f7f9f9; }
+
+.it_education-author {
+  padding: 120px 0;
+  background: #ffffff; }
+
+.it_education-description {
+  padding: 0;
+  background: #f7f9f9; }
+
+.it_education-lessons {
+  padding: 120px 0;
+  background: #ffffff; }
+  .it_education-lessons hgroup {
+    margin-bottom: 48px; }
+
+.it_education-price {
+  padding: 80px 0 120px;
+  background: #f7f9f9; }
+
+.it_education-advantages {
+  padding: 120px 0;
+  background: #f7f9f9; }
+  .it_education-advantages hgroup {
+    margin-bottom: 30px; }
+
+.it_education-faq {
+  padding: 120px 0;
+  background: #f7f9f9; }
+  .it_education-faq hgroup {
+    margin-bottom: 80px; }
+
+.corporate_training {
+  padding: 120px 0;
+  background: #fcb03b; }
+
+.personal_coaching {
+  padding: 100px 0 0;
+  background: #ffffff; }
+
+/* FEEDBACK */
+.order-education {
+  padding: 130px 0 200px;
+  background: #2f2c2c; }
+
+.order-coaching {
+  padding: 120px 0;
+  background: url("../img/bg-boxed-black.jpg") center center repeat; }
 
 .subscribe {
   position: relative;
@@ -1278,10 +1315,6 @@ body {
 .testimonial-slider {
   padding: 120px 0; }
 
-.corporate_training {
-  padding: 120px 0;
-  background: #fcb03b; }
-
 /* --- free.hbs --- */
 .about-consideration_time {
   padding: 120px 0;
@@ -1292,29 +1325,11 @@ body {
   background: url("../img/bg-boxed-blue.jpg") center center repeat; }
 
 /* --- individual.hbs --- */
-.personal_coaching {
-  padding: 100px 0 0;
-  background: #ffffff; }
-
-.order_coaching {
-  padding: 120px 0;
-  background: url("../img/bg-boxed-black.jpg") center center repeat; }
-
 .testimonial-section {
   padding: 120px 0;
   background: #ffffff; }
 
 /* --- it-professions.hbs --- */
-.sale-you,
-.sale-it {
-  padding: 120px 0; }
-
-.sale-need {
-  padding: 0; }
-
-.sale-you, .sale-need, .sale-it {
-  background: #ffffff; }
-
 .testimonials-promo {
   padding: 120px 0 80px;
   background: #fcb03b; }
@@ -1324,36 +1339,6 @@ body {
   background: #ffffff; }
 
 /* --- learn_html.hbs --- */
-.it_education-job {
-  padding: 120px 0;
-  background: #f7f9f9; }
-
-.order_education {
-  padding: 130px 0 200px;
-  background: #2f2c2c; }
-
-.it_education-author {
-  padding: 120px 0;
-  background: #ffffff; }
-
-.it_education-description {
-  padding: 0;
-  background: #f7f9f9; }
-
-.it_education-price {
-  padding: 80px 0 120px;
-  background: #f7f9f9; }
-
-.counter_red {
-  padding: 120px 0;
-  background: url("../img/bg-boxed-red.jpg") center center repeat; }
-
-.it_education-lessons {
-  padding: 120px 0;
-  background: #ffffff; }
-  .it_education-lessons .title, .it_education-lessons .base {
-    margin-bottom: 48px; }
-
 .testimonials-slider {
   position: relative;
   overflow: hidden;
@@ -1369,19 +1354,4 @@ body {
   .testimonials-slider.testi-2 {
     background: url("../img/bg-boxed-dark.jpg") center center repeat; }
 
-.it_education-advantages {
-  padding: 120px 0;
-  background: #f7f9f9; }
-  .it_education-advantages .title, .it_education-advantages .base {
-    margin-bottom: 30px; }
-
-.it_education-faq {
-  padding: 120px 0;
-  background: #f7f9f9; }
-  .it_education-faq .title, .it_education-faq .base {
-    margin-bottom: 80px; }
-
 /* --- testimonials.hbs --- */
-.counter_green {
-  padding: 80px 0;
-  background: #3cb878; }
