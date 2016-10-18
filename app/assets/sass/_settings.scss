@@ -167,7 +167,7 @@ body {
 		input:-moz-placeholder,
 		textarea:-ms-input-placeholder,
 		input:-ms-input-placeholder {
-			color: #acacac !important;
+			color: #acacac;
 		}
 	}
 
@@ -200,6 +200,7 @@ body {
 .zz {font-family: $font-zz !important;}
 .position-abs {position: absolute !important;}
 .align-left {text-align: left !important;}
+.no-padding {padding: 0 !important;}
 
 
 /////////////////////////////////
