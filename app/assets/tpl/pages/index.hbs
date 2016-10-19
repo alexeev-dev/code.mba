@@ -1,16 +1,16 @@
 {{#extend 'base'}}
 	{{#content 'wr'}}
 		<div class="offer-money_back">
-			<div class="container-fluid">
+			<div class="container">
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-lg-8 offset-lg-2">
 
 						{{!-- {{>elements/socials it_education.body.html.author.socials}} --}}
 						
 						{{>offer offer.money_back}}
 						
 						{{#carousel testimonials.base i="4" class="js-carousel"}}
-							{{>testimonial face_top="true" class="default"}}
+							{{>testimonial face_bottom="true" class="testimonials classic"}}
 						{{/carousel}}
 
 						<div class="decor">
