@@ -1,19 +1,19 @@
 <blockquote{{#if class}} class="{{class}}"{{/if}}>
 	{{#if face_top}}
 		<figure>
-	        <img src="{{photo}}" alt="{{name}}">
-	    </figure>
+			<img src="{{user.photo}}" alt="{{user.name}}">
+		</figure>
 	{{/if}}
 	<p>{{title}}</p>
-    <footer>
-    	{{#if face_bottom}}
+	<footer>
+		{{#if face_bottom}}
 			<figure>
-		    	<img src="{{photo}}" alt="{{name}}">
+				<img src="{{user.photo}}" alt="{{user.name}}">
 			</figure>
-    	{{/if}}
-        <cite>
-            <a href="#">{{name}}</a>
-            <span>{{place}}</span>
-        </cite>
-    </footer>
+		{{/if}}
+		<cite>
+			<a href="#">{{user.name}}</a>
+			<span>{{user.place}}</span>
+		</cite>
+	</footer>
 </blockquote>

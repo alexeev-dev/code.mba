@@ -1,41 +1,53 @@
 {{#extend 'base'}}
 	{{#content 'wr'}}
 
-		<div class="offer-learn_html">
+		<section class="offer-learn_html">
 			<div class="container">
 				<div class="row">
 
-					<div class="col-md-6"></div>
+					<div class="col-xs-12 col-lg-6">
+						<hgroup class="eye_catcher-html">
+							<h1 class="h1 slider-content-title c-dark super-title"><span>ПРОФЕССИЯ</span> <br><b>HTML</b>-верстальщик</h1>
+							<h2>
+								<i class="seoicon-seo-landing-pages-symbol-inside-a-circle"></i>
+								<em><small>за</small></em><br>
+								<span><b>42</b></span>
+								<strong><small>дня</small></strong>
+							</h2>
+						</hgroup>
+					</div>
 
-					<div class="col-md-6">
-						<div class="slider-thumb">
+					<div class="col-xs-12 col-lg-6">
+						<section class="eye_catcher-html">
 							<img alt="slider" src="img/slider3.png">
-						</div>
+						</section>
 					</div>
 
 				</div>
 			</div>
-		</div>
+		</section>
 		
-		<div class="it_education-job">
+		<section class="it_education-job">
 			<div class="container">
 				<div class="row">
 
 					<div class="col-lg-4">
-						<canvas id="myChart" width="360" height="360"></canvas>
-						<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.min.js"></script>
-						<script type="text/javascript" src="js/donut-chart.js"></script>
-						<ul class="job-statistics">
-							<li><b>23% &mdash; </b>аналитика в профессии</li>
-							<li><b>42% &mdash; </b>техническая сторона</li>
-							<li><b>17% &mdash; </b>креативность и творчество</li>
-							<li><b>28% &mdash; </b>повторяющиеся действия</li>
-						</ul>
+						<section class="job-statistics">
+							<canvas id="myChart" width="360" height="360"></canvas>
+							<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.min.js"></script>
+							<script type="text/javascript" src="js/donut-chart.js"></script>
+							<ul>
+								<li><b>23% &mdash; </b>аналитика в профессии</li>
+								<li><b>42% &mdash; </b>техническая сторона</li>
+								<li><b>17% &mdash; </b>креативность и творчество</li>
+								<li><b>28% &mdash; </b>повторяющиеся действия</li>
+							</ul>
+						</section>
 					</div>
 
 					<div class="col-lg-7 offset-lg-1">
-						{{>extra/title it_education.body.html.job class="title align-left"}}
-						<div class="job-info">
+						{{>extra/title it_education.body.html.job class="align-left"}}
+						<section class="job-info">
 							<p>Имея дизайн сайта в <b>Photoshop</b>, необходимо через Редактор Кода повторить <small>его</small> <b>1</b><em>- в -</em><b>1</b> <small>в</small> Браузере <b>—</b> <span>преобразовать картинку в код.</span> <br>Каждый элемент дизайна описывается кодом. Делая замеры в <b>Photoshop</b>, все значения подставляются в Код. Результат <b>—</b> сверстаный сайт.</p>
 							<ul>
 								<li>
@@ -51,19 +63,18 @@
 									<em><b>74%</b> </em>рост популярности профессии
 								</li>
 							</ul>
-						</div>
+						</section>
 					</div>
 
 				</div>
 			</div>
-		</div>
+		</section>
 
-		<div class="order-education">
+		<section class="order-education">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-8 offset-lg-2">
-<<<<<<< HEAD
-						{{>extra/title order_education class="title--order"}}
+					<div class="col-lg-8 offset-lg-2 col-xs-12">
+						{{>extra/title order_education}}
 						<form>
 							<div class="row">
 								<div class="col-lg-8 no-padding">
@@ -75,9 +86,6 @@
 							</div>
 							<button class="btn">Записаться<span class="semicircle"></span></button>
 						</form>
-=======
-						{{>extra/title order_education}}
->>>>>>> upstream/master
 					</div>
 				</div>
 			</div>
@@ -87,20 +95,21 @@
 				<img src="img/seoscore2.png" alt="image">
 				<img src="img/seoscore3.png" alt="image">
 			</div>
-		</div>
+		</section>
 
-		<div class="it_education-author">
+		<section class="it_education-author">
 			<div class="container">
 				<div class="row">
 
-					<div class="col-lg-5 col-md-5 col-sm-5">
-						<div class="author-slider">
+					<div class="col-lg-5 col-md-5 col-xs-12">
+						<section class="author-slider">
 							<p>Портфолио автора</p>
-						</div>
+							<img src="img/product-details.png" alt="">
+						</section>
 					</div>
 
-					<div class="col-lg-6 offset-lg-1 col-md-6 offset-md-1 col-sm-6 offset-sm-1">
-						<div class="author-info">
+					<div class="col-lg-6 offset-lg-1 col-md-6 offset-md-1 col-xs-12">
+						<section class="author-info">
 							<h3>Автор курса</h3>
 							<h4>Алексеев Вадим</h4>
 							<ul class="raiting">
@@ -117,11 +126,11 @@
 								<i class="seoicon-chat-comment"></i>
 								<span class="semicircle"></span>
 							</a>
-						</div>
-						<div class="author-footer">
-							<p class="workplace">Место работы: <a href="#"><b>CEO LDD "CODE.mba"</b></a></p>
-							<p>Другие курсы автора: <a href="#"><b>Front-End</b> разработчик</a>, <a href="#">Создание сайтов</a></p>
-							<div><p>Социальные профили: </p>
+						</section>
+						<ul class="author-footer">
+							<li class="workplace">Место работы: <a href="#"><b>CEO LDD "CODE.mba"</b></a></li>
+							<li>Другие курсы автора: <a href="#"><b>Front-End</b> разработчик</a>, <a href="#">Создание сайтов</a></li>
+							<li>Социальные профили:
 								<ul>
 									<li><a href="#"><i class="seoicon-social-facebook"></i></a></li>
 									<li><a href="#"><i class="seoicon-social-twitter"></i></a></li>
@@ -129,15 +138,15 @@
 									<li><a href="#"><i class="seoicon-social-google-plus"></i></a></li>
 									<li><a href="#"><i class="seoicon-social-pinterest"></i></a></li>
 								</ul>
-							</div>
-						</div>
+							</li>
+						</ul>
 					</div>
 
 				</div>
 			</div>
-		</div>
+		</section>
 
-		<div class="it_education-description">
+		<section class="it_education-description">
 			<div class="container">
 				<ul class="description-tab_control">
 					<li><a href="#" role="tab">Описание курса</a></li>
@@ -145,15 +154,15 @@
 				</ul>
 				<div class="row">
 					<div class="col-md-12">
-						<div class="description-tab_wrap">
-							<div class="description-course">
+						<section class="description-tab_wrap">
+							<section class="description-course">
 								<h3>Уровень <b>—</b> обучение с НУЛЯ</h3>
 								<p>Привет! Более <b>10</b> лет я занимаюсь <b>WEB-</b>разработкой, а <b>3</b> года назад я начал обучать. Сначала это были работники моей компании (я создал список рекомендаций, по которым мои разработчики писали код в едином стиле), затем это было корпоративное обучение (мой список рекомендаций превратился в полноценную методичку) и наконец, я занялся частной практикой и обучил несколько десятков человек с НУЛЯ (один из студентов даже открыл свою студию).</p>
 								<p>Проанализировав код, который пишут в компаниях где я побывал и отвечая на многочисленные вопросы студентов, я разработал <span>уникальную пошаговую методологию верстки адаптивных сайтов</span>. Методология самодостаточна, однако без знания <b>HTML/CSS —</b> это как ездить на машине без прав <b>—</b> все просто на прямой дороге, но в городе с оживленным движением можно легко попасть в аварию. И я задумался, как можно <span>быстро освоить <b>HTML</b> и <b>CSS</b> новичку</span> для работы с моей методологией.</p>
 								<p>В этом курсе я разделили <b>HTML-</b>теги на <b>3</b> группы: строительные, типографика и формы <b>—</b> теперь легко понимать что где использовать, затем я собрал ТОП<b>-30</b> самых часто используемых <b>CSS-</b>практик, как результат <b>— 80%</b> работ выполняются <b>20%</b> знаний, и наконец, используя <b>Bootstrap</b> для адаптации <b>—</b> <span>скорость верстки увеличивается в <b>2-3</b> раза!</span> <br>Каждый из этих модулей (<b>HTML/CSS/Bootstrap</b>) я предлагаю вам изучить за <b>1</b> неделю <b>+ 2</b> недели методологии <b>+ 1</b> неделя основы <b>WEB</b>. Кроме того вас ждут интересные домашние задания, лабораторная и дипломная работы. <br><span>Курс рассчитан на <b>1,5-3</b><small>мес</small>.</span>(в зависимости от интенсивности обучения).</p>
 								<p>В курсе даются все инструменты, которые требуют <span>при устройстве на работу в <b>IT-</b>компании.</span> Но инструменты это еще не все, вашим главным приемуществом перед другими соискателями на работу будет навык использования этих инструментов. В отличие от других новичков, которые придумывают собственные схемы верстки, вы сможете использовать методологию, обкатанную на сотнях проектах. Кроме того, не изобретая заново велостпед, вы сможете сосредоточиться на формировании своего собственного стиля кодинга, а не на придумывании <b>"</b>как лучше сверстать<b>"</b>.</p>
-							</div>
-							<div class="description-author">
+							</section>
+							<section class="description-author">
 								<h3>3 оценки для “<span>Алексеев Вадим</span>”</h3>
 								<ul class="comments">
 									<li>
@@ -224,17 +233,17 @@
 									</div>
 									<button class="btn">Отправить<span class="semicircle"></span></button>
 								</form>
-							</div>
-						</div>
+							</section>
+						</section>
 					</div>
 				</div>
 			</div>
 		</div>
 
-		<div class="it_education-price">
+		<section class="it_education-price">
 			<div class="container">
 
-				<div class="price_table-wrap">
+				<section class="price_table-wrap">
 					<div class="row">
 						<div class="col-md-4">
 							<div class="price-item">
@@ -308,12 +317,24 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</section>
 
 			</div>
-		</div>
+
+
+			{{!-- ПОПАП "ЗАПИСАТЬСЯ" --}}
+			<div class="popup">
+				{{>extra/title popups.enroll}}
+				<form>
+					<input type="text" placeholder="Ваше Имя">
+					<input type="text" placeholder="Ваш Email">
+					<input type="text" placeholder="Ваш телефон">
+					<button class="btn">Записаться<span class="semicircle"></span></button>
+				</form>
+			</div>
+		</section>
 		
-		<div class="counter_red">
+		<section class="counter-red">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-3 col-md-6 col-sm-6 col-xs-12">
@@ -342,76 +363,76 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 
-		<div class="it_education-lessons">
+		<section class="it_education-lessons">
 			<div class="container">
 
 				<div class="row">
 					<div class="col-lg-10 offset-lg-1">
-						{{>extra/title it_education.body.html.lessons class="title"}}
+						{{>extra/title it_education.body.html.lessons}}
 					</div>
 				</div>
 
 				<div class="row">
 					<div class="col-lg-6">
-						<div class="lesson-item">
+						<section class="lesson-item">
 							<figure>
 								<img src="img/info-box28.png" alt="">
 							</figure>
 							<h5>База</h5>
 							<p>Введение в основы разработки, классификация технологий</p>
 							<a href="#">Программа модуля<i class="seoicon-right-arrow"></i></a>
-						</div>
+						</section>
 					</div>
 					<div class="col-lg-6">
-						<div class="lesson-item">
+						<section class="lesson-item">
 							<figure>
 								<img src="img/info-html.png" alt="">
 							</figure>
 							<h5><b>HTML</b></h5>
 							<p>Понимание архитектуры документа, виды и предназночение тегов</p>
 							<a href="#">Программа модуля<i class="seoicon-right-arrow"></i></a>
-						</div>
+						</section>
 					</div>
 				</div>
 
 				<div class="row">
 					<div class="col-lg-6">
-						<div class="lesson-item">
+						<section class="lesson-item">
 							<figure>
 								<img src="img/info-css.png" alt="">
 							</figure>
 							<h5><b>CSS</b></h5>
 							<p>Создание стилей, разбор ТОП самых часто используемых техник</p>
 							<a href="#">Программа модуля<i class="seoicon-right-arrow"></i></a>
-						</div>
+						</section>
 					</div>
 					<div class="col-lg-6">
-						<div class="lesson-item">
+						<section class="lesson-item">
 							<figure>
 								<img src="img/info-b.png" alt="">
 							</figure>
 							<h5><b>Bootstrap</b></h5>
 							<p>Использование модульной сетки и адаптация сайтов без усилий</p>
 							<a href="#">Программа модуля<i class="seoicon-right-arrow"></i></a>
-						</div>
+						</section>
 					</div>
 				</div>
 
 				<div class="row">
 					<div class="col-lg-6">
-						<div class="lesson-item">
+						<section class="lesson-item">
 							<figure>
 								<img src="img/info-box25.png" alt="">
 							</figure>
 							<h5>Методология</h5>
 							<p>Пошаговая инструкция верстки или как писать чистый, поддерживаемый код</p>
 							<a href="#">Программа модуля<i class="seoicon-right-arrow"></i></a>
-						</div>
+						</section>
 					</div>
 					<div class="col-lg-6">
-						<div class="lesson-item">
+						<section class="lesson-item">
 							<figure>
 								<img src="img/info-box28.png" alt="">
 							</figure>
@@ -422,144 +443,210 @@
 								<li><i class="seoicon-check"></i>переделка шаблона в лендинг</li>
 							</ul>
 							<a href="#">Программа модуля<i class="seoicon-right-arrow"></i></a>
-						</div>
+						</section>
 					</div>
 				</div>
 
 			</div>
-		</div>
 
-		<div class="testimonials-slider testi-1">
+			{{!-- ПОПАПЫ МОДУЛЕЙ КУРСА --}}
+			<div class="popup">
+				<h4>День <b>1</b></h4>
+				<ul>
+					<li>Урок <b>1</b> <b>–</b> Что такое Браузер?</li>
+					<li>Урок <b>2</b> <b>–</b> История Браузеров</li>
+					<li>Урок <b>3</b> <b>–</b> Обзор браузеров</li>
+					<li>Урок <b>4</b> <b>–</b> <b>IP</b> и анонимность в Интернете</li>
+					<li>Урок <b>5</b> <b>–</b> Инструменты разработчика</li>
+					<li>Урок <b>6</b> <b>–</b> подключение расширений для <b>Chrome</b></li>
+					<li>Урок <b>7</b> <b>–</b> программы для <b>screenshot-</b>ов</li>
+				</ul>
+				<h4>День <b>2</b></h4>
+				<ul>
+					<li>Урок <b>1</b> <b>–</b> редакторы кода</li>
+					<li>Урок <b>2</b> <b>–</b> установка <b>Sublime</b></li>
+					<li>Урок <b>3</b> <b>–</b> модули для <b>Sublime</b></li>
+					<li>Урок <b>4</b> <b>–</b> настройка <b>Sublime</b></li>
+				</ul>
+				<h4>День <b>3</b></h4>
+				<ul>
+					<li>Урок <b>1</b> <b>–</b> хостинг, домены, <b>DNS</b></li>
+					<li>Урок <b>2</b> <b>–</b> устанавливаем локальный сервер</li>
+					<li>Урок <b>3</b> <b>–</b> работа с панелью управления хостингом</li>
+					<li>Урок <b>4</b> <b>–</b> работа с <b>FileZilla</b></li>
+				</ul>
+				<h4>День <b>4</b></h4>
+				<ul>
+					<li>Урок <b>1</b> <b>–</b> Как искать решения в гугле</li>
+					<li>Урок <b>2</b> <b>–</b> <b>13</b> способов как гуглить</li>
+					<li>Урок <b>3</b> <b>–</b> Гугл тренды</li>
+					<li>Урок <b>4</b> <b>–</b> Хром эксперементы</li>
+					<li>Урок <b>5</b> <b>–</b> Сайты для вдохновения</li>
+				</ul>
+				<h4>День <b>5</b></h4>
+				<ul>
+					<li>Урок <b>1</b> <b>–</b> этапы разработки <b>Web-</b>проекта</li>
+					<li>Урок <b>2</b> <b>–</b> отличия <b>Front-End</b> от <b>Back-End</b></li>
+					<li>Урок <b>3</b> <b>–</b> классификация технологий</li>
+					<li>Урок <b>4</b> <b>–</b> сайты для обучения</li>
+					<li>Урок <b>5</b> <b>–</b> сайты для фриланса</li>
+				</ul>
+			</div>
+		</section>
+
+		<section class="testimonials-slider testi-1">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-4 col-md-4">
 						{{>extra/title it_education.body.html.testimonials-1}}
 					</div>
-					<div class="col-lg-7 offset-lg-1 col-md-7 offset-md-1"></div>
+					<div class="col-lg-7 offset-lg-1 col-md-7 offset-md-1">
+						{{#carousel testimonials.base i="1" class="js-carousel"}}
+							{{>testimonial face_top="true" class="testimonials creative"}}
+						{{/carousel}}
+						<ul class="carousel-dots">
+							<li><a href="#"></a></li>
+							<li><a href="#"></a></li>
+							<li class="active"><a href="#"></a></li>
+							<li><a href="#"></a></li>
+						</ul>
+						<ul class="carousel-arrows">
+							<li class="btn-prev">
+								<svg></svg>
+							</li>
+							<li class="btn-next">
+								<svg></svg>
+							</li>
+						</ul>
+					</div>
 				</div>
 			</div>
 
 			<div class="decor">
 				<img src="img/testimonial2.png" alt="image">
 			</div>
-		</div>
+		</section>
 
-		<div class="it_education-advantages">
+		<section class="it_education-advantages">
 			<div class="container">
 
 				<div class="row">
 					<div class="col-md-12">
-						{{>extra/title it_education.body.html.advantages class="title"}}
+						{{>extra/title it_education.body.html.advantages}}
 					</div>
 				</div>
 
 				<div class="row">
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-						<div class="advantage-items">
+						<section class="advantage-items">
 							<h4>Видеовстречи</h4>
 							<p>Еженедельные <b>"</b>разборы полетов<b>"</b> с автором курса, мастeр-классы <br>и ответы на вопросы</p>
 							<figure>
 								<img src="img/info-box11.png" alt="">
 							</figure>
-						</div>
+						</section>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-						<div class="advantage-items">
+						<section class="advantage-items">
 							<h4>Шпаргалки</h4>
 							<p>МИНИ-памятки <b>HTML/CSS</b> свойст, коллекция СУПЕР-скриптов <br>и <b>100%</b> нужные ссылки</p>
 							<figure>
 								<img src="img/info-box16.png" alt="">
 							</figure>
-						</div>
+						</section>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-						<div class="advantage-items">
+						<section class="advantage-items">
 							<h4>Куратора</h4>
 							<p>Персональный наставник, который всегда улыбается вам, внимателен и доступен на связи <b>24/7</b></p>
 							<figure>
 								<img src="img/info-box21.png" alt="">
 							</figure>
-						</div>
+						</section>
 					</div>
 				</div>
 
 				<div class="row">
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-						<div class="advantage-items">
+						<section class="advantage-items">
 							<h4>Резюме</h4>
 							<p>После прохождение курса мы поможем грамотно составить <br>и опубликовать <b>on-line</b></p>
 							<figure>
 								<img src="img/info-box14.png" alt="">
 							</figure>
-						</div>
+						</section>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-						<div class="advantage-items">
+						<section class="advantage-items">
 							<h4>Свободу</h4>
 							<p>Набор этих навыков позволит тебе зарабатывать деньги без привязки к месту и времени работы</p>
 							<figure>
 								<img src="img/info-box22.png" alt="">
 							</figure>
-						</div>
+						</section>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-						<div class="advantage-items">
+						<section class="advantage-items">
 							<h4>Связи</h4>
 							<p>Сообщество единомышленников, где можно спросить совета, найти команду или подзаработать</p>
 							<figure>
 								<img src="img/info-box13.png" alt="">
 							</figure>
-						</div>
+						</section>
 					</div>
 				</div>
 
 				<div class="row">
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-						<div class="advantage-items">
+						<section class="advantage-items">
 							<h4>Портфолио</h4>
 							<p>Вы приобретаете <b>2</b> коммерческих навыка и получаете <b>+2</b> работы высокого качества</p>
 							<figure>
 								<img src="img/info-box18.png" alt="">
 							</figure>
-						</div>
+						</section>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-						<div class="advantage-items">
+						<section class="advantage-items">
 							<h4>Рекомендацию</h4>
 							<p>На каждого студента составляется характеристика <b>on-line</b> и выдается рекомендательное письмо</p>
 							<figure>
 								<img src="img/info-box19.png" alt="">
 							</figure>
-						</div>
+						</section>
 					</div>
 					<div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
-						<div class="advantage-items">
+						<section class="advantage-items">
 							<h4>Сертификат</h4>
 							<p>Документ с личным <b>ID</b>, подлинность и статус которого можно проверить у нас на сайте</p>
 							<figure>
 								<img src="img/eye.png" alt="">
 							</figure>
-						</div>
+						</section>
 					</div>
 				</div>
 
 			</div>
-		</div>
+		</section>
 
-		<div class="testimonial-slider">
+		<section class="testimonials-slider testi-2">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-8 offset-lg-2"></div>
+					<div class="col-lg-8 offset-lg-2">
+						{{#carousel testimonials.base i="1" class="js-carousel"}}
+							{{>testimonial face_top="true" class="testimonials venge"}}
+						{{/carousel}}
+					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 
-		<div class="it_education-faq">
+		<section class="it_education-faq">
 			<div class="container">
 
 				<div class="row">
 					<div class="col-md-12">
-						{{>extra/title it_education.body.html.faq-title class="title"}}
+						{{>extra/title it_education.body.html.faq-title}}
 					</div>
 				</div>
 
@@ -648,7 +735,7 @@
 
 				<div class="row">
 					<div class="col-lg-12">
-						{{!-- ТАЙТЛ ? --}}
+						<h4>Как я смогу понять, что мне подходит именно этот курс?</h4>
 					</div>
 					<div class="col-lg-6 col-md-12">
 						<ul class="faq-items">
@@ -750,7 +837,7 @@
 				</div>
 
 			</div>
-		</div>
+		</section>
 
 	{{/content}}
 {{/extend}}
