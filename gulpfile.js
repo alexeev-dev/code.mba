@@ -11,6 +11,7 @@ const handlebarsCompile = require('gulp-compile-handlebars');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
 
+
 // APP config
 let dir = {
   src: 'app/',
@@ -34,6 +35,7 @@ gulp.task('sass', () => {
 });
 
 handlebarsLayouts.register(Handlebars);
+
 
 Array.prototype.remove = function(value) {
     var idx = this.indexOf(value);
@@ -66,7 +68,6 @@ Handlebars.registerHelper('carousel', (items, options) => {
 
     let body = '<div ' + attributes.join(' ') + '>';
 
-	// var body = '<div ' + attributes.splice(0, extra); + '>';
 	for(let i=0, l=item; i<l; i++) {
 		body = body + '<div class="carousel-item">' + options.fn(items[i]) + '</div>';
 	}
@@ -79,6 +80,13 @@ Handlebars.registerHelper('ifCond', (vs1, vs2, options) => {
 		return options.fn(this);
 	}
 	return options.inverse(this);
+});
+
+Handlebars.registerHelper('repeat', (items, from, to, incr, options) => {
+    let int = '';
+    for(let i=from; i<to; i+=incr)
+        int+=options.fn(items[i]);
+    return int;
 });
 
 // + socials
