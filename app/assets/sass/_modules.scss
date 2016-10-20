@@ -1298,71 +1298,90 @@
 }
 
 // job
-.job-statistics {
-	ul {
-		margin-left: 50px;
+.job {
+	&-statistics {
+		ul {
+			margin-left: 50px;
 
-		@include respond-to(md) {margin-bottom: 50px;}
-		li {
-			color: #acacac; font-size: 14px; line-height: 1.5;
-			position: relative; margin-bottom: 20px; padding-left: 40px;
+			@include respond-to(md) {margin-bottom: 50px;}
+			@include respond-to(xs) {margin-left: 0;}
 
-			&:before {
-				content: '';
-				display: inline-block; width: 20px; height: 20px; position: absolute; top: 0; left: 0;
-				border-radius: 100%; border-color: transparent;
-			}
+			li {
+				color: #acacac; font-size: 14px; line-height: 1.5;
+				position: relative; margin-bottom: 20px; padding-left: 40px;
 
-			&:nth-child(1) {&:before {background: #4cc2c0;}}
-			&:nth-child(2) {&:before {background: #3cb878;}}
-			&:nth-child(3) {&:before {background: #fcb03b;}}
-			&:nth-child(4) {&:before {background: #f15b26;}}
+				&:before {
+					content: '';
+					display: inline-block; width: 20px; height: 20px; position: absolute; top: 0; left: 0;
+					border-radius: 100%; border-color: transparent;
+				}
 
-			b {
-				color: #2f2c2c;
-			}
-		}
-	}
-}
-.job-info {
-	p {
-		color: #acacac; font-size: 18px; line-height: 26px; letter-spacing: 0.2px;
-		margin: 0 0 80px;
-
-		@include respond-to(md) {margin-bottom: 30px;}
-
-		span {
-			color: #2f2c2c; font-size: 18px; line-height: 26px; letter-spacing: 0.2px;
-		}
-
-		em {
-			font-size: 12px;
-			position: relative; top: -2px;
-		}
-	}
-
-	ul {
-		padding-left: 100px;
-
-		li {
-			color: #acacac; font-size: 14px; line-height: 80px;
-			position: relative; margin-bottom: 40px; padding-left: 100px; height: 70px;
-
-			i {
-				color: #4cc2c0; font-size: 70px;
-				display: inline-block; position: absolute; left: 0; top: 0;
-			}
-
-			em {
-				color: #2f2c2c; font-size: 30px; line-height: 1.5; letter-spacing: 0.2px;
+				&:nth-child(1) {&:before {background: #4cc2c0;}}
+				&:nth-child(2) {&:before {background: #3cb878;}}
+				&:nth-child(3) {&:before {background: #fcb03b;}}
+				&:nth-child(4) {&:before {background: #f15b26;}}
 
 				b {
+					color: #2f2c2c;
+				}
+			}
+		}
+	}
+	&-info {
+		p {
+			color: #acacac; font-size: 18px; line-height: 26px; letter-spacing: 0.2px;
+			margin: 0 0 80px;
 
+			@include respond-to(md) {margin-bottom: 30px;}
+			@include respond-to(xs) {
+				font-size: 14px; line-height: 22px;
+			}
+
+			span {
+				color: #2f2c2c; font-size: 18px; line-height: 26px; letter-spacing: 0.2px;
+
+				@include respond-to(xs) {
+					font-size: 14px; line-height: 22px;
 				}
 			}
 
-			a {
-				color: #2f2c2c;
+			em {
+				font-size: 12px;
+				position: relative; top: -2px;
+			}
+		}
+
+		ul {
+			padding-left: 100px;
+
+			@include respond-to(sm) {
+				padding-left: 0;
+			}
+
+			li {
+				color: #acacac; font-size: 14px; line-height: 80px;
+				position: relative; margin-bottom: 40px; padding-left: 100px; height: 70px;
+
+				@include respond-to(sm) {
+					line-height: 1;
+				}
+
+				i {
+					color: #4cc2c0; font-size: 70px;
+					display: inline-block; position: absolute; left: 0; top: 0;
+				}
+
+				em {
+					color: #2f2c2c; font-size: 30px; line-height: 1.5; letter-spacing: 0.2px;
+
+					b {
+
+					}
+				}
+
+				a {
+					color: #2f2c2c;
+				}
 			}
 		}
 	}
@@ -1404,6 +1423,13 @@
 		a {
 			color: #4cc2c0; font-size: 16px;
 			display: inline-block;
+
+			@include respond-to(md) {
+				display: block; margin-bottom: 20px;
+			}
+		}
+		.raiting {
+			@include respond-to(md) {margin: 0; display: block;}
 		}
 
 		a.btn {
@@ -1462,14 +1488,40 @@
 // description
 .description {
 	&-tab_control {
-		float: left; margin-top: -77px; margin-bottom: 85px; 
+		float: left; margin-top: -77px; margin-bottom: 85px;
+
+		@include respond-to(sm) {
+			margin-top: -92px;
+		} 
+		@include respond-to(xs) {
+			float: none; position: relative; top: -142px; margin: 0;
+		}
+
+		&:after {
+			content: '';
+			display: block; width: 100%; clear: both;
+		}
 
 		li {
 			display: inline-block;
+
+			@include respond-to(sm) {
+				float: left; width: 50%;
+			}
+			@include respond-to(xs) {
+				float: none; width: 100%; display: block;
+			}
+
 			a {
 				font-size: 18px; text-align: center; text-transform: uppercase; line-height: 1.5;
 				float: left; position: relative; padding: 25px 70px;
 				background-color: #f1f3f3; border-right: 2px solid #e3e9e9; border-radius: 50px 0 0 0;
+
+				@include respond-to(sm) {font-size: 14px;}
+				@include respond-to(xs) {
+					float: none; display: inline-block; width: 100%; padding: 25px 0;
+					border-radius: 50px 50px 0 0; border-right: none;
+				}
 
 				&:before {
 					content: '';
@@ -1492,8 +1544,13 @@
 
 			&:last-child {
 				margin-left: -4px;
+
+				@include respond-to(xs) {margin-left: 0;}
+
 				a {
 					border-radius: 0 50px 0 0; border-right: none;
+
+					@include respond-to(xs) {border-radius: 0;}
 				}
 			}
 		}
@@ -1519,8 +1576,17 @@
 		h3 {
 			color: #2f2c2c; font-size: 40px; line-height: 1.5; letter-spacing: 0.2px;
 			margin-bottom: 40px;
+
+			@include respond-to(sm) {font-size: 30px;}
+			@include respond-to(xs) {font-size: 26px;}
+
 			span {
 				color: #4cc2c0; font-size: 40px; line-height: 1.5; letter-spacing: 0.2px;
+
+				@include respond-to(sm) {font-size: 30px;}
+				@include respond-to(xs) {font-size: 26px; display: block;}
+
+				b {color: #2f2c2c;}
 			}
 		}
 
@@ -1529,8 +1595,14 @@
 				padding-left: 100px; position: relative; margin-bottom: 40px;
 				border-bottom: 2px solid #f1f3f3;
 
+				@include respond-to(xs) {padding-left: 0;}
+
 				figure {
 					position: absolute; left: 0; top: 0;
+
+					@include respond-to(xs) {
+						position: static; float: left; margin-right: 20px;
+					}
 				}
 				ul.raiting {
 					display: block; margin: 0;
@@ -1544,9 +1616,17 @@
 				a {
 					display: inline-block; margin-bottom: 15px;
 					transition: all 0.15s linear;
+
+					@include respond-to(xs) {
+						display: block; margin-bottom: 5px;
+					}
 					&.name {
 						color: #2f2c2c; font-size: 18px;
 						margin-right: 15px;
+						@include respond-to(xs) {
+							font-size: 16px;
+							margin-right: 0;
+						}
 					}
 					&.date {
 						color: #ccc; font-size: 14px;
@@ -1556,6 +1636,13 @@
 				p {
 					color: #acacac; font-size: 18px; line-height: 26px; letter-spacing: 0.2px;
 					margin: 0 0 .75em;
+
+					@include respond-to(xs) {font-size: 16px; line-height: 24px;}
+
+					&:before {
+						content: '';
+						display: block; width: 100%; clear: both;
+					}
 				}
 			}
 		}
@@ -1563,9 +1650,17 @@
 		h4 {
 			color: #acacac; font-size: 16px; line-height: 1.5; letter-spacing: 0.2px;
 			display: inline-block; margin-left: 40px;
+
+			@include respond-to(xs) {
+				display: block; margin-left: 0;
+			}
 		}
 		ul.raiting {
 			display: inline-block; margin-left: 50px; margin-bottom: 30px;
+
+			@include respond-to(xs) {
+				display: block; margin-left: 0;
+			}
 		}
 
 		form {
@@ -1599,6 +1694,10 @@
 			button {
 				padding: 23px 31px;
 				background-color: #4cc3c1;
+
+				@include respond-to(sm) {
+					width: 100%; padding: 23px 0;
+				}
 			}
 		}
 		
