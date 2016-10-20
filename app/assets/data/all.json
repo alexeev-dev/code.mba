@@ -401,6 +401,10 @@
 		"enroll": {
 			"title": "Записаться",
 			"subtitle": "Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis seacula."
+		},
+		"ask": {
+			"title": "Задать вопрос",
+			"subtitle": "Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis seacula."
 		}
 	},
 	"_comment": "Вот тут пишите отзывы и др рекомендации",
