@@ -694,16 +694,16 @@
 						<h4>Как я смогу понять, что мне подходит именно этот курс?</h4>
 					</div>
 					<div class="col-lg-6 col-md-12">
-						<ul class="faq-items">
+						<ul class="faq-items true">
 							{{#each it_education.body.html.desigion.yes}}
-								<li class="true">{{.}}</li>
+								<li>{{.}}</li>
 							{{/each}}
 						</ul>
 					</div>
 					<div class="col-lg-6 col-md-12">
-						<ul class="faq-items">
+						<ul class="faq-items false">
 							{{#each it_education.body.html.desigion.no}}
-								<li class="false">{{.}}</li>
+								<li>{{.}}</li>
 							{{/each}}
 						</ul>
 					</div>

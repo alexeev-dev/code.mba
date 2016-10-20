@@ -1126,8 +1126,10 @@
 				-moz-osx-font-smoothing: grayscale;
 				position: absolute; left: 0; top: 8px;
 			}
+		}
 
-			&.true {
+		&.true {
+			li {
 				color: #3cb878;
 
 				&:before {
@@ -1135,7 +1137,9 @@
 					color: #3cb878;
 				}
 			}
-			&.false {
+		}
+		&.false {
+			li {
 				color: #f15b26;
 
 				&:before {

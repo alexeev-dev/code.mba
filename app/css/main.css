@@ -1419,16 +1419,16 @@ body {
       position: absolute;
       left: 0;
       top: 8px; }
-    .faq-items li.true {
+  .faq-items.true li {
+    color: #3cb878; }
+    .faq-items.true li:before {
+      content: "\e908";
       color: #3cb878; }
-      .faq-items li.true:before {
-        content: "\e908";
-        color: #3cb878; }
-    .faq-items li.false {
+  .faq-items.false li {
+    color: #f15b26; }
+    .faq-items.false li:before {
+      content: "\e912";
       color: #f15b26; }
-      .faq-items li.false:before {
-        content: "\e912";
-        color: #f15b26; }
 
 .advantage-items {
   text-align: center;
