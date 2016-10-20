@@ -412,51 +412,11 @@
 		"base": [
 			{
 				"id": "",
-				"title": "Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis seacula.",
+				"title": "Спасибо большое за это необыкновенное приключение. Классный преподователь, веселые однокурсники и мозгосносный материал.",
 				"user": {
 					"photo": "img/avatar.png",
-					"name": "Jonathan Simpson",
-					"place": "Envato Market",
-					"link": ""
-				}
-			},
-			{
-				"id": "",
-				"title": "Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis seacula.",
-				"user": {
-					"photo": "img/avatar.png",
-					"name": "Jonathan Simpson",
-					"place": "Envato Market",
-					"link": ""
-				}
-			},
-			{
-				"id": "",
-				"title": "Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis seacula.",
-				"user": {
-					"photo": "img/avatar.png",
-					"name": "Jonathan Simpson",
-					"place": "Envato Market",
-					"link": ""
-				}
-			},
-			{
-				"id": "",
-				"title": "Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis seacula.",
-				"user": {
-					"photo": "img/avatar.png",
-					"name": "Jonathan Simpson",
-					"place": "Envato Market",
-					"link": ""
-				}
-			},
-			{
-				"id": "",
-				"title": "555555",
-				"user": {
-					"photo": "",
-					"name": "",
-					"place": "",
+					"name": "Гомер Симпсон",
+					"place": "Атомная станция",
 					"link": ""
 				}
 			}
