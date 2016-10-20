@@ -150,7 +150,7 @@
 			<div class="container">
 				<ul class="description-tab_control">
 					<li><a href="#" role="tab">Описание курса</a></li>
-					<li class="active"><a href="#" role="tab">Мненио об авторе (3)</a></li>
+					<li class="active"><a href="#" role="tab">Мнение об авторе (3)</a></li>
 				</ul>
 				<div class="row">
 					<div class="col-md-12">
@@ -163,7 +163,7 @@
 								<p>В курсе даются все инструменты, которые требуют <span>при устройстве на работу в <b>IT-</b>компании.</span> Но инструменты это еще не все, вашим главным приемуществом перед другими соискателями на работу будет навык использования этих инструментов. В отличие от других новичков, которые придумывают собственные схемы верстки, вы сможете использовать методологию, обкатанную на сотнях проектах. Кроме того, не изобретая заново велостпед, вы сможете сосредоточиться на формировании своего собственного стиля кодинга, а не на придумывании <b>"</b>как лучше сверстать<b>"</b>.</p>
 							</section>
 							<section class="description-author">
-								<h3>3 оценки для “<span>Алексеев Вадим</span>”</h3>
+								<h3>3 оценки для <span><b>&ldquo;</b>Алексеев Вадим<b>&rdquo;</b></span></h3>
 								<ul class="comments">
 									<li>
 										<figure>
@@ -694,16 +694,16 @@
 						<h4>Как я смогу понять, что мне подходит именно этот курс?</h4>
 					</div>
 					<div class="col-lg-6 col-md-12">
-						<ul class="faq-items">
+						<ul class="faq-items true">
 							{{#each it_education.body.html.desigion.yes}}
-								<li class="true">{{.}}</li>
+								<li>{{.}}</li>
 							{{/each}}
 						</ul>
 					</div>
 					<div class="col-lg-6 col-md-12">
-						<ul class="faq-items">
+						<ul class="faq-items false">
 							{{#each it_education.body.html.desigion.no}}
-								<li class="false">{{.}}</li>
+								<li>{{.}}</li>
 							{{/each}}
 						</ul>
 					</div>
