@@ -2,7 +2,6 @@
 
 const gulp = require('gulp');
 const plumber = require('gulp-plumber');
-const babel = require('gulp-babel');
 const browserSync = require('browser-sync');
 const mergeJson = require('gulp-merge-json');
 const Handlebars = require('handlebars');
@@ -10,6 +9,10 @@ const handlebarsLayouts = require('handlebars-layouts');
 const handlebarsCompile = require('gulp-compile-handlebars');
 const rename = require('gulp-rename');
 const sass = require('gulp-sass');
+const rollup = require('rollup-stream');
+const source = require('vinyl-source-stream');
+const json = require('rollup-plugin-json');
+const babel = require('rollup-plugin-babel');
 
 
 // APP config
@@ -48,7 +51,7 @@ Array.prototype.remove = function(value) {
 
 Handlebars.registerHelper('carousel', (items, options) => {
 
-	let attributes = ['class="carousel"']; 
+	let attributes = ['class="carousel"'];
 	let item = items.length;
 
 	for (var attributeName in options.hash) {
@@ -102,7 +105,7 @@ let fs = require('fs');
 // Merge JSON
 gulp.task('merge', () => {
 	gulp.src([
-		dir.src + 'assets/data/**/*.json', 
+		dir.src + 'assets/data/**/*.json',
 		!dir.src + 'assets/data/all.json'
 	])
 	.pipe(plumber())
@@ -120,7 +123,7 @@ gulp.task('handlebars', ['merge'], () => {
 	let options = {
         ignorePartials: true,
         batch : [
-        	dir.src + 'assets/tpl/layouts', 
+        	dir.src + 'assets/tpl/layouts',
       		dir.src + 'assets/tpl/modules'
         ]
     }
@@ -135,15 +138,18 @@ gulp.task('handlebars', ['merge'], () => {
 		.pipe(gulp.dest(dir.src));
 });
 
-// Watch for file changes 
-gulp.task('default', ['browser-sync', 'handlebars', 'sass'], () => {
+gulp.task('scripts', () => {
+  return rollup({
+    entry: './app/js/main.js',
+    plugins: [json(), babel()]
+  }).pipe(source('main.js'))
+  .pipe(gulp.dest('dist'));
+});
+
+// Watch for file changes
+gulp.task('default', ['browser-sync', 'handlebars', 'sass', 'scripts'], () => {
 	gulp.watch(dir.src + 'assets/tpl/**/*.{hbs,handlebars}', ['handlebars', reload]);
 	gulp.watch(dir.src + '*.html', reload);
-    gulp.watch(dir.src + 'assets/sass/**/*.scss', ['sass', reload]);
-
-	return gulp.src('app/js/main.js')
-        .pipe(babel({
-            presets: ['es2015']
-        }))
-        .pipe(gulp.dest('dist'));
+  gulp.watch(dir.src + 'assets/sass/**/*.scss', ['sass', reload]);
+  gulp.watch(`${dir.src}js/**/*.js`, ['scripts', reload]);
 });

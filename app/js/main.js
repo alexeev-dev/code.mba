@@ -1,4 +1,4 @@
-import loadElements from "utils/elements-loader";
+import {loadElements} from './utils/elements-loader';
 
 let MainController = {
   /**
@@ -33,3 +33,5 @@ let MainController = {
   }
 
 }
+
+MainController.init();
