@@ -1,20 +1,26 @@
 // header
+.logo {
+	color: #000000; font-size: 27px; font-family: $font-zz !important; text-transform: uppercase; letter-spacing: 0.2px; line-height: 1;
+	padding: 10px 0 0 85px; margin-right: 82px; float: left; height: 52px;
+	position: absolute; right: 0; top: -60px; z-index: 9;
+	background: url('../img/logo-eye.png') 0 center no-repeat;
+
+	&:hover {color: #000000;}
+	
+
+	@media all and (max-width: 768px) {float: none; margin: 0 auto; display: block; width: 240px;}
+
+	em {font-size: 30px;}
+
+	span {
+		color: #ffffff; font-size: 10px; text-transform: uppercase; line-height: 1;
+		display: block;
+	}
+}
+
 .header {
 	padding: 30px 0 0;
-	.logo {
-		color: #2f2c2c; font-size: 27px; text-transform: uppercase; letter-spacing: 0.2px; line-height: 1;
-		padding: 10px 0 0 85px; margin-right: 82px; float: left; height: 52px;
-		background: url('../img/logo-eye.png') 0 center no-repeat;
-
-		@media all and (max-width: 768px) {float: none; margin: 0 auto; display: block; width: 240px;}
-
-		em {font-size: 30px;}
-
-		span {
-			color: #acacac; font-size: 10px; text-transform: uppercase; line-height: 1;
-			display: block;
-		}
-	}
+	
 	nav {
 		float: left; padding: 14px 0;
 
@@ -1493,9 +1499,7 @@
 				color: #acacac; font-size: 16px; line-height: 1.5; letter-spacing: 0.2px;
 				margin-bottom: 5px;
 
-				&.gold {
-					color: #fcb03b;
-				}
+				&.gold {color: #fcb03b;}
 
 				em {
 					color: #2f2c2c; font-weight: 600;
@@ -1508,6 +1512,7 @@
 			color: #4cc2c0; font-size: 24px; line-height: 1.5;
 			margin-bottom: 31px;
 		}
+		strike {p {margin-bottom: 0;}}
 
 		.btn {
 			padding: 23px 31px;
@@ -1518,6 +1523,51 @@
 			position: absolute; right: -17px; top: 50%; transform: translateY(-50%);
 
 			@include respond-to(sm) {display: none;}
+		}
+
+
+		&.flat {
+			border-radius: 10px;
+			box-shadow: 15px 0 80px rgba(0, 0, 0, 0.2);
+
+			figure {border: none;}
+
+			ul {
+				li {
+					color: #ffffff; font-size: 13px;
+					&.gold {color: #2f2c2c; font-family: ArialRoundedMTProCyrBold,sans-serif; font-weight: 400; font-size: 18px;}
+					em {color: #ffffff; font-family: ArialRoundedMTProCyrBold,sans-serif; font-weight: 400; font-size: 18px;}
+				}
+			}
+
+			p {color: #2f2c2c;}
+
+			.btn {border: 2px solid #ffffff; display: block;}
+
+			&:hover {
+				h5 {color: #2f2c2c;}
+				.btn {background-color: #2f2c2c !important; border: 2px solid #2f2c2c;}
+			}
+
+
+			&:nth-child(1),
+			&:nth-child(2) {
+				&:after {display: none;}
+			}
+
+			&.blue {background-color: #4cc2c0; .btn {background-color: #4cc2c0;}}
+			&.red {background-color: #f15b26; .btn {background-color: #f15b26;}}
+			&.yellow {
+				background-color: #fcb03b; 
+
+				.btn {background-color: #fcb03b; 
+
+					.semicircle:after {border-color: #fcb03b;}
+
+					&.disabled{color: #fcb03b; background-color: #ffffff;}
+				}
+				&:hover .btn.disabled {background-color: #ffffff !important; border-color: #ffffff;}
+			}
 		}
 	}
 }
@@ -1986,11 +2036,19 @@
 // eye-catcher
 .eye_catcher {
 	&-html {
-		padding-top: 60px;
+		padding-top: 20px;
+
+		.img_new {
+			left: 15%;
+			position: absolute;
+			top: 300px;
+			width: 414px;
+			z-index: 999;
+		}
 
 		@include respond-to(md) {text-align: center;}
 		h1 {
-			color: #2f2c2c; font-size: 48px; font-family: $font-base; font-weight: 900; line-height: 1;
+			color: #2f2c2c; font-size: 48px; font-family: ArialRoundedMTProCyrBold,sans-serif; font-weight: 900; line-height: 1;
 			position: relative; top: 25px; margin: 0;
 
 			@include respond-to(lg) {top: 0;}
@@ -1998,13 +2056,15 @@
 			@include respond-to(xs) {font-size: 36px;}
 
 			span {
-				font-size: 68px; font-weight: 100;
+				font-size: 72px; font-weight: 400;
 				@include respond-to(xs) {font-size: 36px;}
 			}
 			b {
-				font-size: 68px; font-weight: 900;
+				font-size: 110px; font-weight: 900; font-family: ArialRoundedMTProCyrBold,sans-serif;
 				@include respond-to(xs) {font-size: 36px;}
 			}
+
+			span, b, em, u {z-index: 999; position: relative;}
 		}
 		h2 {
 			@include respond-to(md) {text-align: center;}
@@ -2051,7 +2111,7 @@
 
 // POPUP
 .popup {
-	position: relative; padding: 20px 30px; width: 400px; margin: 0 auto;
+	position: relative; padding: 60px; width: 600px; margin: 0 auto;
 	background-color: #fff; box-shadow: 0 14px 32px 10px rgba(0, 0, 0, 0.2); border-radius: 10px;
 	overflow: hidden;
 
@@ -2067,7 +2127,7 @@
 	}
 
 	h4 {
-		
+		font-size: 30px;
 	}
 
 	p {
@@ -2075,7 +2135,8 @@
 	}
 
 	ul {
-		margin-bottom: 15px;
+		margin-bottom: 40px; 
+		&.last {margin-bottom: 0;}
 		li {
 			padding-left: 15px; position: relative;
 			&:before {
@@ -2084,6 +2145,8 @@
 				color: #4cc2c0; font-size: 12px;
 				position: absolute; left: 0; top: 4px;
 			}
+
+			b {font-size: 16px;}
 		}
 	}
 
@@ -2100,7 +2163,7 @@
 		}
 	}
 	a.close-popup {
-		position: absolute; right: 30px; top: 30px;
+		position: absolute; top: 20px; right: 5px;
 
 		&:hover {
 			span {

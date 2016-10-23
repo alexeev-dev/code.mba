@@ -1,26 +1,25 @@
 {{#extend 'base'}}
+	{{#content 'header'}}{{/content}}
 	{{#content 'wr'}}
 
-		<section class="offer-learn_html">
+		<section class="offer-learn_html" id="particles-js">
 			<div class="container">
 				<div class="row">
 
-					<div class="col-xs-12 col-lg-6">
-						<hgroup class="eye_catcher-html">
-							<h1 class="h1 slider-content-title c-dark super-title"><span>ПРОФЕССИЯ</span> <br><b>HTML</b>-верстальщик</h1>
-							<h2>
-								<i class="seoicon-seo-landing-pages-symbol-inside-a-circle"></i>
-								<em><small>за</small></em><br>
-								<span><b>42</b></span>
-								<strong><small>дня</small></strong>
-							</h2>
-						</hgroup>
-					</div>
+					<div class="col-xs-12 col-lg-12">
+						<a href="#" class="logo">code<em>.</em>mba <span>Обучение <b>IT-</b>профессиям</span></a>
 
-					<div class="col-xs-12 col-lg-6">
-						<section class="eye_catcher-html">
-							<img alt="slider" src="img/slider3.png">
-						</section>
+						<hgroup class="eye_catcher-html">
+							<h1 class="h1 slider-content-title c-dark super-title"><span>ПРОФЕССИЯ</span> <br><b>HTML</b><em>-верстальщик</em></h1>
+							<h2>
+								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+								{{!-- <i class="seoicon-seo-landing-pages-symbol-inside-a-circle"></i> --}}
+								<em><small><u>за</u></small></em><br>
+								<span><b><u>4</u><u>2</u></b></span>
+								<strong><small><u>дня</u></small></strong>
+							</h2>
+							<img alt="slider" src="img/slider3.png" class="img_new">
+						</hgroup>
 					</div>
 
 				</div>
@@ -46,9 +45,16 @@
 					</div>
 
 					<div class="col-lg-7 offset-lg-1">
-						{{>extra/title it_education.body.html.job class="align-left"}}
+						{{!-- {{>extra/title it_education.body.html.job class="align-left"}} --}}
 						<section class="job-info">
-							<p>Имея дизайн сайта в <b>Photoshop</b>, необходимо через Редактор Кода повторить <small>его</small> <b>1</b><em>- в -</em><b>1</b> <small>в</small> Браузере <b>—</b> <span>преобразовать картинку в код.</span> <br>Каждый элемент дизайна описывается кодом. Делая замеры в <b>Photoshop</b>, все значения подставляются в Код. Результат <b>—</b> сверстаный сайт.</p>
+							<hgroup class="align-left">
+								<h2>Суть работы</h2>
+								<div class="heading-line">
+									<span class="short-line"></span>
+									<span class="long-line"></span>
+								</div>
+							</hgroup>
+							<p>Имея дизайн сайта в <b>Photoshop</b>, необходимо через Редактор Кода повторить <small>его</small> <b>1</b><em>- в -</em><b>1</b> <small>в</small> Браузере <b>—</b> <span>преобразовать картинку в код.</span> <br>Каждый элемент дизайна описывается кодом. Делая замеры в <b>Photoshop</b>, все значения подставляются в Код. <br><span>Результат <b>—</b> сверстаный сайт</span>.</p>
 							<ul>
 								<li>
 									<i class="seoicon-lightbulb-on"></i>
@@ -111,7 +117,7 @@
 					<div class="col-lg-6 offset-lg-1 col-md-6 offset-md-1 col-xs-12">
 						<section class="author-info">
 							<h3>Автор курса</h3>
-							<h4>Алексеев Вадим</h4>
+							<h4 style="position: relative;">Алексеев Вадим <img src="img/alex1.jpg" style="position:absolute; bottom:0; right:0; border-radius:50%; width:120px;"></h4>
 							<ul class="raiting">
 								<li><i class="fa fa-star" aria-hidden="true"></i></li>
 								<li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -142,7 +148,6 @@
 						</ul>
 						{{!-- ПОПАП "Задать вопрос" --}}
 						<div class="popup">
-							{{>extra/title popups.ask}}
 							<form>
 								<input type="text" placeholder="Ваше Имя">
 								<input type="text" placeholder="Ваш Email">
@@ -256,34 +261,34 @@
 		<section class="it_education-price">
 			<div class="container">
 
-				<section class="price-table_wrap">
+				
 					<div class="row">
 						<div class="col-lg-4 col-md-6 col-xs-12">
-							<div class="price-item">
+							<div class="price-item flat blue">
 								<figure>
 									<img src="img/pricing1.png">
 								</figure>
 								<h5>Самоучка</h5>
 								<ul>
 									<li><em><b>1</b> <small>год</small></em> доступа к материалам</li>
-									<li>-</li>
+									<li><em>&nbsp;</em>-<em>&nbsp;</em></li>
 									<li><em><b>36</b></em> ответов на домашки</li>
 									<li><em>Диплом</em> принимает куратор</li>
-									<li>-</li>
-									<li>-</li>
-									<li>-</li>
-									<li>-</li>
+									<li><em>&nbsp;</em>-<em>&nbsp;</em></li>
+									<li><em>&nbsp;</em>-<em>&nbsp;</em></li>
+									<li><em>&nbsp;</em>-<em>&nbsp;</em></li>
+									<li><em>&nbsp;</em>-<em>&nbsp;</em></li>
 									<li><em>Сертификат</em> <b>on-line</b></li>
-									<li>-</li>
-									<li>-</li>
+									<li><em>&nbsp;</em>-<em>&nbsp;</em></li>
+									<li><em>&nbsp;</em>-<em>&nbsp;</em></li>
 								</ul>
 								<p><b>9.900</b> <small>руб.</small></p>
-								<a href="#" class="btn">Купить!<span class="semicircle"></span></a>
+								<a href="#" class="btn">Купить сейчас<span class="semicircle"></span></a>
 								<img src="img/pricing-dots.png" class="dots">
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-6 col-xs-12">
-							<div class="price-item">
+							<div class="price-item flat red" id="particle-js">
 								<figure>
 									<img src="img/pricing2.png">
 								</figure>
@@ -294,20 +299,21 @@
 									<li><em><b>99</b></em> ответов на домашки</li>
 									<li><em>Диплом</em> принимает автор</li>
 									<li class="gold">Персональный куратор</li>
-									<li>-</li>
-									<li>-</li>
+									<li><em>&nbsp;</em>-<em>&nbsp;</em></li>
+									<li><em>&nbsp;</em>-<em>&nbsp;</em></li>
 									<li><em>Рекомендация</em> от куратора</li>
 									<li><em>Сертификат</em> <b>on-line</b></li>
-									<li>-</li>
-									<li>-</li>
+									<li><em>&nbsp;</em>-<em>&nbsp;</em></li>
+									<li><em>&nbsp;</em>-<em>&nbsp;</em></li>
 								</ul>
+								<strike><p><b>16.800</b> <small>руб.</small></p></strike>
 								<p><b>14.500</b> <small>руб.</small></p>
-								<a href="#" class="btn">Купить!<span class="semicircle"></span></a>
-								<img src="img/pricing-dots.png" class="dots">
+								<a href="#" class="btn">Забронировать<span class="semicircle"></span></a>
+								{{!-- <img src="img/pricing-dots.png" class="dots"> --}}
 							</div>
 						</div>
 						<div class="col-lg-4 col-md-12 col-xs-12">
-							<div class="price-item">
+							<div class="price-item flat yellow">
 								<figure>
 									<img src="img/pricing3.png">
 								</figure>
@@ -318,7 +324,7 @@
 									<li><em><b>300</b></em> ответов на домашки</li>
 									<li><em>Диплом</em> принимает автор</li>
 									<li class="gold">Персональный куратор</li>
-									<li><em><b>6</b><small>часов</small></em> занятий с автором</li>
+									<li><em><b>6</b><small> часов</small></em> занятий с автором</li>
 									<li><em>Исходники</em> проектов</li>
 									<li><em>Рекомендация</em> от автора</li>
 									<li><em>Сертификат</em> на почту</li>
@@ -326,18 +332,17 @@
 									<li class="gold">Хостинг на <b>CODE.mba</b></li>
 								</ul>
 								<p><b>42.100</b> <small>руб.</small></p>
-								<a href="#" class="btn">Купить!<span class="semicircle"></span></a>
+								<a href="#" class="btn disabled">МЕСТ НЕТ<span class="semicircle"></span></a>
 							</div>
 						</div>
 					</div>
-				</section>
+				
 
 			</div>
 
 
 			{{!-- ПОПАП "ЗАПИСАТЬСЯ" --}}
 			<div class="popup">
-				{{>extra/title popups.enroll}}
 				<form>
 					<input type="text" placeholder="Ваше Имя">
 					<input type="text" placeholder="Ваш Email">
@@ -391,6 +396,37 @@
 					</div>
 				</div>
 
+<div class="cd-modal" data-modal="modal-trigger">
+	<div class="cd-svg-bg" 
+	data-step1="M-59.9,540.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L864.8-41c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L-59.5,540.6 C-59.6,540.7-59.8,540.7-59.9,540.5z" 
+	data-step2="M33.8,690l-188.2-300.3c-0.1-0.1,0-0.3,0.1-0.3l925.4-579.8c0.1-0.1,0.3,0,0.3,0.1L959.6,110c0.1,0.1,0,0.3-0.1,0.3 L34.1,690.1C34,690.2,33.9,690.1,33.8,690z" 
+	data-step3="M-465.1,287.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L459.5-294c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-464.9,287.7-465,287.7-465.1,287.5z" 
+	data-step4="M-329.3,504.3l-272.5-435c-0.1-0.1,0-0.3,0.1-0.3l925.4-579.8c0.1-0.1,0.3,0,0.3,0.1l272.5,435c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-329,504.5-329.2,504.5-329.3,504.3z" 
+	data-step5="M341.1,797.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L1265.8,216c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L341.5,797.6 C341.4,797.7,341.2,797.7,341.1,797.5z" 
+	data-step6="M476.4,1013.4L205,580.3c-0.1-0.1,0-0.3,0.1-0.3L1130.5,0.2c0.1-0.1,0.3,0,0.3,0.1l271.4,433.1c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C476.6,1013.6,476.5,1013.5,476.4,1013.4z">
+		<svg height="100%" width="100%" preserveAspectRatio="none" viewBox="0 0 800 500">
+			<title>SVG Modal background</title>
+			<path id="cd-changing-path-1" d="M-59.9,540.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L864.8-41c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L-59.5,540.6 C-59.6,540.7-59.8,540.7-59.9,540.5z"/>
+			<path id="cd-changing-path-2" d="M-465.1,287.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L459.5-294c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-464.9,287.7-465,287.7-465.1,287.5z"/>
+			<path id="cd-changing-path-3" d="M341.1,797.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L1265.8,216c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L341.5,797.6 C341.4,797.7,341.2,797.7,341.1,797.5z"/>
+		</svg>
+	</div>
+
+	<div class="cd-modal-content">
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad modi repellendus, optio eveniet eligendi molestiae? Fugiat, temporibus! A rerum pariatur neque laborum earum, illum voluptatibus eum voluptatem fugiat, porro animi tempora? Sit harum nulla, nesciunt molestias, iusto aliquam aperiam est qui possimus reprehenderit ipsam ea aut assumenda inventore iste! Animi quaerat facere repudiandae earum quisquam accusamus tempora, delectus nesciunt, provident quae aliquam, voluptatum beatae quis similique in maiores repellat eligendi voluptas veniam optio illum vero! Eius, dignissimos esse eligendi veniam.
+		</p>
+
+		<p>
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad modi repellendus, optio eveniet eligendi molestiae? Fugiat, temporibus! A rerum pariatur neque laborum earum, illum voluptatibus eum voluptatem fugiat, porro animi tempora? Sit harum nulla, nesciunt molestias, iusto aliquam aperiam est qui possimus reprehenderit ipsam ea aut assumenda inventore iste! Animi quaerat facere repudiandae earum quisquam accusamus tempora, delectus nesciunt, provident quae aliquam, voluptatum beatae quis similique in maiores repellat eligendi voluptas veniam optio illum vero! Eius, dignissimos esse eligendi veniam.
+		</p>
+	</div> <!-- cd-modal-content -->
+
+	<a href="#0" class="modal-close">Close</a>
+</div> <!-- cd-modal -->
+
+<div class="cd-cover-layer"></div> <!-- .cd-cover-layer -->
+
 				<div class="row">
 					<div class="col-lg-6">
 						<section class="lesson-item">
@@ -399,7 +435,7 @@
 							</figure>
 							<h5>База</h5>
 							<p>Введение в основы разработки, классификация технологий</p>
-							<a href="#">Программа модуля<i class="seoicon-right-arrow"></i></a>
+							<a href="#" id="modal-trigger" data-type="cd-modal-trigger">Программа модуля<i class="seoicon-right-arrow"></i></a>
 						</section>
 					</div>
 					<div class="col-lg-6">
@@ -469,6 +505,10 @@
 			{{!-- ПОПАПЫ МОДУЛЕЙ КУРСА --}}
 			<div class="popup">
 				<h4>День <b>1</b></h4>
+				<div class="heading-line">
+					<span class="short-line"></span>
+					<span class="long-line"></span>
+				</div>
 				<ul>
 					<li>Урок <b>1</b> <b>–</b> Что такое Браузер?</li>
 					<li>Урок <b>2</b> <b>–</b> История Браузеров</li>
@@ -479,6 +519,10 @@
 					<li>Урок <b>7</b> <b>–</b> программы для <b>screenshot-</b>ов</li>
 				</ul>
 				<h4>День <b>2</b></h4>
+				<div class="heading-line">
+					<span class="short-line"></span>
+					<span class="long-line"></span>
+				</div>
 				<ul>
 					<li>Урок <b>1</b> <b>–</b> редакторы кода</li>
 					<li>Урок <b>2</b> <b>–</b> установка <b>Sublime</b></li>
@@ -486,6 +530,10 @@
 					<li>Урок <b>4</b> <b>–</b> настройка <b>Sublime</b></li>
 				</ul>
 				<h4>День <b>3</b></h4>
+				<div class="heading-line">
+					<span class="short-line"></span>
+					<span class="long-line"></span>
+				</div>
 				<ul>
 					<li>Урок <b>1</b> <b>–</b> хостинг, домены, <b>DNS</b></li>
 					<li>Урок <b>2</b> <b>–</b> устанавливаем локальный сервер</li>
@@ -493,6 +541,10 @@
 					<li>Урок <b>4</b> <b>–</b> работа с <b>FileZilla</b></li>
 				</ul>
 				<h4>День <b>4</b></h4>
+				<div class="heading-line">
+					<span class="short-line"></span>
+					<span class="long-line"></span>
+				</div>
 				<ul>
 					<li>Урок <b>1</b> <b>–</b> Как искать решения в гугле</li>
 					<li>Урок <b>2</b> <b>–</b> <b>13</b> способов как гуглить</li>
@@ -501,7 +553,11 @@
 					<li>Урок <b>5</b> <b>–</b> Сайты для вдохновения</li>
 				</ul>
 				<h4>День <b>5</b></h4>
-				<ul>
+				<div class="heading-line">
+					<span class="short-line"></span>
+					<span class="long-line"></span>
+				</div>
+				<ul class="last">
 					<li>Урок <b>1</b> <b>–</b> этапы разработки <b>Web-</b>проекта</li>
 					<li>Урок <b>2</b> <b>–</b> отличия <b>Front-End</b> от <b>Back-End</b></li>
 					<li>Урок <b>3</b> <b>–</b> классификация технологий</li>
