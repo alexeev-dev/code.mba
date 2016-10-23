@@ -1,6 +1,8 @@
 .DS_Store
 node_modules
-dist
+dist/css
+dist/js
+dist/*.html
 .tmp
 .sass-cache
 bower_components

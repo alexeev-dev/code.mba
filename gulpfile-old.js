@@ -13,6 +13,7 @@ const rollup = require('rollup-stream');
 const source = require('vinyl-source-stream');
 const json = require('rollup-plugin-json');
 const babel = require('rollup-plugin-babel');
+const nodeResolve = require('rollup-plugin-node-resolve');
 
 
 // APP config
@@ -141,7 +142,7 @@ gulp.task('handlebars', ['merge'], () => {
 gulp.task('scripts', () => {
   return rollup({
     entry: './app/js/main.js',
-    plugins: [json(), babel()]
+    plugins: [json(), babel(), nodeResolve({jsnext:true, main:true})]
   }).pipe(source('main.js'))
   .pipe(gulp.dest('dist'));
 });

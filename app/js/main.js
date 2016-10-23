@@ -20,6 +20,8 @@ let MainController = {
   },
 
   init() {
+    loadElements(this.el);
+    
     this.hooks.forEach((descriptor) => {
       let [hook, action] = descriptor;
       $(`.${hook}`).click((event) => {
@@ -34,4 +36,6 @@ let MainController = {
 
 }
 
-MainController.init();
+$(() => {
+  MainController.init();
+})
