@@ -23,7 +23,7 @@ button, select {-webkit-appearance: none; border: none;}
   @else if $media == xs {@media (max-width: 543px) {@content;}}
   @else if $media == sm {@media (max-width: 767px) {@content;}}
   @else if $media == md {@media (max-width: 991px) {@content;}}
-  @else if $media == lg {@media (max-width: 1999px) {@content;}}
+  @else if $media == lg {@media (max-width: 1199px) {@content;}}
   
   // views – ⇩ 
   @else if $media == phone_port {@media (max-width: 419px) {@content;}} // smartphone vertical – sm.320
@@ -200,6 +200,21 @@ body {
 .position-abs {position: absolute !important;}
 .align-left {text-align: left !important;}
 .no-padding {padding: 0 !important;}
+.xs-hide {
+	@include respond-to(xs) {display: none;}
+}
+.sm-hide {
+	@media all and (min-width: 544px) and (max-width: 767px) {display: none;}
+}
+.md-hide {
+	@media all and (min-width: 768px) and (max-width: 991px) {display: none;}
+}
+.lg-hide {
+	@media all and (min-width: 992px) and (max-width: 1199px) {display: none;}
+}
+.xl-hide {
+	@media all and (min-width: 1200px) {display: none;}
+}
 
 
 /////////////////////////////////

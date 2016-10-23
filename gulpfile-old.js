@@ -14,6 +14,7 @@ const source = require('vinyl-source-stream');
 const json = require('rollup-plugin-json');
 const babel = require('rollup-plugin-babel');
 const nodeResolve = require('rollup-plugin-node-resolve');
+const autoprefixer = require('gulp-autoprefixer');
 
 
 // APP config
@@ -35,6 +36,10 @@ gulp.task('browser-sync', () => {
 gulp.task('sass', () => {
     return gulp.src(dir.src + 'assets/sass/**/*.scss')
     .pipe(sass.sync().on('error', sass.logError))
+    .pipe(autoprefixer({
+        browsers: ['last 15 versions', '> 1%', 'ie 8', 'ie 7'],
+        cascade: false
+    }))
     .pipe(gulp.dest(dir.src + 'css'));
 });
 
