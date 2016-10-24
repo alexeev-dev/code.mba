@@ -1,5 +1,6 @@
 import {loadElements} from './utils/elements-loader';
 import {MobileMenu} from './mobile-menu';
+import {DonutChart} from './donut-chart';
 
 let MainController = {
   /**
@@ -25,6 +26,7 @@ let MainController = {
 
   init() {
     MobileMenu.init();
+    DonutChart.init();
     loadElements(this.el);
 
     this.hooks.forEach((descriptor) => {

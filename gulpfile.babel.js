@@ -160,7 +160,9 @@ gulp.task('libs', () => {
   gulp.src([
     'node_modules/jquery/dist/jquery.min.js',
     'node_modules/segment-js/dist/segment.min.js',
-    'node_modules/d3-ease/build/d3-ease.min.js'
+    'node_modules/d3-ease/build/d3-ease.min.js',
+    'node_modules/waypoints/lib/jquery.waypoints.min.js',
+    'node_modules/chart.js/dist/Chart.min.js'
   ])
   .pipe(concat('libs.min.js'))
   .pipe(gulp.dest(`${path.dest}/js/vendor`));
