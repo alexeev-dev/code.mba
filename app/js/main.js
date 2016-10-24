@@ -25,7 +25,7 @@ let MainController = {
   isMenuOpen: false,
 
   init() {
-    MobileMenu.init();
+    //MobileMenu.init();
     DonutChart.init();
     loadElements(this.el);
 
