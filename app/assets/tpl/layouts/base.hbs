@@ -49,8 +49,136 @@
 	</div> --}}
 
 	<!-- JS -->
-	<script src="js/vendor/libs.min.js"></script>
-	<script src="js/main.js"></script>
+	<script src="assets/js/jquery-2.1.4.min.js"></script>
+	<script src="assets/js/particles.min.js"></script>
+
+	<script>
+    $(document).ready(function() {
+	    particlesJS("particle-js", {
+	        "particles": {
+		    "number": {
+		      "value": 90,
+		      "density": {
+		        "enable": true,
+		        "value_area": 800
+		      }
+		    },
+		    "color": {
+		      "value": "#ffffff"
+		    },
+		    "shape": {
+		      "type": "circle",
+		      "stroke": {
+		        "width": 0,
+		        "color": "#000000"
+		      },
+		      "polygon": {
+		        "nb_sides": 5
+		      },
+		      "image": {
+		        "src": "img/github.svg",
+		        "width": 100,
+		        "height": 100
+		      }
+		    },
+		    "opacity": {
+		      "value": 0.5997616736507331,
+		      "random": false,
+		      "anim": {
+		        "enable": false,
+		        "speed": 1,
+		        "opacity_min": 0.1,
+		        "sync": false
+		      }
+		    },
+		    "size": {
+		      "value": 3,
+		      "random": true,
+		      "anim": {
+		        "enable": false,
+		        "speed": 40,
+		        "size_min": 0.1,
+		        "sync": false
+		      }
+		    },
+		    "line_linked": {
+		      "enable": true,
+		      "distance": 150,
+		      "color": "#ffffff",
+		      "opacity": 0.4,
+		      "width": 1
+		    },
+		    "move": {
+		      "enable": true,
+		      "speed": 6,
+		      "direction": "none",
+		      "random": false,
+		      "straight": false,
+		      "out_mode": "out",
+		      "bounce": false,
+		      "attract": {
+		        "enable": false,
+		        "rotateX": 600,
+		        "rotateY": 1200
+		      }
+		    }
+		  },
+		  "interactivity": {
+		    "detect_on": "canvas",
+		    "events": {
+		      "onhover": {
+		        "enable": true,
+		        "mode": "grab"
+		      },
+		      "onclick": {
+		        "enable": true,
+		        "mode": "push"
+		      },
+		      "resize": true
+		    },
+		    "modes": {
+		      "grab": {
+		        "distance": 227.75766584354238,
+		        "line_linked": {
+		          "opacity": 0.8336705787130719
+		        }
+		      },
+		      "bubble": {
+		        "distance": 400,
+		        "size": 40,
+		        "duration": 2,
+		        "opacity": 8,
+		        "speed": 3
+		      },
+		      "repulse": {
+		        "distance": 200,
+		        "duration": 0.4
+		      },
+		      "push": {
+		        "particles_nb": 4
+		      },
+		      "remove": {
+		        "particles_nb": 2
+		      }
+		    }
+		  },
+		  "retina_detect": true
+	      });
+	    });
+
+	    $(function(){
+		  var $jittery = $('.eye_catcher-html');
+		  $.each($('u', $jittery), function(i){
+		    $(this).css('animation-delay', '-'+i+'70ms');
+		});
+	});
+  </script>
+  <script src="assets/js/snap.svg-min.js"></script>
+<script src="assets/js/svg-popup.js"></script>
+
+
+<script src="dist/main.js"></script>
+
 
 	<!-- counters_close-body -->
 </body>
