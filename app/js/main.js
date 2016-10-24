@@ -10,32 +10,41 @@ let MainController = {
   ],
 
   el: {
-    searchForm: ".overlay_search"
-  },
-
-  searchForm: {
-    state: {
-      open: "open"
+    search: {
+      container: ".overlay_search",
+      form: ".overlay_search form"
     }
   },
 
   init() {
     loadElements(this.el);
-    
+
     this.hooks.forEach((descriptor) => {
       let [hook, action] = descriptor;
       $(`.${hook}`).click((event) => {
+        console.log("Hook triggered!");
         this[action]();
       });
     });
+
+    this.initSearch();
+
+  },
+
+  initSearch() {
+    let {container, form} = this.el.search;
+    container.click($.proxy(this.closeSearch, this));
+    form.click((event) => event.stopPropagation());
   },
 
   openSearch() {
+    this.el.search.container.addClass("open");
+  },
 
+  closeSearch() {
+    this.el.search.container.removeClass("open");
   }
 
 }
 
-$(() => {
-  MainController.init();
-})
+MainController.init();

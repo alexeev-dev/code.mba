@@ -154,8 +154,16 @@ gulp.task('scripts', () => {
   .pipe(gulp.dest(`${path.dest}/js`));
 });
 
+/* [TASK] Копирование библиотечных файлов */
+gulp.task('libs', () => {
+  gulp.src([
+    'node_modules/jquery/dist/jquery.min.js'
+  ])
+  .pipe(gulp.dest(`${path.dest}/js/vendor`));
+});
+
 /* [TASK] Сборка с отслеживанием изменения для удобной разработки */
-gulp.task('watch', ['css', 'browser-sync', 'handlebars', 'sass', 'scripts'], () => {
+gulp.task('watch', ['css', 'libs', 'browser-sync', 'handlebars', 'sass', 'scripts'], () => {
   gulp.watch(`${path.src}/assets/tpl/**/*.{hbs,handlebars}`, ['handlebars', reload]);
 	gulp.watch(`${path.dest}/*.html`, reload);
   gulp.watch(`${path.src}/assets/sass/**/*.scss`, ['sass', reload]);
@@ -163,4 +171,4 @@ gulp.task('watch', ['css', 'browser-sync', 'handlebars', 'sass', 'scripts'], () 
 });
 
 /* [TASK] Сборка без отслеживания (Сборка в продакшен) */
-gulp.task('default', ['css', 'handlebars', 'sass', 'scripts']);
+gulp.task('default', ['css', 'libs', 'handlebars', 'sass', 'scripts']);
