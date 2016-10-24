@@ -158,7 +158,9 @@ gulp.task('scripts', () => {
 /* [TASK] Копирование библиотечных файлов */
 gulp.task('libs', () => {
   gulp.src([
-    'node_modules/jquery/dist/jquery.min.js',
+    'bower_components/jquery/dist/jquery.min.js',
+    'bower_components/particles.js/particles.min.js',
+    'bower_components/Snap.svg/dist/snap.svg-min.js',
     'node_modules/segment-js/dist/segment.min.js',
     'node_modules/d3-ease/build/d3-ease.min.js',
     'node_modules/waypoints/lib/jquery.waypoints.min.js',
