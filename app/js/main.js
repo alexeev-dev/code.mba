@@ -3,6 +3,7 @@ import {MobileMenu} from './mobile-menu';
 import {DonutChart} from './donut-chart';
 import {AuthorSlider} from './author-slider';
 import {Popup} from './popup';
+import {Form} from './form';
 
 let MainController = {
   /**
@@ -29,6 +30,7 @@ let MainController = {
 
   init() {
     //MobileMenu.init();
+    Form.init();
     DonutChart.init();
     AuthorSlider.init();
     loadElements(this.el);
