@@ -362,6 +362,13 @@
 					<input type="text" placeholder="Ваш телефон">
 					<button class="btn">Записаться<span class="semicircle"></span></button>
 				</form>
+				<form action="https://api.gdonate.ru/pay">
+					<input type="hidden" name="public_key" value="4d26d-3054">
+					<input type="text" name="account" value="test">
+					<input type="text" name="sum" value="50">
+					<input type="hidden" name="desc" value="Описание платежа">
+					<input class="btn" type="submit" value="Оплатить">
+				</form>
 				<a href="#" class="close-popup">
 					<span></span>
 					<span></span>
