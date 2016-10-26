@@ -25,7 +25,7 @@ let Counter = (function($){
         $(number).text("0");
       });
 
-      let wp = counter.waypoint((direction) => {
+      let [wp] = counter.waypoint((direction) => {
         counterTick();
         wp.destroy();
       }, { offset: "75%" });

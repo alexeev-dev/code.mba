@@ -2,6 +2,7 @@ import {loadElements} from './utils/elements-loader';
 import {MobileMenu} from './mobile-menu';
 import {DonutChart} from './donut-chart';
 import {AuthorSlider} from './author-slider';
+import {ReviewsCarousel} from './reviews-carousel';
 import {Counter} from './counter';
 import {Popup} from './popup';
 import {Form} from './form';
@@ -41,6 +42,8 @@ let MainController = {
     Counter.init();
     DonutChart.init();
     AuthorSlider.init();
+    ReviewsCarousel.init();
+    
     loadElements(this.el);
 
     this.hooks.forEach((descriptor) => {
