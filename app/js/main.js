@@ -2,6 +2,7 @@ import {loadElements} from './utils/elements-loader';
 import {MobileMenu} from './mobile-menu';
 import {DonutChart} from './donut-chart';
 import {AuthorSlider} from './author-slider';
+import {Counter} from './counter';
 import {Popup} from './popup';
 import {Form} from './form';
 
@@ -37,6 +38,7 @@ let MainController = {
   init() {
     //MobileMenu.init();
     Form.init();
+    Counter.init();
     DonutChart.init();
     AuthorSlider.init();
     loadElements(this.el);
