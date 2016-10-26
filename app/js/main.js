@@ -23,6 +23,10 @@ let MainController = {
     },
     icons: {
       seo: ".header-search .seoicon-text-paper"
+    },
+    tabs: {
+      tabs: ".description-tab_control li",
+      items: ".tab-item"
     }
   },
 
@@ -43,6 +47,7 @@ let MainController = {
     });
 
     this.initSearch();
+    this.initTabs();
 
   },
 
@@ -50,6 +55,19 @@ let MainController = {
     let {container, form} = this.el.search;
     container.click($.proxy(this.closeSearch, this));
     form.click((event) => event.stopPropagation());
+  },
+
+  initTabs() {
+    let {tabs, items} = this.el.tabs;
+    tabs.click((event) => {
+      let target = $(event.target);
+      let tab = target.parent();
+      event.preventDefault();
+      tabs.removeClass("active");
+      tab.addClass("active");
+      items.css("display", "none");
+      $(target.attr("href")).css("display", "block");
+    });
   },
 
   openSearch() {
