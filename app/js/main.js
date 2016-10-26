@@ -2,6 +2,7 @@ import {loadElements} from './utils/elements-loader';
 import {MobileMenu} from './mobile-menu';
 import {DonutChart} from './donut-chart';
 import {AuthorSlider} from './author-slider';
+import {Popup} from './popup';
 
 let MainController = {
   /**
@@ -10,7 +11,8 @@ let MainController = {
    */
   hooks: [
     ["js-open-search", "openSearch"],
-    ["mobile-menu", "triggerMenu"]
+    ["mobile-menu", "triggerMenu"],
+    ["js-open-popup", "openPopup"]
   ],
 
   el: {
@@ -34,7 +36,7 @@ let MainController = {
     this.hooks.forEach((descriptor) => {
       let [hook, action] = descriptor;
       $(`.${hook}`).click((event) => {
-        this[action]();
+        this[action](event);
       });
     });
 
@@ -64,6 +66,13 @@ let MainController = {
       MobileMenu.animateClose();
       this.isMenuOpen = true;
     }
+  },
+
+  openPopup(event) {
+    let popupId = $(event.target).attr("href");
+    let popup = new Popup(popupId);
+    event.preventDefault();
+    popup.show();
   }
 
 }

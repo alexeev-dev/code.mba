@@ -140,7 +140,7 @@
 							</ul>
 							<a href="#">3 пользователя оценили Автора</a>
 							<p><b>Frontend-</b>разработчик с <b>10-</b>летним стажем, <b>Web-</b>евангелист, владелец собственной фирмы по верстке сайтов. Всего <b>500+</b> завершённых проектов. Сертифицированный <b>SCRUM-</b>мастер. Более <b>3</b> лет в <b>IT-</b>образовании.</p>
-							<a href="#" class="btn">
+							<a href="#question-popup" class="btn js-open-popup">
 								Задать вопрос автору
 								<i class="seoicon-chat-comment"></i>
 								<span class="semicircle"></span>
@@ -160,7 +160,7 @@
 							</li>
 						</ul>
 						{{!-- ПОПАП "Задать вопрос" --}}
-						<div class="popup">
+						<div id="question-popup" class="popup">
 							<form>
 								<input type="text" placeholder="Ваше Имя">
 								<input type="text" placeholder="Ваш Email">
@@ -840,6 +840,8 @@
 
 			</div>
 		</section>
+
+		<div class="popup-overlay"></div>
 
 	{{/content}}
 {{/extend}}
