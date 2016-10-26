@@ -564,7 +564,7 @@ Modal Window
 .cd-modal svg > path {
   fill: #1f4c74;
 }
-.cd-modal .modal-close {
+.cd-modal .close {
   /* 'X' icon */
   position: absolute;
   z-index: 1;
@@ -597,16 +597,16 @@ Modal Window
   -moz-transition: -moz-transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
   transition: transform 0.3s 0s, visibility 0s 0.3s, opacity 0.3s 0s;
 }
-.no-touch .cd-modal .modal-close:hover {
+.no-touch .cd-modal .close:hover {
   background-color: rgba(0, 0, 0, 0.5);
 }
-.cd-modal.modal-is-visible {
+.cd-modal.active {
   visibility: visible;
   -webkit-transition: visibility 0s 0s;
   -moz-transition: visibility 0s 0s;
   transition: visibility 0s 0s;
 }
-.cd-modal.modal-is-visible .modal-close {
+.cd-modal.active .close {
   visibility: visible;
   opacity: 1;
   -webkit-transition: -webkit-transform 0.3s 0s, visibility 0s 0s, opacity 0.3s 0s;
@@ -641,7 +641,7 @@ Modal Window
   line-height: 1.6;
   margin: 2em 0;
 }
-.modal-is-visible .cd-modal-content {
+.active .cd-modal-content {
   opacity: 1;
   -webkit-transform: translateY(0);
   -moz-transform: translateY(0);

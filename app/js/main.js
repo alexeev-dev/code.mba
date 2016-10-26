@@ -95,12 +95,12 @@ let MainController = {
     }
   },
 
-  openPopup(event) {
-    let popupId = $(event.target).attr("href");
-    let popup = new Popup(popupId);
-    event.preventDefault();
-    popup.show();
-  },
+  // openPopup(event) {
+  //   let popupId = $(event.target).attr("href");
+  //   let popup = new Popup(popupId);
+  //   event.preventDefault();
+  //   popup.show();
+  // },
 
   selectProduct(event) {
     let product = $(event.target).attr("data-id");
