@@ -300,7 +300,7 @@
 									<li><em>&nbsp;</em>-<em>&nbsp;</em></li>
 								</ul>
 								<p><b>9.900</b> <small>руб.</small></p>
-								<a href="#" class="btn">Купить сейчас<span class="semicircle"></span></a>
+								<a href="#sign-in-popup" class="btn js-open-popup js-select-product" data-id="1">Купить сейчас<span class="semicircle"></span></a>
 								<img src="img/pricing-dots.png" class="dots">
 							</div>
 						</div>
@@ -325,7 +325,7 @@
 								</ul>
 								<strike><p><b>16.800</b> <small>руб.</small></p></strike>
 								<p><b>14.500</b> <small>руб.</small></p>
-								<a href="#" class="btn">Забронировать<span class="semicircle"></span></a>
+								<a href="#sign-in-popup" class="btn js-open-popup js-select-product" data-id="2">Забронировать<span class="semicircle"></span></a>
 								{{!-- <img src="img/pricing-dots.png" class="dots"> --}}
 							</div>
 						</div>
@@ -359,7 +359,7 @@
 
 
 			{{!-- ПОПАП "ЗАПИСАТЬСЯ" --}}
-			<div class="popup">
+			<div id="sign-in-popup" class="popup">
 				<form>
 					<input name="source" type="hidden" value="sign-in">
 					<input name="name" type="text" placeholder="Ваше Имя" required="required">

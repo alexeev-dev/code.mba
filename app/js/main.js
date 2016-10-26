@@ -13,7 +13,8 @@ let MainController = {
   hooks: [
     ["js-open-search", "openSearch"],
     ["mobile-menu", "triggerMenu"],
-    ["js-open-popup", "openPopup"]
+    ["js-open-popup", "openPopup"],
+    ["js-select-product", "selectProduct"]
   ],
 
   el: {
@@ -27,7 +28,8 @@ let MainController = {
     tabs: {
       tabs: ".description-tab_control li",
       items: ".tab-item"
-    }
+    },
+    signInPopup: "#sign-in-popup"
   },
 
   isMenuOpen: false,
@@ -93,6 +95,11 @@ let MainController = {
     let popup = new Popup(popupId);
     event.preventDefault();
     popup.show();
+  },
+
+  selectProduct(event) {
+    let product = $(event.target).attr("data-id");
+    this.el.signInPopup.find("input[name=source]").val(`sign-in-${product}`);
   }
 
 }
