@@ -68,13 +68,13 @@ Handlebars.registerHelper('carousel', (items, options) => {
 		let item = options.hash[attributeName];
 	}
 
-    let body = '<div ' + attributes.join(' ') + '>';
+  let body = `<div ${attributes.join(' ')}><div class="carousel__inner"><div class="carousel__content">`;
 
 	for(let i=0, l=item; i<l; i++) {
 		body = body + '<div class="carousel-item">' + options.fn(items[i]) + '</div>';
 	}
 
-    return new Handlebars.SafeString(body + '</div>');
+  return new Handlebars.SafeString(body + '</div></div></div>');
 });
 
 /* Регистрация хелпера для Handlebars */

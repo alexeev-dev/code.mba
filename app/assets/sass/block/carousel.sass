@@ -1,0 +1,30 @@
+.carousel
+  &__inner
+    //overflow: hidden
+  &__content
+    width: 100%
+    transition: all ease-out 0.8s
+    &::after
+      display: table
+      content: " "
+      clear: both
+  &-item
+    width: 100%
+    float: left
+    opacity: 1
+    transition: all ease-out 0.3s
+    figure, p, cite a, cite span
+      transition: all ease-out 0.5s
+    &--gone
+      opacity: 0
+      figure
+        opacity: 0
+      p
+        transform: translateX(20%)
+      cite a
+        transform: translateX(40%)
+      cite span
+        transform: translateX(70%)
+  &-dots
+    position: relative
+    z-index: 2

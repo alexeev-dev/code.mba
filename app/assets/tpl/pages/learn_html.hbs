@@ -84,10 +84,11 @@
 						<form>
 							<div class="row">
 								<div class="col-lg-8 no-padding">
-									<input class="site" type="text" placeholder="Как к вам обращаться?" required="required">
+									<input name="source" type="hidden" value="order-edu">
+									<input name="name" class="site" type="text" placeholder="Как к вам обращаться?" required="required">
 								</div>
 								<div class="col-lg-4 no-padding">
-									<input class="email" type="email" placeholder="Ваш Email" required="required">
+									<input name="email" class="email" type="email" placeholder="Ваш Email" required="required">
 								</div>
 							</div>
 							<button class="btn">Записаться<span class="semicircle"></span></button>
@@ -140,7 +141,7 @@
 							</ul>
 							<a href="#">3 пользователя оценили Автора</a>
 							<p><b>Frontend-</b>разработчик с <b>10-</b>летним стажем, <b>Web-</b>евангелист, владелец собственной фирмы по верстке сайтов. Всего <b>500+</b> завершённых проектов. Сертифицированный <b>SCRUM-</b>мастер. Более <b>3</b> лет в <b>IT-</b>образовании.</p>
-							<a href="#" class="btn">
+							<a href="#question-popup" class="btn js-open-popup">
 								Задать вопрос автору
 								<i class="seoicon-chat-comment"></i>
 								<span class="semicircle"></span>
@@ -160,12 +161,13 @@
 							</li>
 						</ul>
 						{{!-- ПОПАП "Задать вопрос" --}}
-						<div class="popup">
+						<div id="question-popup" class="popup">
 							<form>
-								<input type="text" placeholder="Ваше Имя">
-								<input type="text" placeholder="Ваш Email">
-								<input type="text" placeholder="Ваш телефон">
-								<textarea placeholder="Ваш вопрос"></textarea>
+								<input name="source" type="hidden" value="leave-question">
+								<input name="name" type="text" placeholder="Ваше Имя" required="required">
+								<input name="email" type="email" placeholder="Ваш Email" required="required">
+								<input name="phone" type="text" placeholder="Ваш телефон" required="required">
+								<textarea name="message" placeholder="Ваш вопрос"></textarea>
 								<button class="btn">Задать вопрос<span class="semicircle"></span></button>
 							</form>
 							<a href="#" class="close-popup">
@@ -182,19 +184,19 @@
 		<section class="it_education-description">
 			<div class="container">
 				<ul class="description-tab_control">
-					<li><a href="#" role="tab">Описание курса</a></li>
-					<li class="active"><a href="#" role="tab">Мнение об авторе (3)</a></li>
+					<li><a href="#tab-item-course" role="tab">Описание курса</a></li>
+					<li class="active"><a href="#tab-item-author" role="tab">Мнение об авторе (3)</a></li>
 				</ul>
 				<div class="row">
 					<div class="col-md-12">
-						<section class="description-course">
+						<section id="tab-item-course" class="tab-item description-course">
 							<h3>Уровень <b>—</b> обучение с НУЛЯ</h3>
 							<p>Привет! Более <b>10</b> лет я занимаюсь <b>WEB-</b>разработкой, а <b>3</b> года назад я начал обучать. Сначала это были работники моей компании (я создал список рекомендаций, по которым мои разработчики писали код в едином стиле), затем это было корпоративное обучение (мой список рекомендаций превратился в полноценную методичку) и наконец, я занялся частной практикой и обучил несколько десятков человек с НУЛЯ (один из студентов даже открыл свою студию).</p>
 							<p>Проанализировав код, который пишут в компаниях где я побывал и отвечая на многочисленные вопросы студентов, я разработал <span>уникальную пошаговую методологию верстки адаптивных сайтов</span>. Методология самодостаточна, однако без знания <b>HTML/CSS —</b> это как ездить на машине без прав <b>—</b> все просто на прямой дороге, но в городе с оживленным движением можно легко попасть в аварию. И я задумался, как можно <span>быстро освоить <b>HTML</b> и <b>CSS</b> новичку</span> для работы с моей методологией.</p>
 							<p>В этом курсе я разделили <b>HTML-</b>теги на <b>3</b> группы: строительные, типографика и формы <b>—</b> теперь легко понимать что где использовать, затем я собрал ТОП<b>-30</b> самых часто используемых <b>CSS-</b>практик, как результат <b>— 80%</b> работ выполняются <b>20%</b> знаний, и наконец, используя <b>Bootstrap</b> для адаптации <b>—</b> <span>скорость верстки увеличивается в <b>2-3</b> раза!</span> <br>Каждый из этих модулей (<b>HTML/CSS/Bootstrap</b>) я предлагаю вам изучить за <b>1</b> неделю <b>+ 2</b> недели методологии <b>+ 1</b> неделя основы <b>WEB</b>. Кроме того вас ждут интересные домашние задания, лабораторная и дипломная работы. <br><span>Курс рассчитан на <b>1,5-3</b><small>мес</small>.</span>(в зависимости от интенсивности обучения).</p>
 							<p>В курсе даются все инструменты, которые требуют <span>при устройстве на работу в <b>IT-</b>компании.</span> Но инструменты это еще не все, вашим главным приемуществом перед другими соискателями на работу будет навык использования этих инструментов. В отличие от других новичков, которые придумывают собственные схемы верстки, вы сможете использовать методологию, обкатанную на сотнях проектах. Кроме того, не изобретая заново велостпед, вы сможете сосредоточиться на формировании своего собственного стиля кодинга, а не на придумывании <b>"</b>как лучше сверстать<b>"</b>.</p>
 						</section>
-						<section class="description-author">
+						<section id="tab-item-author" class="tab-item description-author">
 							<h3>3 оценки для <span><b>&ldquo;</b>Алексеев Вадим<b>&rdquo;</b></span></h3>
 							<ul class="comments">
 								<li>
@@ -254,13 +256,15 @@
 							<form>
 								<div class="row">
 									<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-										<input type="text" placeholder="Ваше Имя">
-										<input type="text" placeholder="Ваш Email">
+										<input name="source" type="hidden" value="raiting-form">
+										<input name="rate" type="hidden" value="4">
+										<input name="name" type="text" placeholder="Ваше Имя" required="required">
+										<input name="email" type="email" placeholder="Ваш Email" required="required">
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
-										<textarea placeholder="Что вы думаете об Авторе?"></textarea>
+										<textarea name="message" placeholder="Что вы думаете об Авторе?"></textarea>
 									</div>
 								</div>
 								<button class="btn">Отправить<span class="semicircle"></span></button>
@@ -296,7 +300,7 @@
 									<li><em>&nbsp;</em>-<em>&nbsp;</em></li>
 								</ul>
 								<p><b>9.900</b> <small>руб.</small></p>
-								<a href="#" class="btn">Купить сейчас<span class="semicircle"></span></a>
+								<a href="#sign-in-popup" class="btn js-open-popup js-select-product" data-id="1">Купить сейчас<span class="semicircle"></span></a>
 								<img src="img/pricing-dots.png" class="dots">
 							</div>
 						</div>
@@ -321,7 +325,7 @@
 								</ul>
 								<strike><p><b>16.800</b> <small>руб.</small></p></strike>
 								<p><b>14.500</b> <small>руб.</small></p>
-								<a href="#" class="btn">Забронировать<span class="semicircle"></span></a>
+								<a href="#sign-in-popup" class="btn js-open-popup js-select-product" data-id="2">Забронировать<span class="semicircle"></span></a>
 								{{!-- <img src="img/pricing-dots.png" class="dots"> --}}
 							</div>
 						</div>
@@ -355,11 +359,12 @@
 
 
 			{{!-- ПОПАП "ЗАПИСАТЬСЯ" --}}
-			<div class="popup">
+			<div id="sign-in-popup" class="popup">
 				<form>
-					<input type="text" placeholder="Ваше Имя">
-					<input type="text" placeholder="Ваш Email">
-					<input type="text" placeholder="Ваш телефон">
+					<input name="source" type="hidden" value="sign-in">
+					<input name="name" type="text" placeholder="Ваше Имя" required="required">
+					<input name="email" type="email" placeholder="Ваш Email" required="required">
+					<input name="phone" type="text" placeholder="Ваш телефон" required="required">
 					<button class="btn">Записаться<span class="semicircle"></span></button>
 				</form>
 				<a href="#" class="close-popup">
@@ -448,7 +453,7 @@
 							</figure>
 							<h5>База</h5>
 							<p>Введение в основы разработки, классификация технологий</p>
-							<a href="#" id="modal-trigger" data-type="cd-modal-trigger">Программа модуля<i class="seoicon-right-arrow"></i></a>
+							<a href="#lesson-popup" class="js-open-popup" id="modal-trigger" data-type="cd-modal-trigger">Программа модуля<i class="seoicon-right-arrow"></i></a>
 						</section>
 					</div>
 					<div class="col-lg-6">
@@ -458,7 +463,7 @@
 							</figure>
 							<h5><b>HTML</b></h5>
 							<p>Понимание архитектуры документа, виды и предназночение тегов</p>
-							<a href="#">Программа модуля<i class="seoicon-right-arrow"></i></a>
+							<a href="#lesson-popup" class="js-open-popup">Программа модуля<i class="seoicon-right-arrow"></i></a>
 						</section>
 					</div>
 				</div>
@@ -471,7 +476,7 @@
 							</figure>
 							<h5><b>CSS</b></h5>
 							<p>Создание стилей, разбор ТОП самых часто используемых техник</p>
-							<a href="#">Программа модуля<i class="seoicon-right-arrow"></i></a>
+							<a href="#lesson-popup" class="js-open-popup">Программа модуля<i class="seoicon-right-arrow"></i></a>
 						</section>
 					</div>
 					<div class="col-lg-6">
@@ -481,7 +486,7 @@
 							</figure>
 							<h5><b>Bootstrap</b></h5>
 							<p>Использование модульной сетки и адаптация сайтов без усилий</p>
-							<a href="#">Программа модуля<i class="seoicon-right-arrow"></i></a>
+							<a href="#lesson-popup" class="js-open-popup">Программа модуля<i class="seoicon-right-arrow"></i></a>
 						</section>
 					</div>
 				</div>
@@ -494,7 +499,7 @@
 							</figure>
 							<h5>Методология</h5>
 							<p>Пошаговая инструкция верстки или как писать чистый, поддерживаемый код</p>
-							<a href="#">Программа модуля<i class="seoicon-right-arrow"></i></a>
+							<a href="#lesson-popup" class="js-open-popup">Программа модуля<i class="seoicon-right-arrow"></i></a>
 						</section>
 					</div>
 					<div class="col-lg-6">
@@ -508,7 +513,7 @@
 								<li><i class="seoicon-check"></i>верстка дизайн-макета <b>"</b>под ключ<b>"</b></li>
 								<li><i class="seoicon-check"></i>переделка шаблона в лендинг</li>
 							</ul>
-							<a href="#">Программа модуля<i class="seoicon-right-arrow"></i></a>
+							<a href="#lesson-popup" class="js-open-popup">Программа модуля<i class="seoicon-right-arrow"></i></a>
 						</section>
 					</div>
 				</div>
@@ -516,7 +521,7 @@
 			</div>
 
 			{{!-- ПОПАПЫ МОДУЛЕЙ КУРСА --}}
-			<div class="popup">
+			<div id="lesson-popup" class="popup">
 				<h4>День <b>1</b></h4>
 				<div class="heading-line">
 					<span class="short-line"></span>
@@ -595,10 +600,6 @@
 							{{>testimonial face_top="true" class="testimonials creative"}}
 						{{/carousel}}
 						<ul class="carousel-dots">
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-							<li class="active"><a href="#"></a></li>
-							<li><a href="#"></a></li>
 						</ul>
 						<ul class="carousel-arrows">
 							<li class="btn-prev">
@@ -840,6 +841,8 @@
 
 			</div>
 		</section>
+
+		<div class="popup-overlay"></div>
 
 	{{/content}}
 {{/extend}}
