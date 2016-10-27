@@ -3,6 +3,7 @@ import {MobileMenu} from './mobile-menu';
 import {DonutChart} from './donut-chart';
 import {AuthorSlider} from './author-slider';
 import AnimateParticle from './animate-particle';
+import SvgPopups from './svg-popups';
 import {ReviewsCarousel} from './reviews-carousel';
 import {Counter} from './counter';
 import {Popup} from './popup';
@@ -16,9 +17,14 @@ let MainController = {
   hooks: [
     ["js-open-search", "openSearch"],
     ["mobile-menu", "triggerMenu"],
-    ["js-open-popup", "openPopup"],
+    //["js-open-popup", "openPopup"],
     ["js-select-product", "selectProduct"]
   ],
+
+  modules: {
+    AnimateParticle,
+    SvgPopups
+  },
 
   el: {
     search: {
@@ -41,10 +47,13 @@ let MainController = {
     //MobileMenu.init();
     Form.init();
     Counter.init();
-    AnimateParticle();
     DonutChart.init();
     AuthorSlider.init();
     ReviewsCarousel.init();
+
+    for (let module in this.modules) {
+      this.modules[module]();
+    }
 
     loadElements(this.el);
 
