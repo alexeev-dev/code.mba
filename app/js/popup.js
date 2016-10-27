@@ -1,115 +1,9 @@
-let Popup = (function($){
-  
-  class Popup {
-    
-    constructor(id) {
+'use strict';
 
-      let el = $(id);
-
-      this.el = el;
-      this.overlay = $('.overlay');
-      this.btnTarget = $('a[href="' + id + '"]');
-      
-      el.click((event) => {
-        event.stopPropagation();
-      });
-      el.find(".close").click((event) => {
-        event.preventDefault();
-        this.close();
-      });
-      this.overlay.click((event) => {
-        this.close();
-      });
-
-      // if (el.hasClass('slide')) {
-      //     el.detach().insertAfter(this.btnTarget);
-      // }
-    }
-
-    show() {
-      this.el.addClass('active');
-
-      this.overlay.addClass('active');
-
-      svgPopup(open);
-
-      // this.btnTarget.addClass('hidden');
-
-      // return false;
-    }
-
-    close() {
-      this.el.removeClass('active');
-    
-      this.btnTarget.removeClass('hidden');
-
-      this.overlay.removeClass('active');
-
-      // svgPopup(close, this.el);
-    
-
-      return false;
-    }
-  }
-
-  return Popup;
-})(jQuery);
-
-export {Popup};
-
-
-
-/* ------------------- */
-/* ----- HELPERS ----- */
-/* ------------------- */
-let svgPopup = (state)=> {
-
-  /*
-    convert a cubic bezier value to a custom mina easing
-    http://stackoverflow.com/questions/25265197/how-to-convert-a-cubic-bezier-value-to-a-custom-mina-easing-snap-svg
-  */
-  let duration = 600;
-  let epsilon = (1000 / 60 / duration) / 4;
-  let firstCustomMinaAnimation = bezier(.63,.35,.48,.92, epsilon);
-
-  let svgCoverLayer = $('#lessons-base').children('.svg-bg');
-  let paths = svgCoverLayer.find('path');
-
-  //store Snap objects
-  let pathsArray = [];
-      pathsArray[0] = Snap('#'+paths.eq(0).attr('id')),
-      pathsArray[1] = Snap('#'+paths.eq(1).attr('id')),
-      pathsArray[2] = Snap('#'+paths.eq(2).attr('id'));
-
-  //store path 'd' attribute values 
-  let pathSteps = [];
-      pathSteps[0] = svgCoverLayer.data('step1');
-      pathSteps[1] = svgCoverLayer.data('step2');
-      pathSteps[2] = svgCoverLayer.data('step3');
-      pathSteps[3] = svgCoverLayer.data('step4');
-      pathSteps[4] = svgCoverLayer.data('step5');
-      pathSteps[5] = svgCoverLayer.data('step6');
-
-
-  // CALL OUR ANIMAYON HERE
-  animatePopup(paths, pathSteps, duration, state);
-
-}
-
-
-// animate SVG
-function animatePopup(paths, pathSteps, duration, state) {
-    let path1 = ( state == 'open' ) ? pathSteps[1] : pathSteps[0]; // pathSteps[n] = $('.svg-bg').data('step'+(n+1));
-    let path2 = ( state == 'open' ) ? pathSteps[3] : pathSteps[2];
-    let path3 = ( state == 'open' ) ? pathSteps[5] : pathSteps[4];
-    
-    paths[0].animate({'d': path1}, duration, firstCustomMinaAnimation); //paths[0] = Snap('#cd-changing-path-1')
-    paths[1].animate({'d': path2}, duration, firstCustomMinaAnimation); //paths[1] = Snap('#cd-changing-path-2')
-    paths[2].animate({'d': path3}, duration, firstCustomMinaAnimation); //paths[2] = Snap('#cd-changing-path-3')
-}
 
 // bezier CODE
-function bezier(x1, y1, x2, y2, epsilon) {
+let bezier = (x1, y1, x2, y2, epsilon) => {
+    
     //https://github.com/arian/cubic-bezier
     let curveX = (t)=> {
       let v = 1 - t;
@@ -158,9 +52,109 @@ function bezier(x1, y1, x2, y2, epsilon) {
     };
 };
 
+/* ------------------------ HELPERS ------------------------ */
+/* --------------------------------------------------------- */
+
+    let svgCoverLayer = $('#lessons-base').children('.svg-bg');
+    let paths = svgCoverLayer.find('path');
+
+    /*
+    convert a cubic bezier value to a custom mina easing
+    http://stackoverflow.com/questions/25265197/how-to-convert-a-cubic-bezier-value-to-a-custom-mina-easing-snap-svg
+    */
+    let duration = 600;
+    let epsilon = (1000 / 60 / duration) / 4;
+    let firstCustomMinaAnimation = bezier(.63,.35,.48,.92, epsilon);
+
+    //store Snap objects
+    let pathsArray = [];
+        pathsArray[0] = Snap('#'+paths.eq(0).attr('id'));
+        pathsArray[1] = Snap('#'+paths.eq(1).attr('id'));
+        pathsArray[2] = Snap('#'+paths.eq(2).attr('id'));
+
+    //store path 'd' attribute values 
+    let pathSteps = [];
+        pathSteps[0] = svgCoverLayer.data('step1');
+        pathSteps[1] = svgCoverLayer.data('step2');
+        pathSteps[2] = svgCoverLayer.data('step3');
+        pathSteps[3] = svgCoverLayer.data('step4');
+        pathSteps[4] = svgCoverLayer.data('step5');
+        pathSteps[5] = svgCoverLayer.data('step6');
+
+// animate SVG
+let animatePopup = (paths, pathSteps, duration, state) => {
+
+    let path1 = ( state == 'open' ) ? pathSteps[1] : pathSteps[0]; // pathSteps[n] = $('.svg-bg').data('step'+(n+1));
+    let path2 = ( state == 'open' ) ? pathSteps[3] : pathSteps[2];
+    let path3 = ( state == 'open' ) ? pathSteps[5] : pathSteps[4];
+    
+    return paths[0].animate({'d': path1}, duration, firstCustomMinaAnimation); //paths[0] = Snap('#cd-changing-path-1')
+    return paths[1].animate({'d': path2}, duration, firstCustomMinaAnimation); //paths[1] = Snap('#cd-changing-path-2')
+    return paths[2].animate({'d': path3}, duration, firstCustomMinaAnimation); //paths[2] = Snap('#cd-changing-path-3')
+};
 
 
 
+/* --------------------- */
+/* ------- MODUL ------- */
+/* --------------------- */
+let Popup = (function($){
+  
+  class Popup {
+    
+    constructor(id) {
+
+      let el = $(id);
+
+      this.el = el;
+      this.overlay = $('.overlay');
+      this.btnTarget = $('a[href="' + id + '"]');
+      
+      el.click((event) => {
+        event.stopPropagation();
+      });
+      el.find(".close").click((event) => {
+        event.preventDefault();
+        this.close();
+      });
+      this.overlay.click((event) => {
+        this.close();
+      });
+
+      // if (el.hasClass('slide')) {
+      //     el.detach().insertAfter(this.btnTarget);
+      // }
+    }
+
+    show() {
+      this.el.addClass('active');
+
+      this.overlay.addClass('active');
+
+      animatePopup(paths, pathSteps, duration, open);
+
+      this.btnTarget.addClass('hidden');
+
+      return false;
+    }
+
+    close() {
+      this.el.removeClass('active');
+    
+      this.btnTarget.removeClass('hidden');
+
+      this.overlay.removeClass('active');
+
+      // animatePopup(paths, pathSteps, duration, open);
+
+      return false;
+    }
+  }
+
+  return Popup;
+})(jQuery);
+
+export {Popup};
 
 
 
