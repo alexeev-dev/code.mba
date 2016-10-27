@@ -15,7 +15,7 @@ let MainController = {
   hooks: [
     ["js-open-search", "openSearch"],
     ["mobile-menu", "triggerMenu"],
-    ["js-open-popup", "openPopup"],
+    ["js-popup", "openPopup"],
     ["js-select-product", "selectProduct"]
   ],
 
@@ -95,12 +95,14 @@ let MainController = {
     }
   },
 
-  // openPopup(event) {
-  //   let popupId = $(event.target).attr("href");
-  //   let popup = new Popup(popupId);
-  //   event.preventDefault();
-  //   popup.show();
-  // },
+  openPopup(event) {
+    event.preventDefault();
+
+    let popupId = $(event.target).attr("href");
+    let popup = new Popup(popupId);
+
+    popup.show();
+  },
 
   selectProduct(event) {
     let product = $(event.target).attr("data-id");
