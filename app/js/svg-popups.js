@@ -28,16 +28,16 @@ function initModal(modalTrigger) {
   //open modal window
   modalTrigger.on('click', function(event){
     event.preventDefault();
-    modal.addClass('modal-is-visible');
-    coverLayer.addClass('modal-is-visible');
+    modal.addClass('active');
+    coverLayer.addClass('active');
     animateModal(pathsArray, pathSteps, duration, 'open');
   });
 
   //close modal window
   modal.on('click', '.modal-close', function(event){
     event.preventDefault();
-    modal.removeClass('modal-is-visible');
-    coverLayer.removeClass('modal-is-visible');
+    modal.removeClass('active');
+    coverLayer.removeClass('active');
     animateModal(pathsArray, pathSteps, duration, 'close');
   });
 }
