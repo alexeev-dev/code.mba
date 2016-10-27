@@ -5,9 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/crumina-fonts.css">
-	<link rel="stylesheet" type="text/css" href="css/fonts.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 
 	<title></title>
@@ -42,11 +40,11 @@
 	</div>
 
 	<!-- popups -->
-	{{!-- <div class="popup">
-		{{#block 'popups'}}
+	<div class="popups">
+		{{#block 'popups'}}{{/block}}
 
-		{{/block}}
-	</div> --}}
+		<div class="overlay"></div>
+	</div>
 
 	<!-- JS -->
 	<script src="js/vendor/libs.min.js"></script>

@@ -2,7 +2,7 @@
 	{{#content 'header'}}{{/content}}
 	{{#content 'wr'}}
 
-		<section class="offer-learn_html" id="particles-js">
+		<section class="offer-learn_html">
 			<div class="container">
 				<div class="row">
 
@@ -12,7 +12,6 @@
 						<hgroup class="eye_catcher-html">
 							<h1 class="h1 slider-content-title c-dark super-title"><span>ПРОФЕССИЯ</span> <br><b>HTML</b><em>-верстальщик</em></h1>
 							<h2>
-								&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 								{{!-- <i class="seoicon-seo-landing-pages-symbol-inside-a-circle"></i> --}}
 								<em><small><u>за</u></small></em><br>
 								<span><b><u>4</u><u>2</u></b></span>
@@ -33,8 +32,6 @@
 					<div class="col-lg-4">
 						<section class="job-statistics">
 							<canvas id="myChart" width="360" height="360"></canvas>
-							<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.1/Chart.min.js"></script>
-							<script type="text/javascript" src="js/donut-chart.js"></script>
 							<ul>
 								<li><b>23% &mdash; </b>аналитика в профессии</li>
 								<li><b>42% &mdash; </b>техническая сторона</li>
@@ -131,7 +128,7 @@
 					<div class="col-lg-6 offset-lg-1 col-md-6 offset-md-1 col-xs-12">
 						<section class="author-info">
 							<h3>Автор курса</h3>
-							<h4 style="position: relative;">Алексеев Вадим <img src="img/alex1.jpg" style="position:absolute; bottom:0; right:0; border-radius:50%; width:120px;"></h4>
+							<h4>Алексеев Вадим <img src="img/alex1.jpg"></h4>
 							<ul class="raiting">
 								<li><i class="fa fa-star" aria-hidden="true"></i></li>
 								<li><i class="fa fa-star" aria-hidden="true"></i></li>
@@ -141,11 +138,14 @@
 							</ul>
 							<a href="#">3 пользователя оценили Автора</a>
 							<p><b>Frontend-</b>разработчик с <b>10-</b>летним стажем, <b>Web-</b>евангелист, владелец собственной фирмы по верстке сайтов. Всего <b>500+</b> завершённых проектов. Сертифицированный <b>SCRUM-</b>мастер. Более <b>3</b> лет в <b>IT-</b>образовании.</p>
-							<a href="#question-popup" class="btn js-open-popup">
+
+
+							<a class="btn js-popup" href="#question-popup">
 								Задать вопрос автору
 								<i class="seoicon-chat-comment"></i>
 								<span class="semicircle"></span>
 							</a>
+
 						</section>
 						<ul class="author-footer">
 							<li class="workplace">Место работы: <a href="#"><b>CEO LDD "CODE.mba"</b></a></li>
@@ -160,21 +160,6 @@
 								</ul>
 							</li>
 						</ul>
-						{{!-- ПОПАП "Задать вопрос" --}}
-						<div id="question-popup" class="popup">
-							<form>
-								<input name="source" type="hidden" value="leave-question">
-								<input name="name" type="text" placeholder="Ваше Имя" required="required">
-								<input name="email" type="email" placeholder="Ваш Email" required="required">
-								<input name="phone" type="text" placeholder="Ваш телефон" required="required">
-								<textarea name="message" placeholder="Ваш вопрос"></textarea>
-								<button class="btn">Задать вопрос<span class="semicircle"></span></button>
-							</form>
-							<a href="#" class="close-popup">
-								<span></span>
-								<span></span>
-							</a>
-						</div>
 					</div>
 
 				</div>
@@ -273,7 +258,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</section>
 
 		<section class="it_education-price">
 			<div class="container">
@@ -360,20 +345,22 @@
 
 			{{!-- ПОПАП "ЗАПИСАТЬСЯ" --}}
 			<div id="sign-in-popup" class="popup">
-				<form>
-					<input name="source" type="hidden" value="sign-in">
-					<input name="name" type="text" placeholder="Ваше Имя" required="required">
-					<input name="email" type="email" placeholder="Ваш Email" required="required">
-					<input name="phone" type="text" placeholder="Ваш телефон" required="required">
-					<button class="btn">Записаться<span class="semicircle"></span></button>
-				</form>
-				<form action="https://api.gdonate.ru/pay">
-					<input type="hidden" name="public_key" value="4d26d-3054">
-					<input type="text" name="account" value="test">
-					<input type="text" name="sum" value="50">
-					<input type="hidden" name="desc" value="Описание платежа">
-					<input class="btn" type="submit" value="Оплатить">
-				</form>
+				<div>
+					<form>
+						<input name="source" type="hidden" value="sign-in">
+						<input name="name" type="text" placeholder="Ваше Имя" required="required">
+						<input name="email" type="email" placeholder="Ваш Email" required="required">
+						<input name="phone" type="text" placeholder="Ваш телефон" required="required">
+						<button class="btn">Записаться<span class="semicircle"></span></button>
+					</form>
+					<form action="https://api.gdonate.ru/pay">
+						<input type="hidden" name="public_key" value="4d26d-3054">
+						<input type="text" name="account" value="test">
+						<input type="text" name="sum" value="50">
+						<input type="hidden" name="desc" value="Описание платежа">
+						<input class="btn" type="submit" value="Оплатить">
+					</form>
+				</div>
 				<a href="#" class="close-popup">
 					<span></span>
 					<span></span>
@@ -421,37 +408,6 @@
 					</div>
 				</div>
 
-<div class="cd-modal" data-modal="modal-trigger">
-	<div class="cd-svg-bg"
-	data-step1="M-59.9,540.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L864.8-41c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L-59.5,540.6 C-59.6,540.7-59.8,540.7-59.9,540.5z"
-	data-step2="M33.8,690l-188.2-300.3c-0.1-0.1,0-0.3,0.1-0.3l925.4-579.8c0.1-0.1,0.3,0,0.3,0.1L959.6,110c0.1,0.1,0,0.3-0.1,0.3 L34.1,690.1C34,690.2,33.9,690.1,33.8,690z"
-	data-step3="M-465.1,287.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L459.5-294c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-464.9,287.7-465,287.7-465.1,287.5z"
-	data-step4="M-329.3,504.3l-272.5-435c-0.1-0.1,0-0.3,0.1-0.3l925.4-579.8c0.1-0.1,0.3,0,0.3,0.1l272.5,435c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-329,504.5-329.2,504.5-329.3,504.3z"
-	data-step5="M341.1,797.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L1265.8,216c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L341.5,797.6 C341.4,797.7,341.2,797.7,341.1,797.5z"
-	data-step6="M476.4,1013.4L205,580.3c-0.1-0.1,0-0.3,0.1-0.3L1130.5,0.2c0.1-0.1,0.3,0,0.3,0.1l271.4,433.1c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C476.6,1013.6,476.5,1013.5,476.4,1013.4z">
-		<svg height="100%" width="100%" preserveAspectRatio="none" viewBox="0 0 800 500">
-			<title>SVG Modal background</title>
-			<path id="cd-changing-path-1" d="M-59.9,540.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L864.8-41c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L-59.5,540.6 C-59.6,540.7-59.8,540.7-59.9,540.5z"/>
-			<path id="cd-changing-path-2" d="M-465.1,287.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L459.5-294c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-464.9,287.7-465,287.7-465.1,287.5z"/>
-			<path id="cd-changing-path-3" d="M341.1,797.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L1265.8,216c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L341.5,797.6 C341.4,797.7,341.2,797.7,341.1,797.5z"/>
-		</svg>
-	</div>
-
-	<div class="cd-modal-content">
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad modi repellendus, optio eveniet eligendi molestiae? Fugiat, temporibus! A rerum pariatur neque laborum earum, illum voluptatibus eum voluptatem fugiat, porro animi tempora? Sit harum nulla, nesciunt molestias, iusto aliquam aperiam est qui possimus reprehenderit ipsam ea aut assumenda inventore iste! Animi quaerat facere repudiandae earum quisquam accusamus tempora, delectus nesciunt, provident quae aliquam, voluptatum beatae quis similique in maiores repellat eligendi voluptas veniam optio illum vero! Eius, dignissimos esse eligendi veniam.
-		</p>
-
-		<p>
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad modi repellendus, optio eveniet eligendi molestiae? Fugiat, temporibus! A rerum pariatur neque laborum earum, illum voluptatibus eum voluptatem fugiat, porro animi tempora? Sit harum nulla, nesciunt molestias, iusto aliquam aperiam est qui possimus reprehenderit ipsam ea aut assumenda inventore iste! Animi quaerat facere repudiandae earum quisquam accusamus tempora, delectus nesciunt, provident quae aliquam, voluptatum beatae quis similique in maiores repellat eligendi voluptas veniam optio illum vero! Eius, dignissimos esse eligendi veniam.
-		</p>
-	</div> <!-- cd-modal-content -->
-
-	<a href="#0" class="modal-close">Close</a>
-</div> <!-- cd-modal -->
-
-<div class="cd-cover-layer"></div> <!-- .cd-cover-layer -->
-
 				<div class="row">
 					<div class="col-lg-6">
 						<section class="lesson-item">
@@ -460,7 +416,7 @@
 							</figure>
 							<h5>База</h5>
 							<p>Введение в основы разработки, классификация технологий</p>
-							<a href="#lesson-popup" class="js-open-popup" id="modal-trigger" data-type="cd-modal-trigger">Программа модуля<i class="seoicon-right-arrow"></i></a>
+							<a href="#lessons-base" class="js-popup">Программа модуля<i class="seoicon-right-arrow"></i></a>
 						</section>
 					</div>
 					<div class="col-lg-6">
@@ -470,7 +426,7 @@
 							</figure>
 							<h5><b>HTML</b></h5>
 							<p>Понимание архитектуры документа, виды и предназночение тегов</p>
-							<a href="#lesson-popup" class="js-open-popup">Программа модуля<i class="seoicon-right-arrow"></i></a>
+							<a href="#lessons-html" class="js-popup">Программа модуля<i class="seoicon-right-arrow"></i></a>
 						</section>
 					</div>
 				</div>
@@ -483,7 +439,7 @@
 							</figure>
 							<h5><b>CSS</b></h5>
 							<p>Создание стилей, разбор ТОП самых часто используемых техник</p>
-							<a href="#lesson-popup" class="js-open-popup">Программа модуля<i class="seoicon-right-arrow"></i></a>
+							<a href="#lessons-css" class="js-popup">Программа модуля<i class="seoicon-right-arrow"></i></a>
 						</section>
 					</div>
 					<div class="col-lg-6">
@@ -493,7 +449,7 @@
 							</figure>
 							<h5><b>Bootstrap</b></h5>
 							<p>Использование модульной сетки и адаптация сайтов без усилий</p>
-							<a href="#lesson-popup" class="js-open-popup">Программа модуля<i class="seoicon-right-arrow"></i></a>
+							<a href="#lessons-bootstrap" class="js-popup">Программа модуля<i class="seoicon-right-arrow"></i></a>
 						</section>
 					</div>
 				</div>
@@ -506,7 +462,7 @@
 							</figure>
 							<h5>Методология</h5>
 							<p>Пошаговая инструкция верстки или как писать чистый, поддерживаемый код</p>
-							<a href="#lesson-popup" class="js-open-popup">Программа модуля<i class="seoicon-right-arrow"></i></a>
+							<a href="#lessons-metodology" class="js-popup">Программа модуля<i class="seoicon-right-arrow"></i></a>
 						</section>
 					</div>
 					<div class="col-lg-6">
@@ -520,79 +476,11 @@
 								<li><i class="seoicon-check"></i>верстка дизайн-макета <b>"</b>под ключ<b>"</b></li>
 								<li><i class="seoicon-check"></i>переделка шаблона в лендинг</li>
 							</ul>
-							<a href="#lesson-popup" class="js-open-popup">Программа модуля<i class="seoicon-right-arrow"></i></a>
+							<a href="#" >Программа модуля<i class="seoicon-right-arrow"></i></a>
 						</section>
 					</div>
 				</div>
 
-			</div>
-
-			{{!-- ПОПАПЫ МОДУЛЕЙ КУРСА --}}
-			<div id="lesson-popup" class="popup">
-				<h4>День <b>1</b></h4>
-				<div class="heading-line">
-					<span class="short-line"></span>
-					<span class="long-line"></span>
-				</div>
-				<ul>
-					<li>Урок <b>1</b> <b>–</b> Что такое Браузер?</li>
-					<li>Урок <b>2</b> <b>–</b> История Браузеров</li>
-					<li>Урок <b>3</b> <b>–</b> Обзор браузеров</li>
-					<li>Урок <b>4</b> <b>–</b> <b>IP</b> и анонимность в Интернете</li>
-					<li>Урок <b>5</b> <b>–</b> Инструменты разработчика</li>
-					<li>Урок <b>6</b> <b>–</b> подключение расширений для <b>Chrome</b></li>
-					<li>Урок <b>7</b> <b>–</b> программы для <b>screenshot-</b>ов</li>
-				</ul>
-				<h4>День <b>2</b></h4>
-				<div class="heading-line">
-					<span class="short-line"></span>
-					<span class="long-line"></span>
-				</div>
-				<ul>
-					<li>Урок <b>1</b> <b>–</b> редакторы кода</li>
-					<li>Урок <b>2</b> <b>–</b> установка <b>Sublime</b></li>
-					<li>Урок <b>3</b> <b>–</b> модули для <b>Sublime</b></li>
-					<li>Урок <b>4</b> <b>–</b> настройка <b>Sublime</b></li>
-				</ul>
-				<h4>День <b>3</b></h4>
-				<div class="heading-line">
-					<span class="short-line"></span>
-					<span class="long-line"></span>
-				</div>
-				<ul>
-					<li>Урок <b>1</b> <b>–</b> хостинг, домены, <b>DNS</b></li>
-					<li>Урок <b>2</b> <b>–</b> устанавливаем локальный сервер</li>
-					<li>Урок <b>3</b> <b>–</b> работа с панелью управления хостингом</li>
-					<li>Урок <b>4</b> <b>–</b> работа с <b>FileZilla</b></li>
-				</ul>
-				<h4>День <b>4</b></h4>
-				<div class="heading-line">
-					<span class="short-line"></span>
-					<span class="long-line"></span>
-				</div>
-				<ul>
-					<li>Урок <b>1</b> <b>–</b> Как искать решения в гугле</li>
-					<li>Урок <b>2</b> <b>–</b> <b>13</b> способов как гуглить</li>
-					<li>Урок <b>3</b> <b>–</b> Гугл тренды</li>
-					<li>Урок <b>4</b> <b>–</b> Хром эксперементы</li>
-					<li>Урок <b>5</b> <b>–</b> Сайты для вдохновения</li>
-				</ul>
-				<h4>День <b>5</b></h4>
-				<div class="heading-line">
-					<span class="short-line"></span>
-					<span class="long-line"></span>
-				</div>
-				<ul class="last">
-					<li>Урок <b>1</b> <b>–</b> этапы разработки <b>Web-</b>проекта</li>
-					<li>Урок <b>2</b> <b>–</b> отличия <b>Front-End</b> от <b>Back-End</b></li>
-					<li>Урок <b>3</b> <b>–</b> классификация технологий</li>
-					<li>Урок <b>4</b> <b>–</b> сайты для обучения</li>
-					<li>Урок <b>5</b> <b>–</b> сайты для фриланса</li>
-				</ul>
-				<a href="#" class="close-popup">
-					<span></span>
-					<span></span>
-				</a>
 			</div>
 		</section>
 
@@ -668,7 +556,7 @@
 					<div class="col-lg-4 col-md-6 col-xs-12">
 						<section class="advantage-items">
 							<h4>Резюме</h4>
-							<p>После прохождение курса мы поможем грамотно составить <br>и опубликовать <b>on-line</b></p>
+							<p>После прохождения <br class="xs-hide sm-hide md-hide xl-hide">курса мы поможем грамотно составить <br>и опубликовать <br class="xs-hide sm-hide md-hide xl-hide"><b>on-line</b></p>
 							<figure>
 								<img src="img/info-box14.png" alt="">
 							</figure>
@@ -695,10 +583,10 @@
 				</div>
 
 				<div class="row">
-					<div class="col-lg-4 col-md-6col-xs-12">
+					<div class="col-lg-4 col-md-6 col-xs-12">
 						<section class="advantage-items">
 							<h4>Портфолио</h4>
-							<p>Вы приобретаете <b>2</b> коммерческих навыка и получаете <b>+2</b> работы высокого качества</p>
+							<p>Вы приобретаете <br class="xs-hide sm-hide md-hide xl-hide"><b>2</b> коммерческих навыка <br class="xs-hide sm-hide md-hide xl-hide">и получаете <br class="xs-hide sm-hide md-hide xl-hide"><b>+2</b> работы высокого качества</p>
 							<figure>
 								<img src="img/info-box18.png" alt="">
 							</figure>
@@ -716,7 +604,7 @@
 					<div class="col-lg-4 col-xs-12">
 						<section class="advantage-items">
 							<h4>Сертификат</h4>
-							<p>Документ с личным <b>ID</b>, подлинность и статус которого можно проверить у нас на сайте</p>
+							<p>Документ с личным <b>ID</b>, подлинность и статус <br class="xs-hide sm-hide md-hide xl-hide">которого можно <br class="xs-hide sm-hide md-hide xl-hide">проверить у нас <br class="xs-hide sm-hide md-hide xl-hide">на сайте</p>
 							<figure>
 								<img src="img/eye.png" alt="">
 							</figure>
@@ -849,7 +737,570 @@
 			</div>
 		</section>
 
-		<div class="popup-overlay"></div>
+	{{/content}}
+
+	{{#content 'popups'}}
+		
+		{{!-------------------------------------}}
+		{{!-- попапы информационные [вопросы] --}}
+		{{!-------------------------------------}}
+		
+		{{!-- "Вопрос преподавателю" [popup] --}}
+		<div id="question-popup" class="popup slide">
+			<div class="popup-content">
+				<form>
+					<input name="source" type="hidden" value="leave-question">
+					<input name="name" type="text" placeholder="Ваше Имя" required="required">
+					<input name="email" type="email" placeholder="Ваш Email" required="required">
+					<textarea name="message" placeholder="Ваш вопрос"></textarea>
+					<button class="btn">Задать вопрос<span class="semicircle"></span></button>
+				</form>
+			</div>
+			<a href="#" class="close">
+				<span></span>
+				<span></span>
+			</a>
+		</div>
+
+
+		{{!-----------------------------}}
+		{{!-- попапы продажи [заявки] --}}
+		{{!-----------------------------}}
+		<div id="buy-" class="popup">
+			....
+		</div>
+		
+
+		{{!----------------------------------}}
+		{{!-- попапы модулей курса [уроки] --}}
+		{{!----------------------------------}}
+
+		{{!-- BASE [popup] --}}
+		<div id="lessons-base" class="popup svg">
+			<div class="svg-bg"
+				data-step1="M-59.9,540.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L864.8-41c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L-59.5,540.6 C-59.6,540.7-59.8,540.7-59.9,540.5z"
+				data-step2="M33.8,690l-188.2-300.3c-0.1-0.1,0-0.3,0.1-0.3l925.4-579.8c0.1-0.1,0.3,0,0.3,0.1L959.6,110c0.1,0.1,0,0.3-0.1,0.3 L34.1,690.1C34,690.2,33.9,690.1,33.8,690z"
+				data-step3="M-465.1,287.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L459.5-294c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-464.9,287.7-465,287.7-465.1,287.5z"
+				data-step4="M-329.3,504.3l-272.5-435c-0.1-0.1,0-0.3,0.1-0.3l925.4-579.8c0.1-0.1,0.3,0,0.3,0.1l272.5,435c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-329,504.5-329.2,504.5-329.3,504.3z"
+				data-step5="M341.1,797.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L1265.8,216c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L341.5,797.6 C341.4,797.7,341.2,797.7,341.1,797.5z"
+				data-step6="M476.4,1013.4L205,580.3c-0.1-0.1,0-0.3,0.1-0.3L1130.5,0.2c0.1-0.1,0.3,0,0.3,0.1l271.4,433.1c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C476.6,1013.6,476.5,1013.5,476.4,1013.4z">
+				<svg height="100%" width="100%" preserveAspectRatio="none" viewBox="0 0 800 500">
+					<title>Фоновый рисунок</title>
+					<path id="cd-changing-path-1" d="M-59.9,540.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L864.8-41c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L-59.5,540.6 C-59.6,540.7-59.8,540.7-59.9,540.5z"/>
+					<path id="cd-changing-path-2" d="M-465.1,287.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L459.5-294c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-464.9,287.7-465,287.7-465.1,287.5z"/>
+					<path id="cd-changing-path-3" d="M341.1,797.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L1265.8,216c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L341.5,797.6 C341.4,797.7,341.2,797.7,341.1,797.5z"/>
+				</svg>
+			</div>
+			<div class="popup-content">
+				<section>
+					<h4>День <b>1</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul>
+						<li>Урок <b>1</b> <b>–</b> Что такое Браузер?</li>
+						<li>Урок <b>2</b> <b>–</b> История Браузеров</li>
+						<li>Урок <b>3</b> <b>–</b> Обзор браузеров</li>
+						<li>Урок <b>4</b> <b>–</b> <b>IP</b> и анонимность в Интернете</li>
+						<li>Урок <b>5</b> <b>–</b> Инструменты разработчика</li>
+						<li>Урок <b>6</b> <b>–</b> подключение расширений для <b>Chrome</b></li>
+						<li>Урок <b>7</b> <b>–</b> программы для <b>screenshot-</b>ов</li>
+					</ul>
+				</section>
+				<section>
+					<h4>День <b>2</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul>
+						<li>Урок <b>1</b> <b>–</b> редакторы кода</li>
+						<li>Урок <b>2</b> <b>–</b> установка <b>Sublime</b></li>
+						<li>Урок <b>3</b> <b>–</b> модули для <b>Sublime</b></li>
+						<li>Урок <b>4</b> <b>–</b> настройка <b>Sublime</b></li>
+					</ul>
+				</section>
+				<section>
+					<h4>День <b>3</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul>
+						<li>Урок <b>1</b> <b>–</b> хостинг, домены, <b>DNS</b></li>
+						<li>Урок <b>2</b> <b>–</b> устанавливаем локальный сервер</li>
+						<li>Урок <b>3</b> <b>–</b> работа с панелью управления хостингом</li>
+						<li>Урок <b>4</b> <b>–</b> работа с <b>FileZilla</b></li>
+					</ul>
+				</section>
+				<section>
+					<h4>День <b>4</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul>
+						<li>Урок <b>1</b> <b>–</b> Как искать решения в гугле</li>
+						<li>Урок <b>2</b> <b>–</b> <b>13</b> способов как гуглить</li>
+						<li>Урок <b>3</b> <b>–</b> Гугл тренды</li>
+						<li>Урок <b>4</b> <b>–</b> Хром эксперементы</li>
+						<li>Урок <b>5</b> <b>–</b> Сайты для вдохновения</li>
+					</ul>
+				</section>
+				<section>
+					<h4>День <b>5</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul class="last">
+						<li>Урок <b>1</b> <b>–</b> этапы разработки <b>Web-</b>проекта</li>
+						<li>Урок <b>2</b> <b>–</b> отличия <b>Front-End</b> от <b>Back-End</b></li>
+						<li>Урок <b>3</b> <b>–</b> классификация технологий</li>
+						<li>Урок <b>4</b> <b>–</b> сайты для обучения</li>
+						<li>Урок <b>5</b> <b>–</b> сайты для фриланса</li>
+					</ul>
+				</section>
+			</div>
+			<a href="#" class="close">
+				<span></span>
+				<span></span>
+			</a>
+		</div>
+
+		{{!-- HTML [popup] --}}
+		<div id="lessons-html" class="popup svg">
+			<div class="svg-bg"
+				data-step1="M-59.9,540.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L864.8-41c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L-59.5,540.6 C-59.6,540.7-59.8,540.7-59.9,540.5z"
+				data-step2="M33.8,690l-188.2-300.3c-0.1-0.1,0-0.3,0.1-0.3l925.4-579.8c0.1-0.1,0.3,0,0.3,0.1L959.6,110c0.1,0.1,0,0.3-0.1,0.3 L34.1,690.1C34,690.2,33.9,690.1,33.8,690z"
+				data-step3="M-465.1,287.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L459.5-294c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-464.9,287.7-465,287.7-465.1,287.5z"
+				data-step4="M-329.3,504.3l-272.5-435c-0.1-0.1,0-0.3,0.1-0.3l925.4-579.8c0.1-0.1,0.3,0,0.3,0.1l272.5,435c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-329,504.5-329.2,504.5-329.3,504.3z"
+				data-step5="M341.1,797.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L1265.8,216c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L341.5,797.6 C341.4,797.7,341.2,797.7,341.1,797.5z"
+				data-step6="M476.4,1013.4L205,580.3c-0.1-0.1,0-0.3,0.1-0.3L1130.5,0.2c0.1-0.1,0.3,0,0.3,0.1l271.4,433.1c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C476.6,1013.6,476.5,1013.5,476.4,1013.4z">
+				<svg height="100%" width="100%" preserveAspectRatio="none" viewBox="0 0 800 500">
+					<title>Фоновый рисунок</title>
+					<path id="cd-changing-path-1" d="M-59.9,540.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L864.8-41c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L-59.5,540.6 C-59.6,540.7-59.8,540.7-59.9,540.5z"/>
+					<path id="cd-changing-path-2" d="M-465.1,287.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L459.5-294c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-464.9,287.7-465,287.7-465.1,287.5z"/>
+					<path id="cd-changing-path-3" d="M341.1,797.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L1265.8,216c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L341.5,797.6 C341.4,797.7,341.2,797.7,341.1,797.5z"/>
+				</svg>
+			</div>
+			<div class="popup-content">
+				<section>
+					<h4>День <b>1</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul>
+						<li>Урок <b>1</b> <b>–</b> Начало</li>
+						<li>Урок <b>2</b> <b>–</b> Понимание <b>HTML</b></li>
+						<li>Урок <b>3</b> <b>–</b> Логика <b>HTML-</b>разметки</li>
+						<li>Урок <b>4</b> <b>–</b> Первый <b>HTML-</b>документ</li>
+						<li>Урок <b>5</b> <b>–</b> Из чего состоит <b>HTML</b></li>
+						<li>Урок <b>5</b>, часть <b>1.1</b> <b>–</b> ТЕГ <b>(</b>теория<b>)</b></li>
+						<li>Урок <b>5</b>, часть <b>1.2</b> <b>–</b> ТЕГ <b>(</b>практика<b>)</b></li>
+						<li>Урок <b>5</b>, часть <b>1.3</b> <b>–</b> ТЕГ <b>(</b>частая ошибка новичков<b>)</b></li>
+						<li>Урок <b>5</b>, часть <b>2.1</b> <b>–</b> АТРИБУТ <b>(</b>теория<b>)</b></li>
+						<li>Урок <b>5</b>, часть <b>2.2</b> <b>–</b> АТРИБУТ <b>(</b>практика<b>)</b></li>
+						<li>Урок <b>5</b>, часть <b>3</b> <b>–</b> Технически верный <b>HTML-</b>документ</li>
+					</ul>
+				</section>
+				<section>
+					<h4>День <b>2</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul>
+						<li>Урок <b>1</b> <b>–</b> Вступление в Типографику</li>
+						<li>Урок <b>2</b> <b>–</b> Заголовки <b>(h1-h6)</b></li>
+						<li>Урок <b>3</b> <b>–</b> Параграф <b>(p)</b></li>
+						<li>Урок <b>4</b> <b>–</b> Теги выделения <b>(strong, em, mark)</b></li>
+						<li>Урок <b>5</b> <b>–</b> Список <b>(ul)</b></li>
+						<li>Урок <b>6</b> <b>–</b> Цитата <b>(blockquote)</b></li>
+						<li>Урок <b>7</b> <b>–</b> Разделители <b>(br, hr)</b></li>
+						<li>Урок <b>8</b> <b>–</b> Еаблица <b>(table)</b></li>
+						<li>Урок <b>9</b> <b>–</b> Вставка картинок <b>(img)</b></li>
+						<li>Урок <b>10</b> <b>–</b> Ссылки <b>(a)</b></li>
+						<li>Урок <b>11</b> <b>–</b> Резюме</li>
+					</ul>
+				</section>
+				<section>
+					<h4>День <b>3</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul>
+						<li>Урок <b>1</b> <b>–</b> Вступление в формы</li>
+						<li>Урок <b>2</b> <b>–</b> Основа формы <b>(form)</b></li>
+						<li>Урок <b>3</b> <b>–</b> Логика работы форм</li>
+						<li>Урок <b>4</b> <b>–</b> Элементы форм <b>input (text, password)</b></li>
+						<li>Урок <b>5</b> <b>–</b> Элементы форм <b>input (checkbox)</b></li>
+						<li>Урок <b>6</b> <b>–</b> Элементы форм <b>input (radio)</b></li>
+						<li>Урок <b>7</b> <b>–</b> Элемент формы <b>select</b></li>
+						<li>Урок <b>8</b> <b>–</b> Элемент формы <b>textarea</b></li>
+						<li>Урок <b>9</b> <b>–</b> Элементы форм <b>input (sebmit, reset)</b></li>
+						<li>Урок <b>10</b> <b>–</b> Атрибуты элементов форм <b>(name, value)</b></li>
+						<li>Урок <b>11</b> <b>–</b> Элемент формы <b>label</b></li>
+						<li>Урок <b>12</b> <b>–</b> Кнопка <b>button</b></li>
+						<li>Урок <b>13</b> <b>–</b> Резюме</li>
+					</ul>
+				</section>
+				<section>
+					<h4>День <b>4</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul>
+						<li>Урок <b>1</b> <b>–</b> Повторение <b>+</b> понятие дети<b>/</b>родители</li>
+						<li>Урок <b>2</b> <b>–</b> <b>13</b> блочные и строчные теги <b>(</b>теория<b>)</b></li>
+						<li>Урок <b>3</b> <b>–</b> Блочные и строчные теги <b>(</b>практика с <b>DIV</b> и <b>SPAN)</b></li>
+						<li>Урок <b>4</b> <b>–</b> <b>HTML5</b> архитектура страницы</li>
+						<li>Урок <b>5</b> <b>–</b> Понятие адаптивной верстки</li>
+						<li>Урок <b>6</b> <b>–</b> Комментарии в коде и доработка базиса</li>
+					</ul>
+				</section>
+				<section>
+					<h4>День <b>5</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul class="last">
+						<li>Урок <b>1</b> <b>–</b> Учим <b>Emmet</b></li>
+						<li>Урок <b>2</b> <b>–</b> Верстка меню и навигаций от <b>Back-End</b></li>
+						<li>Урок <b>3</b> <b>–</b> <b>HTML5 form types</b></li>
+						<li>Урок <b>4</b> <b>–</b> Типы верстки</li>
+					</ul>
+				</section>
+			</div>
+			<a href="#" class="close">
+				<span></span>
+				<span></span>
+			</a>
+		</div>
+
+		{{!-- CSS [popup] --}}
+		<div id="lessons-css" class="popup svg">
+			<div class="svg-bg"
+			data-step1="M-59.9,540.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L864.8-41c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L-59.5,540.6 C-59.6,540.7-59.8,540.7-59.9,540.5z"
+			data-step2="M33.8,690l-188.2-300.3c-0.1-0.1,0-0.3,0.1-0.3l925.4-579.8c0.1-0.1,0.3,0,0.3,0.1L959.6,110c0.1,0.1,0,0.3-0.1,0.3 L34.1,690.1C34,690.2,33.9,690.1,33.8,690z"
+			data-step3="M-465.1,287.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L459.5-294c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-464.9,287.7-465,287.7-465.1,287.5z"
+			data-step4="M-329.3,504.3l-272.5-435c-0.1-0.1,0-0.3,0.1-0.3l925.4-579.8c0.1-0.1,0.3,0,0.3,0.1l272.5,435c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-329,504.5-329.2,504.5-329.3,504.3z"
+			data-step5="M341.1,797.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L1265.8,216c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L341.5,797.6 C341.4,797.7,341.2,797.7,341.1,797.5z"
+			data-step6="M476.4,1013.4L205,580.3c-0.1-0.1,0-0.3,0.1-0.3L1130.5,0.2c0.1-0.1,0.3,0,0.3,0.1l271.4,433.1c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C476.6,1013.6,476.5,1013.5,476.4,1013.4z">
+				<svg height="100%" width="100%" preserveAspectRatio="none" viewBox="0 0 800 500">
+					<title>Фоновый рисунок</title>
+					<path id="cd-changing-path-1" d="M-59.9,540.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L864.8-41c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L-59.5,540.6 C-59.6,540.7-59.8,540.7-59.9,540.5z"/>
+					<path id="cd-changing-path-2" d="M-465.1,287.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L459.5-294c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-464.9,287.7-465,287.7-465.1,287.5z"/>
+					<path id="cd-changing-path-3" d="M341.1,797.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L1265.8,216c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L341.5,797.6 C341.4,797.7,341.2,797.7,341.1,797.5z"/>
+				</svg>
+			</div>
+			<div class="popup-content">
+				<section>
+					<h4>День <b>1</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul>
+						<li>Урок <b>1</b> <b>–</b> Понимание <b>CSS</b></li>
+						<li>Урок <b>2</b> <b>–</b> Подключение <b>CSS</b></li>
+						<li>Урок <b>3</b> <b>–</b> Наследования в <b>CSS</b></li>
+						<li>Урок <b>4</b> <b>–</b> Классы в <b>CSS</b></li>
+						<li>Урок <b>5</b> <b>–</b> Теория оформления стилями</li>
+						<li>Урок <b>6</b> <b>–</b> Размеры в <b>CSS</b></li>
+					</ul>
+				</section>
+				<section>
+					<h4>День <b>2</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul>
+						<li>Урок <b>1</b> <b>–</b> <b>Font-size</b></li>
+						<li>Урок <b>2</b> <b>–</b> <b>Font-family</b></li>
+						<li>Урок <b>3</b> <b>–</b> Подключение <b>GoogleFonts</b></li>
+						<li>Урок <b>4</b> <b>–</b> <b>Color &amp; font-weight</b></li>
+						<li>Урок <b>5</b> <b>–</b> <b>Line-height + letter-spacing</b></li>
+						<li>Урок <b>6</b> <b>–</b> Тени у текста</li>
+						<li>Урок <b>7</b> <b>–</b> Оформление списков</li>
+						<li>Урок <b>8</b> <b>–</b> Эффекты наведения</li>
+					</ul>
+				</section>
+				<section>
+					<h4>День <b>3</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul>
+						<li>Урок <b>1</b> <b>–</b> Размеры</li>
+						<li>Урок <b>2</b> <b>–</b> Блочная модель</li>
+						<li>Урок <b>3</b> <b>–</b> Свойство <b>display</b></li>
+						<li>Урок <b>4</b> <b>–</b> Отбтекания</li>
+						<li>Урок <b>5</b> <b>–</b> Свойство <b>position</b></li>
+						<li>Урок <b>6</b> <b>–</b> Заключение</li>
+					</ul>
+				</section>
+				<section>
+					<h4>День <b>4</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul>
+						<li>Урок <b>1</b> <b>–</b> Префиксы</li>
+						<li>Урок <b>2</b> <b>–</b> <b>Background</b></li>
+						<li>Урок <b>3</b> <b>–</b> <b>Border-radius</b></li>
+						<li>Урок <b>4</b> <b>–</b> Тени</li>
+						<li>Урок <b>5</b> <b>–</b> <b>Input style</b></li>
+						<li>Урок <b>6</b> <b>–</b> <b>Sprites</b></li>
+						<li>Урок <b>7</b> <b>–</b> Стильные чекбоксы и радиобутоны</li>
+					</ul>
+				</section>
+				<section>
+					<h4>День <b>5</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul class="last">
+						<li>Урок <b>1</b> <b>–</b> Навигация и пагинация</li>
+						<li>Урок <b>2</b> <b>–</b> Верстка превью новости</li>
+						<li>Урок <b>3</b> <b>–</b> <b>Before + after</b></li>
+						<li>Урок <b>4</b> <b>–</b> Выравнивание строчных элементов</li>
+						<li>Урок <b>5</b> <b>–</b> Выравнивание блочных элементов</li>
+						<li>Урок <b>6</b> <b>–</b> Подбробнее про обтекания</li>
+						<li>Урок <b>7</b> <b>–</b> Выравнивание <b>3</b>х блоков <b>(</b>классика<b>)</b></li>
+						<li>Урок <b>8</b> <b>–</b> Прижать хедер к верху</li>
+						<li>Урок <b>9</b> <b>–</b> Сделать полноэкранный блок</li>
+						<li>Урок <b>10</b> <b>–</b> Прижать футтер к низу</li>
+					</ul>
+				</section>
+			</div>
+			<a href="#" class="close">
+				<span></span>
+				<span></span>
+			</a>
+		</div>
+
+		{{!-- BOOTSTRAP [popup] --}}
+		<div id="lessons-bootstrap" class="popup svg">
+			<div class="svg-bg"
+				data-step1="M-59.9,540.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L864.8-41c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L-59.5,540.6 C-59.6,540.7-59.8,540.7-59.9,540.5z"
+				data-step2="M33.8,690l-188.2-300.3c-0.1-0.1,0-0.3,0.1-0.3l925.4-579.8c0.1-0.1,0.3,0,0.3,0.1L959.6,110c0.1,0.1,0,0.3-0.1,0.3 L34.1,690.1C34,690.2,33.9,690.1,33.8,690z"
+				data-step3="M-465.1,287.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L459.5-294c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-464.9,287.7-465,287.7-465.1,287.5z"
+				data-step4="M-329.3,504.3l-272.5-435c-0.1-0.1,0-0.3,0.1-0.3l925.4-579.8c0.1-0.1,0.3,0,0.3,0.1l272.5,435c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-329,504.5-329.2,504.5-329.3,504.3z"
+				data-step5="M341.1,797.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L1265.8,216c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L341.5,797.6 C341.4,797.7,341.2,797.7,341.1,797.5z"
+				data-step6="M476.4,1013.4L205,580.3c-0.1-0.1,0-0.3,0.1-0.3L1130.5,0.2c0.1-0.1,0.3,0,0.3,0.1l271.4,433.1c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C476.6,1013.6,476.5,1013.5,476.4,1013.4z">
+				<svg height="100%" width="100%" preserveAspectRatio="none" viewBox="0 0 800 500">
+					<title>Фоновый рисунок</title>
+					<path id="cd-changing-path-1" d="M-59.9,540.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L864.8-41c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L-59.5,540.6 C-59.6,540.7-59.8,540.7-59.9,540.5z"/>
+					<path id="cd-changing-path-2" d="M-465.1,287.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L459.5-294c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-464.9,287.7-465,287.7-465.1,287.5z"/>
+					<path id="cd-changing-path-3" d="M341.1,797.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L1265.8,216c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L341.5,797.6 C341.4,797.7,341.2,797.7,341.1,797.5z"/>
+				</svg>
+			</div>
+			<div class="popup-content">
+				<section>
+					<h4>День <b>1</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul>
+						<li>Урок <b>1</b> <b>–</b> Подключение <b>Bootstrap</b></li>
+						<li>Урок <b>2</b> <b>–</b> Понимание <b>Bootstrap</b> сетки</li>
+						<li>Урок <b>3</b> <b>–</b> <b>Bootstrap</b> сетка на примере</li>
+						<li>Урок <b>4</b> <b>–</b> Обзор <b>Bootstrap</b> компонентов</li>
+						<li>Урок <b>5</b> <b>–</b> Детально про сетку</li>
+					</ul>
+				</section>
+				<section>
+					<h4>День <b>2</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul>
+						<li>Урок <b>1</b> <b>–</b> <b>Bootstrap</b> типографика</li>
+						<li>Урок <b>2</b> <b>–</b> <b>Bootstrap</b> таблицы</li>
+						<li>Урок <b>3</b> <b>–</b> <b>Bootstrap</b> картинки и служебные классы</li>
+						<li>Урок <b>4</b> <b>–</b> <b>Bootstrap</b> формы</li>
+					</ul>
+				</section>
+				<section>
+					<h4>День <b>3</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul>
+						<li>Урок <b>1</b> <b>–</b> подключение <b>jQuery</b></li>
+						<li>Урок <b>2</b> <b>–</b> <b>Bootstrap</b> навигация</li>
+						<li>Урок <b>3</b> <b>–</b> глификонки</li>
+						<li>Урок <b>4</b> <b>–</b> выпадающий список</li>
+						<li>Урок <b>5</b> <b>–</b> группировка кнопок</li>
+						<li>Урок <b>6</b> <b>–</b> цветные кнопки с выпадающим списком</li>
+						<li>Урок <b>7</b> <b>–</b> дополнительные элементы к инпутам</li>
+						<li>Урок <b>8</b> <b>–</b> навигации</li>
+					</ul>
+				</section>
+				<section>
+					<h4>День <b>4</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul>
+						<li>Урок <b>1</b> <b>–</b> хлебные кношки и пагинация</li>
+						<li>Урок <b>2</b> <b>–</b> лэйблы и бэджи</li>
+						<li>Урок <b>3</b> <b>–</b> декоративные элементы</li>
+						<li>Урок <b>4</b> <b>–</b> оповещания и прогресс<b>-</b>бары</li>
+						<li>Урок <b>5</b> <b>–</b> комментарии</li>
+						<li>Урок <b>6</b> <b>–</b> лист<b>-</b>груп</li>
+						<li>Урок <b>7</b> <b>–</b> панели</li>
+						<li>Урок <b>8</b> <b>–</b> адаптивное видео</li>
+					</ul>
+				</section>
+				<section>
+					<h4>День <b>5</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul class="last">
+						<li>Урок <b>1</b> <b>–</b> всплывающее окно</li>
+						<li>Урок <b>2</b> <b>–</b> скроллинг</li>
+						<li>Урок <b>3</b> <b>–</b> табы</li>
+						<li>Урок <b>4</b> <b>–</b> аккордион</li>
+						<li>Урок <b>5</b> <b>–</b> карусель</li>
+						<li>Урок <b>6</b> <b>–</b> оформление темы</li>
+					</ul>
+				</section>
+			</div>
+			<a href="#" class="close">
+				<span></span>
+				<span></span>
+			</a>
+		</div>
+
+		{{!-- МЕТОДОЛОГИЯ [popup] --}}
+		<div id="lessons-metodology" class="popup svg">
+			<div class="svg-bg"
+				data-step1="M-59.9,540.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L864.8-41c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L-59.5,540.6 C-59.6,540.7-59.8,540.7-59.9,540.5z"
+				data-step2="M33.8,690l-188.2-300.3c-0.1-0.1,0-0.3,0.1-0.3l925.4-579.8c0.1-0.1,0.3,0,0.3,0.1L959.6,110c0.1,0.1,0,0.3-0.1,0.3 L34.1,690.1C34,690.2,33.9,690.1,33.8,690z"
+				data-step3="M-465.1,287.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L459.5-294c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-464.9,287.7-465,287.7-465.1,287.5z"
+				data-step4="M-329.3,504.3l-272.5-435c-0.1-0.1,0-0.3,0.1-0.3l925.4-579.8c0.1-0.1,0.3,0,0.3,0.1l272.5,435c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-329,504.5-329.2,504.5-329.3,504.3z"
+				data-step5="M341.1,797.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L1265.8,216c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L341.5,797.6 C341.4,797.7,341.2,797.7,341.1,797.5z"
+				data-step6="M476.4,1013.4L205,580.3c-0.1-0.1,0-0.3,0.1-0.3L1130.5,0.2c0.1-0.1,0.3,0,0.3,0.1l271.4,433.1c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C476.6,1013.6,476.5,1013.5,476.4,1013.4z">
+				<svg height="100%" width="100%" preserveAspectRatio="none" viewBox="0 0 800 500">
+					<title>Фоновый рисунок</title>
+					<path id="cd-changing-path-1" d="M-59.9,540.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L864.8-41c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L-59.5,540.6 C-59.6,540.7-59.8,540.7-59.9,540.5z"/>
+					<path id="cd-changing-path-2" d="M-465.1,287.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L459.5-294c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3 l-925.4,579.8C-464.9,287.7-465,287.7-465.1,287.5z"/>
+					<path id="cd-changing-path-3" d="M341.1,797.5l-0.9-1.4c-0.1-0.1,0-0.3,0.1-0.3L1265.8,216c0.1-0.1,0.3,0,0.3,0.1l0.9,1.4c0.1,0.1,0,0.3-0.1,0.3L341.5,797.6 C341.4,797.7,341.2,797.7,341.1,797.5z"/>
+				</svg>
+			</div>
+			<div class="popup-content">
+				<section>
+					<h4>День <b>1</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul>
+						<li>Урок <b>1</b> <b>–</b> Понимание архитектуры сайта</li>
+						<li>Урок <b>2</b> <b>–</b> Первый профессиональный шаблон</li>
+						<li>Урок <b>3</b> <b>–</b> Установка <b>Bootstrap</b> и типы лэйаутов</li>
+						<li>Урок <b>4</b> <b>–</b> Архитектура сайта наглядно</li>
+					</ul>
+				</section>
+				<section>
+					<h4>День <b>2</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul>
+						<li>Урок <b>1</b> <b>–</b> <b>Photoshop</b> для верстальщика</li>
+						<li>Урок <b>2</b> <b>–</b> Воспоминания о модульной сетке</li>
+						<li>Урок <b>3</b> <b>–</b> Этап <b>1</b> верстки макета</li>
+						<li>Урок <b>4</b> <b>–</b> Этап <b>2</b> верстки макета</li>
+					</ul>
+				</section>
+				<section>
+					<h4>День <b>3</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul>
+						<li>Урок <b>1</b>, часть <b>1</b> <b>–</b> Создание <b>HTML-</b>структуры</li>
+						<li>Урок <b>1</b>, часть <b>2</b> <b>–</b> Создание <b>HTML-</b>структуры</li>
+					</ul>
+				</section>
+				<section>
+					<h4>День <b>4</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul>
+						<li>Урок <b>1</b> <b>–</b> Скелет <b>CSS</b></li>
+						<li>Урок <b>2</b> <b>–</b> Работа с типографикой</li>
+						<li>Урок <b>3</b> <b>–</b> Выравнивание модулей</li>
+						<li>Урок <b>4</b> <b>–</b> Выравнивание макета</li>
+					</ul>
+				</section>
+				<section>
+					<h4>День <b>5</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul>
+						<li>Урок <b>1</b> <b>–</b> <b>Pixelperfect</b> модулей</li>
+						<li>Урок <b>2</b> <b>–</b> <b>Pixelperfect</b> макета</li>
+					</ul>
+				</section>
+				<section>
+					<h4>День <b>6</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul>
+						<li>Урок <b>1</b> <b>–</b> <b>CSS</b> сброс</li>
+						<li>Урок <b>2</b> <b>–</b> Мелкие детали</li>
+						<li>Урок <b>3</b> <b>–</b> Эффекты наведения</li>
+						<li>Урок <b>4</b> <b>–</b> Работа с адаптацией</li>
+					</ul>
+				</section>
+				<section>
+					<h4>День <b>7</b></h4>
+					<div class="heading-line">
+						<span class="short-line"></span>
+						<span class="long-line"></span>
+					</div>
+					<ul class="last">
+						<li>Урок <b>1</b> <b>–</b> Подключение скриптов</li>
+						<li>Урок <b>2</b> <b>–</b> Подключение <b>owl-carousel.js</b></li>
+						<li>Урок <b>3</b> <b>–</b> Подключение <b>bpopup.js</b></li>
+						<li>Урок <b>4</b> <b>–</b> Подключение <b>feelform.js</b></li>
+						<li>Урок <b>5</b> <b>–</b> Подключение <b>fancybox.js</b></li>
+						<li>Урок <b>5</b> <b>–</b> Подключение <b>WOW.js</b></li>
+					</ul>
+				</section>
+			</div>
+			<a href="#" class="close">
+				<span></span>
+				<span></span>
+			</a>
+		</div>
 
 	{{/content}}
 {{/extend}}
