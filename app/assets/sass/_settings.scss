@@ -160,14 +160,25 @@ body {
 
 		&:focus {color: gray; outline: none;}
 
-		textarea::-webkit-input-placeholder,
-		input::-webkit-input-placeholder,
-		textarea:-moz-placeholder,
-		input:-moz-placeholder,
-		textarea:-ms-input-placeholder,
-		input:-ms-input-placeholder {
-			color: #acacac;
+		&.err {
+			color: #fff !important;
+			background: #f15b26 !important;
+			animation: invalid-input 2s linear 1;
+
+			&::-webkit-input-placeholder,
+			&:-ms-input-placeholder,
+			&:-moz-placeholder {
+				color: #fff !important;
+			}
 		}
+	}
+	textarea::-webkit-input-placeholder,
+	input::-webkit-input-placeholder,
+	textarea::-moz-placeholder,
+	input::-moz-placeholder,
+	textarea:-ms-input-placeholder,
+	input:-ms-input-placeholder {
+		color: #acacac;
 	}
 
 	/* buttons */
