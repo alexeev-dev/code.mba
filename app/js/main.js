@@ -2,6 +2,8 @@ import {loadElements} from './utils/elements-loader';
 import {MobileMenu} from './mobile-menu';
 import {DonutChart} from './donut-chart';
 import {AuthorSlider} from './author-slider';
+import AnimateParticle from './animate-particle';
+import SvgPopups from './svg-popups';
 import {ReviewsCarousel} from './reviews-carousel';
 import {Counter} from './counter';
 import {Popup} from './popup';
@@ -18,6 +20,11 @@ let MainController = {
     ["js-popup", "openPopup"],
     ["js-select-product", "selectProduct"]
   ],
+
+  modules: {
+    AnimateParticle,
+    SvgPopups
+  },
 
   el: {
     search: {
@@ -43,7 +50,11 @@ let MainController = {
     DonutChart.init();
     AuthorSlider.init();
     ReviewsCarousel.init();
-    
+
+    for (let module in this.modules) {
+      this.modules[module]();
+    }
+
     loadElements(this.el);
 
     this.hooks.forEach((descriptor) => {
