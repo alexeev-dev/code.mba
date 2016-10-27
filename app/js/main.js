@@ -2,6 +2,7 @@ import {loadElements} from './utils/elements-loader';
 import {MobileMenu} from './mobile-menu';
 import {DonutChart} from './donut-chart';
 import {AuthorSlider} from './author-slider';
+import AnimateParticle from './animate-particle';
 import {ReviewsCarousel} from './reviews-carousel';
 import {Counter} from './counter';
 import {Popup} from './popup';
@@ -40,10 +41,11 @@ let MainController = {
     //MobileMenu.init();
     Form.init();
     Counter.init();
+    AnimateParticle();
     DonutChart.init();
     AuthorSlider.init();
     ReviewsCarousel.init();
-    
+
     loadElements(this.el);
 
     this.hooks.forEach((descriptor) => {
