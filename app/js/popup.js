@@ -1,161 +1,162 @@
-'use strict';
+/**
+ * Модуль Popups.js - здесь находятится весь код всплывающих окон
+ * Так как всплывающие окна бывают разных типов, предусмотрена унифицированная
+ * система доступа к ним - функция showPopup(). Она позволяет показывать
+ * любое зарегистрированное в этом модуле всплывающее окно. Достаточно просто
+ * передать имя окна и (опционально) пользовательские данные.
+ * Модуль состоит из последовательной регистрации замыканий, в которых находится
+ * код каждого отдельно взятого окна.
+ */
 
+import SvgModal from './svg-modal.json';
+import bezier from './utils/bezier';
 
-// bezier CODE
-let bezier = (x1, y1, x2, y2, epsilon) => {
-    
-    //https://github.com/arian/cubic-bezier
-    let curveX = (t)=> {
-      let v = 1 - t;
-      return 3 * v * v * t * x1 + 3 * v * t * t * x2 + t * t * t;
-    };
+/**
+ * Хэш, в котором будут регистрироваться всплывающие окна
+ */
 
-    let curveY = (t)=> {
-      let v = 1 - t;
-      return 3 * v * v * t * y1 + 3 * v * t * t * y2 + t * t * t;
-    };
+let popups = {};
 
-    let derivativeCurveX = (t)=> {
-      let v = 1 - t;
-      return 3 * (2 * (t - 1) * t + v * v) * x1 + 3 * (- t * t * t + 2 * v * t) * x2;
-    };
+/**
+ * Вспомогательная функция - выполняет регистрацию всплывающего окна
+ */
 
-    return (t)=> {
+function registerPopup(popupName, popupClosure) {
+  popups[popupName] = popupClosure();
+}
 
-      let x = t, t0, t1, t2, x2, d2, i;
+/**
+ * Показывает нужное нам всплывающее окно
+ * @param name - имя всплывающего окна (определяется при его регистрации)
+ * @param options - дополнительные опции, которые могут быть необязательны, а
+ * могут и использоваться разными способами. Всё зависит от типа попапа
+ */
 
-      // First try a few iterations of Newton's method -- normally very fast.
-      for (t2 = x, i = 0; i < 8; i++){
-        x2 = curveX(t2) - x;
-        if (Math.abs(x2) < epsilon) return curveY(t2);
-        d2 = derivativeCurveX(t2);
-        if (Math.abs(d2) < 1e-6) break;
-        t2 = t2 - x2 / d2;
-      }
+export default function showPopup(name, options) {
+  if (typeof popups[name] !== 'undefined') {
+    popups[name](options);
+  } else {
+    console.log(`Ошибка при вызове функции showPopup:
+    Попап с именем "${name}" не зарегистрирован!
+    Пожалуйста убедитесь, что правильно указали
+    имя всплывающего окна. Оно может отличаться от его id
+    или имени класса. Возможно попап с данным именем ещё
+    не был создан и зарегистрирован. Почитайте документацию
+    к модулю app/js/popups.js для более подробной информации.`);
+  }
+}
 
-      t0 = 0, t1 = 1, t2 = x;
+/**
+ * Универсальное всплывающее окно. Подходит для простых окон.
+ * Данный попап очень легко использовать. Для этого сделайте следующее:
+ * 1) Создайте разметку всплывающего окна
+ * 2) При помощи CSS сделайте его оформление. Пропишите стили для скрытого
+ *    и видимого состояния. Там же можно прописать анимации
+ * 3) Добавьте к всплывающему окну опции, использую html5 аттрибут
+ *    data-options. Синтаксис опций следующий:
+ *    data-option="visible:close:shadow",
+ *    где visible - класс добавляемый при открытии окна,
+ *    close - имя класса элемента, при клике на который вы хотите чтобы
+ *    закрывалось окно, shadow - принимает значения true или false,
+ *    true - если вы хотите чтобы происходило затенения экрана
+ *    false - если вы этого не желаете.
+ * 4) Добавьте класс js-show-popup к тем элементам, при клике на которые
+ *    вы хотите, чтобы открывался ваш попап. А затем к этим же элементам
+ *    добавьте аттрибут data-options="generic:#idВашегоПопапа", не забывая
+ *    указывать id нужного попапа.
+ * Вот собственно и всё. Удачи!
+ */
 
-      if (t2 < t0) return curveY(t0);
-      if (t2 > t1) return curveY(t1);
+registerPopup('generic', function () {
+  const overlayVisible = 'shadow-overlay--visible';
+  let overlay = $('.shadow-overlay');
 
-      // Fallback to the bisection method for reliability.
-      while (t0 < t1){
-        x2 = curveX(t2);
-        if (Math.abs(x2 - x) < epsilon) return curveY(t2);
-        if (x > x2) t0 = t2;
-        else t1 = t2;
-        t2 = (t1 - t0) * .5 + t0;
-      }
+  function show(popupId) {
+    let popup = $(popupId);
+    let [visible, close, shadow] = popup.data('options').split(':');
 
-      // Failure
-      return curveY(t2);
-    };
-};
+    visible = visible === '' ? 'active' : visible;
+    close = close === '' ? 'close' : close;
+    shadow = shadow === '' || 'true';
 
-/* ------------------------ HELPERS ------------------------ */
-/* --------------------------------------------------------- */
+    popup.addClass(visible);
 
-    let svgCoverLayer = $('#lessons-base').children('.svg-bg');
-    let paths = svgCoverLayer.find('path');
-
-    /*
-    convert a cubic bezier value to a custom mina easing
-    http://stackoverflow.com/questions/25265197/how-to-convert-a-cubic-bezier-value-to-a-custom-mina-easing-snap-svg
-    */
-    let duration = 600;
-    let epsilon = (1000 / 60 / duration) / 4;
-    let firstCustomMinaAnimation = bezier(.63,.35,.48,.92, epsilon);
-
-    //store Snap objects
-    let pathsArray = [];
-        pathsArray[0] = Snap('#'+paths.eq(0).attr('id'));
-        pathsArray[1] = Snap('#'+paths.eq(1).attr('id'));
-        pathsArray[2] = Snap('#'+paths.eq(2).attr('id'));
-
-    //store path 'd' attribute values 
-    let pathSteps = [];
-        pathSteps[0] = svgCoverLayer.data('step1');
-        pathSteps[1] = svgCoverLayer.data('step2');
-        pathSteps[2] = svgCoverLayer.data('step3');
-        pathSteps[3] = svgCoverLayer.data('step4');
-        pathSteps[4] = svgCoverLayer.data('step5');
-        pathSteps[5] = svgCoverLayer.data('step6');
-
-// animate SVG
-let animatePopup = (paths, pathSteps, duration, state) => {
-
-    let path1 = ( state == 'open' ) ? pathSteps[1] : pathSteps[0]; // pathSteps[n] = $('.svg-bg').data('step'+(n+1));
-    let path2 = ( state == 'open' ) ? pathSteps[3] : pathSteps[2];
-    let path3 = ( state == 'open' ) ? pathSteps[5] : pathSteps[4];
-    
-    return paths[0].animate({'d': path1}, duration, firstCustomMinaAnimation); //paths[0] = Snap('#cd-changing-path-1')
-    return paths[1].animate({'d': path2}, duration, firstCustomMinaAnimation); //paths[1] = Snap('#cd-changing-path-2')
-    return paths[2].animate({'d': path3}, duration, firstCustomMinaAnimation); //paths[2] = Snap('#cd-changing-path-3')
-};
-
-
-
-/* --------------------- */
-/* ------- MODUL ------- */
-/* --------------------- */
-let Popup = (function($){
-  
-  class Popup {
-    
-    constructor(id) {
-
-      let el = $(id);
-
-      this.el = el;
-      this.overlay = $('.overlay');
-      this.btnTarget = $('a[href="' + id + '"]');
-      
-      el.click((event) => {
-        event.stopPropagation();
-      });
-      el.find(".close").click((event) => {
-        event.preventDefault();
-        this.close();
-      });
-      this.overlay.click((event) => {
-        this.close();
-      });
-
-      // if (el.hasClass('slide')) {
-      //     el.detach().insertAfter(this.btnTarget);
-      // }
+    if (shadow === true) {
+      overlay.addClass(overlayVisible);
     }
 
-    show() {
-      this.el.addClass('active');
+    close = popup.find(close);
 
-      this.overlay.addClass('active');
-
-      animatePopup(paths, pathSteps, duration, open);
-
-      this.btnTarget.addClass('hidden');
-
-      return false;
+    function closePopup() {
+      popup.removeClass(visible);
+      overlay.removeClass(overlayVisible);
+      close.off('click');
+      overlay.off('click');
     }
 
-    close() {
-      this.el.removeClass('active');
-    
-      this.btnTarget.removeClass('hidden');
+    close.click((event) => {
+      event.preventDefault();
+      event.stopPropagation();
+      closePopup();
+    });
 
-      this.overlay.removeClass('active');
-
-      // animatePopup(paths, pathSteps, duration, open);
-
-      return false;
-    }
+    overlay.click((event) => {
+      closePopup();
+    });
   }
 
-  return Popup;
-})(jQuery);
+  return show;
 
-export {Popup};
-
+});
 
 
+/**
+ * Всплывающее окно для записи на курсы. Расширяет generic popup
+ */
 
+registerPopup('course', function() {
+  const popupId = '#sing-in-popup';
+  let source = $(popupId).find('[name="source"]');
+
+  function show(courseId) {
+    source.val(courseId);
+    showPopup('generic', popupId);
+  }
+
+  return show;
+});
+
+
+/**
+ * Всплывающее окно с SVG-анимациями на основе библиотеки
+ * Snap.svg (http://snapsvg.io)
+ */
+
+registerPopup('svg', function() {
+  const duration = 600;
+  const popupId = '#svg-modal';
+  const epsilon = (1000 / 60 / duration) / 4;
+  const easing = bezier(0.63, 0.35, 0.48, 0.92, epsilon);
+
+  let path = [1, 2, 3].map((id, index) => Snap(`#svg-modal-path-${index}`));
+
+  function loadContent(content) {
+    console.log(content);
+  }
+
+  function animateBackground(direction) {
+    let [open, close] = SvgModal.animation;
+    let animation = direction === 'open' ? open : close;
+    path.forEach((path, index) => {
+      path.animate({d:animation}, duration, easing);
+    });
+  }
+
+  function show(content) {
+    loadContent(content);
+    showPopup('generic', popupId);
+    animateBackground('open');
+  }
+
+  return show;
+});
