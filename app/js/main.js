@@ -17,7 +17,7 @@ let MainController = {
   hooks: [
     ["js-open-search", "openSearch"],
     ["mobile-menu", "triggerMenu"],
-    ["js-popup", "openPopup"],
+    ["js-show-popup", "openPopup"],
     ["js-select-product", "selectProduct"]
   ],
 
@@ -108,11 +108,9 @@ let MainController = {
 
   openPopup(event) {
     event.preventDefault();
-
-    let popupId = $(event.target).attr("href");
-    let popup = new Popup(popupId);
-
-    popup.show();
+    let params = $(event.target).data('options');
+    let [name, ...options] = params.split(':');
+    showPopup(name, options);
   },
 
   selectProduct(event) {

@@ -115,7 +115,7 @@ registerPopup('generic', function () {
  */
 
 registerPopup('course', function() {
-  const popupId = '#sing-in-popup';
+  const popupId = '#sign-in-popup';
   let source = $(popupId).find('[name="source"]');
 
   function show(courseId) {
