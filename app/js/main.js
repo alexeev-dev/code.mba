@@ -6,7 +6,7 @@ import AnimateParticle from './animate-particle';
 import SvgPopups from './svg-popups';
 import {ReviewsCarousel} from './reviews-carousel';
 import {Counter} from './counter';
-import {Popup} from './popup';
+import showPopup from './popup';
 import {Form} from './form';
 
 let MainController = {
