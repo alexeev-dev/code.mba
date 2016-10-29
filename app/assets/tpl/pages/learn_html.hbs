@@ -304,7 +304,7 @@
 									<li class="min"><em>&nbsp;</em>-<em>&nbsp;</em></li>
 								</ul>
 								<p><b>9.900</b> <small>руб.</small></p>
-								<a href="#sign-in-popup" class="btn js-open-popup js-select-product" data-id="1">Купить сейчас<span class="semicircle"></span></a>
+								<a href="#" class="btn js-show-popup" data-options="price:#price-sale">Купить сейчас<span class="semicircle"></span></a>
 								<img src="img/pricing-dots.png" class="dots">
 							</div>
 						</div>
@@ -760,7 +760,7 @@
 		{{!-----------------------------}}
 		{{!-- попапы продажи [заявки] --}}
 		{{!-----------------------------}}
-		<div id="price-sale" class="popup price-popup generic">
+		<div id="price-sale" class="popup price-popup generic" data-options="active:close-popup:false:true">
 			<div>
 				<form>
 					<input name="source" type="hidden" value="sign-in">
