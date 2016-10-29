@@ -68,7 +68,7 @@ function initPopup(selector, classes, isShadow) {
     overlay.off('click');
   }
 
-  popup.find(close).click((event) => {
+  popup.find(`.${close}`).click((event) => {
     event.preventDefault();
     event.stopPropagation();
     closePopup();
@@ -175,20 +175,26 @@ registerPopup('svg', function() {
   const easing = bezier(0.63, 0.35, 0.48, 0.92, epsilon);
 
   let classes = {
-    visible: 'active',
-    close: 'close'
+    visible: 'svg-modal_visible',
+    close: 'svg-modal__close'
   };
 
   let parentShow = initPopup(popupId, classes, false);
 
   let path = [1, 2, 3].map((id, index) => Snap(`#svg-modal-path-${index}`));
 
+  $(popupId).find(`.${classes.close}`).click((event) => {
+    event.preventDefault();
+    console.log("!!!");
+    animateBackground('close');
+  });
+
   function loadContent(content) {
     console.log(content);
   }
 
   function animateBackground(direction) {
-    let [open, close] = SvgModal.animation;
+    let {open, close} = SvgModal.animation;
     let animation = direction === 'open' ? open : close;
     path.forEach((path, index) => {
       path.animate({d:animation}, duration, easing);
