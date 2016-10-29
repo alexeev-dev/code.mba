@@ -52,6 +52,7 @@ let MainController = {
   init() {
     //MobileMenu.init();
     Form.init();
+    this.movePopups();
     Counter.init();
     DonutChart.init();
     AuthorSlider.init();
@@ -110,6 +111,27 @@ let MainController = {
       MobileMenu.animateClose();
       this.isMenuOpen = true;
     }
+  },
+
+  movePopups() {
+    $('.js-show-popup').each((index, trigger) => {
+      let target = $(trigger);
+      let params = target.data('options');
+
+      if (typeof params === 'undefined') {
+        return true;
+      }
+
+      let [name, popupId] = params.split(':');
+      let options = $(popupId).data('options');
+      let isNomadic = false;
+      if (typeof options !== 'undefined') {
+        [,,,isNomadic] = options.split(':');
+      }
+      if (isNomadic === 'true') {
+        $(popupId).insertAfter(target);
+      }
+    });
   },
 
   openPopup(event) {
