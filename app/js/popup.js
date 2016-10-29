@@ -107,47 +107,29 @@ function initPopup(selector, classes, isShadow) {
  */
 
 registerPopup('generic', function () {
-  const overlayVisible = 'shadow-overlay--visible';
-  let overlay = $('.shadow-overlay');
+  function loadOptions(popupId) {
+    let optionsString = $(popupId).data('options');
+    let visible, close, isShadow;
 
-  function show(popupId) {
-    let popup = $(popupId);
-    let [visible, close, shadow] = popup.data('options').split(':');
-
-    visible = visible === '' ? 'active' : visible;
-    close = close === '' ? 'close' : close;
-    shadow = shadow === '' || 'true';
-
-    popup.addClass(visible);
-
-    if (shadow === true) {
-      overlay.addClass(overlayVisible);
+    if (typeof optionsString !== 'undefined') {
+      [visible, close, isShadow] = optionsString.split(':');
+      visible = visible === '' ? 'active' : visible;
+      close = close === '' ? 'close' : close;
+      shadow = shadow === '' || 'true';
+    } else {
+      [visible, close, isShadow] = ['visible', 'close', true];
     }
 
-    close = popup.find(close);
-
-    function closePopup() {
-      popup.removeClass(visible);
-      overlay.removeClass(overlayVisible);
-      close.off('click');
-      overlay.off('click');
-    }
-
-    close.click((event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      closePopup();
-    });
-
-    overlay.click((event) => {
-      closePopup();
-    });
+    return {visible, close, isShadow};
   }
 
-  return show;
-
+  return function showPopup(popupId) {
+    let options = loadOptions(popupId);
+    let {visible, close, isShadow} = options;
+    let show = initPopup(popupId, {visible, close}, isShadow);
+    show();
+  }
 });
-
 
 /**
  * Всплывающее окно для записи на курсы. Расширяет generic popup
