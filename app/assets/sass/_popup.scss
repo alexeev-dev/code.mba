@@ -14,12 +14,6 @@ Generic запускается с одной опцией - id попапа. О�
 
 */
 .popup {
-	visibility: hidden;
-
-	&.active {
-		visibility: visible;
-	}
-
 	// a.close {
 	// 	position: absolute; top: 10px; right: 5px; display: block; width: 30px; height: 30px;
 
@@ -45,6 +39,8 @@ Generic запускается с одной опцией - id попапа. О�
 	// }
 	
 	&.generic {
+		display: none; &.active {display: block;}
+
 		width: 600px; margin: 0 auto; padding: 60px 0;
 		position: absolute; left: 50%; transform: translateX(-50%); bottom: 10%; z-index: 99;
 		background-color: #fff; box-shadow: 0 14px 32px 10px rgba(0, 0, 0, 0.2); border-radius: 10px;
@@ -62,7 +58,7 @@ Generic запускается с одной опцией - id попапа. О�
 
 		&.naked {
 			width: 90%; margin: 0; padding: 0;
-			position: relative; left: 0; bottom: 0;
+			position: relative; left: 0; transform: translateX(0); bottom: 0;
 			box-shadow: none;
 
 			.popup-content {margin: 0; padding: 0;}
@@ -70,6 +66,8 @@ Generic запускается с одной опцией - id попапа. О�
 	}
 
 	&.svg {
+		visibility: hidden; // need for this type popup (dislpay: none !not working)
+
 		position: fixed;
 		z-index: 9998;
 		top: 0;
@@ -161,7 +159,7 @@ Generic запускается с одной опцией - id попапа. О�
 			-moz-osx-font-smoothing: grayscale;
 			
 			/* FLEX BOX */
-			display: flex;
+			display: none;
 			flex-wrap: wrap;
 			
 			ul > li, h2, h3, h4, p {
