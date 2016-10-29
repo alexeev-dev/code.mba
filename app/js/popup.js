@@ -107,6 +107,8 @@ function initPopup(selector, classes, isShadow) {
  */
 
 registerPopup('generic', function () {
+  let genericPopups = {};
+
   function loadOptions(popupId) {
     let optionsString = $(popupId).data('options');
     let visible, close, isShadow;
@@ -124,27 +126,40 @@ registerPopup('generic', function () {
   }
 
   return function showPopup(popupId) {
-    let options = loadOptions(popupId);
-    let {visible, close, isShadow} = options;
-    let show = initPopup(popupId, {visible, close}, isShadow);
-    show();
+    if (typeof genericPopups[popupId] === 'undefined') {
+      let options = loadOptions(popupId);
+      let {visible, close, isShadow} = options;
+      genericPopups[popupId] = initPopup(popupId, {visible, close}, isShadow);
+    }
+    genericPopups[popupId]();
   }
 });
 
 /**
- * Всплывающее окно для записи на курсы. Расширяет generic popup
+ * Всплывающее окно для записи на курсы.
+ * Инструкция к использованию:
+ * showPopup('course', 'popupId');
+ * Вместо 'popupId' - написать id попапа без знака "#"
  */
 
 registerPopup('course', function() {
-  const popupId = '#sign-in-popup';
-  let source = $(popupId).find('[name="source"]');
+  let coursePopups = {};
 
-  function show(courseId) {
-    source.val(courseId);
-    showPopup('generic', popupId);
+  let classes = {
+    visible: 'active',
+    close: 'close'
+  };
+
+  $('.course-popup').each((index, self) => {
+    let id = $(self).attr('id');
+    coursePopups[id] = initPopup(`#${id}`, classes, false);
+  });
+
+  function showPopup(courseId) {
+    coursePopups[courseId]();
   }
 
-  return show;
+  return showPopup;
 });
 
 
@@ -158,6 +173,13 @@ registerPopup('svg', function() {
   const popupId = '#svg-modal';
   const epsilon = (1000 / 60 / duration) / 4;
   const easing = bezier(0.63, 0.35, 0.48, 0.92, epsilon);
+
+  let classes = {
+    visible: 'active',
+    close: 'close'
+  };
+
+  let parentShow = initPopup(popupId, classes, false);
 
   let path = [1, 2, 3].map((id, index) => Snap(`#svg-modal-path-${index}`));
 
@@ -173,11 +195,9 @@ registerPopup('svg', function() {
     });
   }
 
-  function show(content) {
+  return function showPopup(content) {
     loadContent(content);
-    showPopup('generic', popupId);
+    parentShow();
     animateBackground('open');
   }
-
-  return show;
 });
