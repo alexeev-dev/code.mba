@@ -122,6 +122,8 @@ registerPopup('generic', function () {
       [visible, close, isShadow] = ['visible', 'close', true];
     }
 
+    console.log(visible, close, isShadow);
+
     return {visible, close, isShadow};
   }
 
@@ -191,7 +193,7 @@ registerPopup('svg', function() {
     animateBackground('close');
   });
 
-  function loadContent(content) {
+  function loadContent([content]) {
     $('.svg-modal__content').hide();
     $(content).show();
   }
