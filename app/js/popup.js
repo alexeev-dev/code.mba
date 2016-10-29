@@ -171,6 +171,8 @@ registerPopup('price', function() {
 registerPopup('svg', function() {
   const duration = 600;
   const popupId = '#svg-modal';
+  const overlayVisible = 'active';
+  const overlay = $('.svg-modal__overlay');
   const epsilon = (1000 / 60 / duration) / 4;
   const easing = bezier(0.63, 0.35, 0.48, 0.92, epsilon);
 
@@ -185,12 +187,13 @@ registerPopup('svg', function() {
 
   $(popupId).find(`.${classes.close}`).click((event) => {
     event.preventDefault();
-    console.log("!!!");
+    overlay.removeClass(overlayVisible);
     animateBackground('close');
   });
 
   function loadContent(content) {
-    console.log(content);
+    $('.svg-modal__content').hide();
+    $(content).show();
   }
 
   function animateBackground(direction) {
@@ -203,6 +206,7 @@ registerPopup('svg', function() {
 
   return function showPopup(content) {
     loadContent(content);
+    overlay.addClass(overlayVisible);
     parentShow();
     animateBackground('open');
   }
