@@ -117,7 +117,7 @@ registerPopup('generic', function () {
       [visible, close, isShadow] = optionsString.split(':');
       visible = visible === '' ? 'active' : visible;
       close = close === '' ? 'close' : close;
-      shadow = shadow === '' || 'true';
+      isShadow = isShadow === '' || 'true';
     } else {
       [visible, close, isShadow] = ['visible', 'close', true];
     }
@@ -125,7 +125,7 @@ registerPopup('generic', function () {
     return {visible, close, isShadow};
   }
 
-  return function showPopup(popupId) {
+  return function showPopup([popupId]) {
     if (typeof genericPopups[popupId] === 'undefined') {
       let options = loadOptions(popupId);
       let {visible, close, isShadow} = options;
@@ -191,7 +191,7 @@ registerPopup('svg', function() {
     animateBackground('close');
   });
 
-  function loadContent(content) {
+  function loadContent([content]) {
     $('.svg-modal__content').hide();
     $(content).show();
   }
