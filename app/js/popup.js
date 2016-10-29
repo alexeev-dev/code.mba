@@ -93,17 +93,17 @@ function initPopup(selector, classes, isShadow) {
  *    и видимого состояния. Там же можно прописать анимации
  * 3) Добавьте к всплывающему окну опции, использую html5 аттрибут
  *    data-options. Синтаксис опций следующий:
- *    data-option="visible:close:shadow",
+ *    data-options="visible:close:shadow",
  *    где visible - класс добавляемый при открытии окна,
  *    close - имя класса элемента, при клике на который вы хотите чтобы
  *    закрывалось окно, shadow - принимает значения true или false,
- *    true - если вы хотите чтобы происходило затенения экрана
+ *    true - если вы хотите чтобы происходило затемнения экрана
  *    false - если вы этого не желаете.
  * 4) Добавьте класс js-show-popup к тем элементам, при клике на которые
  *    вы хотите, чтобы открывался ваш попап. А затем к этим же элементам
  *    добавьте аттрибут data-options="generic:#idВашегоПопапа", не забывая
  *    указывать id нужного попапа.
- * Вот собственно и всё. Удачи!
+ * Вот собственно и всё. Удачи!!!
  */
 
 registerPopup('generic', function () {
@@ -138,11 +138,11 @@ registerPopup('generic', function () {
 /**
  * Всплывающее окно для записи на курсы.
  * Инструкция к использованию:
- * showPopup('course', 'popupId');
+ * showPopup('price', 'popupId');
  * Вместо 'popupId' - написать id попапа без знака "#"
  */
 
-registerPopup('course', function() {
+registerPopup('price', function() {
   let coursePopups = {};
 
   let classes = {
@@ -150,7 +150,7 @@ registerPopup('course', function() {
     close: 'close'
   };
 
-  $('.course-popup').each((index, self) => {
+  $('.price-popup').each((index, self) => {
     let id = $(self).attr('id');
     coursePopups[id] = initPopup(`#${id}`, classes, false);
   });

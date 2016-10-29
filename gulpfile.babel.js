@@ -173,7 +173,7 @@ gulp.task('libs', () => {
 /* [TASK] Сборка с отслеживанием изменения для удобной разработки */
 gulp.task('watch', ['css', 'libs', 'browser-sync', 'handlebars', 'sass', 'scripts'], () => {
   gulp.watch(`${path.src}/assets/tpl/**/*.{hbs,handlebars}`, ['handlebars', reload]);
-	gulp.watch(`${path.dest}/*.html`, reload);
+	// gulp.watch(`${path.dest}/*.html`, reload);
   gulp.watch(`${path.src}/assets/sass/**/*.+(scss|sass)`, ['sass', reload]);
   gulp.watch(`${path.src}/js/**/*.js`, ['scripts', reload]);
 });
