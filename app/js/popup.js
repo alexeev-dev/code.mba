@@ -47,6 +47,45 @@ export default function showPopup(name, options) {
 }
 
 /**
+ * Вспомогательная функция-замыкание, для создания всплывающих окон
+ * Подключает обработчики событий, создаёт функционал для стандартного
+ * отображения всплывающего окна.
+ * @param selector - id или класс всплывающего окна в разметке
+ * @param classes - хэш с именами классов для стейта visible и селектор
+ * для элемента закрывающего попап
+ * @param isShadow - отображать ли затенение под всплывающем окном
+ */
+
+function initPopup(selector, classes, isShadow) {
+  const overlayVisible = 'shadow-overlay--visible';
+  let overlay = $('.shadow-overlay');
+  let {visible, close} = classes;
+  let popup = $(selector);
+
+  function closePopup() {
+    overlay.removeClass(overlayVisible);
+    popup.removeClass(visible);
+    overlay.off('click');
+  }
+
+  popup.find(close).click((event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    closePopup();
+  });
+
+  return function showPopup() {
+    popup.addClass(visible);
+    if (isShadow) {
+      overlay.addClass(overlayVisible);
+      overlay.click((event) => {
+        closePopup();
+      });
+    }
+  }
+}
+
+/**
  * Универсальное всплывающее окно. Подходит для простых окон.
  * Данный попап очень легко использовать. Для этого сделайте следующее:
  * 1) Создайте разметку всплывающего окна
