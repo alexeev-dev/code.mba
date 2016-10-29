@@ -152,10 +152,10 @@ registerPopup('price', function() {
 
   $('.price-popup').each((index, self) => {
     let id = $(self).attr('id');
-    coursePopups[id] = initPopup(`#${id}`, classes, false);
+    coursePopups[`#${id}`] = initPopup(`#${id}`, classes, false);
   });
 
-  function showPopup(courseId) {
+  function showPopup([courseId]) {
     coursePopups[courseId]();
   }
 
