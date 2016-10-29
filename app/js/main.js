@@ -41,6 +41,12 @@ let MainController = {
     signInPopup: "#sign-in-popup"
   },
 
+  hideButton: {
+    'generic': true,
+    'svg': false,
+    'price': true
+  },
+
   isMenuOpen: false,
 
   init() {
@@ -111,6 +117,9 @@ let MainController = {
     let params = $(event.target).data('options');
     let [name, ...options] = params.split(':');
     showPopup(name, options);
+    if (typeof this.hideButton[name] !== 'undefined' && this.hideButton[name]) {
+      $(event.target).addClass('hide-it');
+    }
   },
 
   selectProduct(event) {
