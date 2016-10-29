@@ -47,6 +47,45 @@ export default function showPopup(name, options) {
 }
 
 /**
+ * Вспомогательная функция-замыкание, для создания всплывающих окон
+ * Подключает обработчики событий, создаёт функционал для стандартного
+ * отображения всплывающего окна.
+ * @param selector - id или класс всплывающего окна в разметке
+ * @param classes - хэш с именами классов для стейта visible и селектор
+ * для элемента закрывающего попап
+ * @param isShadow - отображать ли затенение под всплывающем окном
+ */
+
+function initPopup(selector, classes, isShadow) {
+  const overlayVisible = 'shadow-overlay--visible';
+  let overlay = $('.shadow-overlay');
+  let {visible, close} = classes;
+  let popup = $(selector);
+
+  function closePopup() {
+    overlay.removeClass(overlayVisible);
+    popup.removeClass(visible);
+    overlay.off('click');
+  }
+
+  popup.find(close).click((event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    closePopup();
+  });
+
+  return function showPopup() {
+    popup.addClass(visible);
+    if (isShadow) {
+      overlay.addClass(overlayVisible);
+      overlay.click((event) => {
+        closePopup();
+      });
+    }
+  }
+}
+
+/**
  * Универсальное всплывающее окно. Подходит для простых окон.
  * Данный попап очень легко использовать. Для этого сделайте следующее:
  * 1) Создайте разметку всплывающего окна
@@ -68,62 +107,59 @@ export default function showPopup(name, options) {
  */
 
 registerPopup('generic', function () {
-  const overlayVisible = 'shadow-overlay--visible';
-  let overlay = $('.shadow-overlay');
+  let genericPopups = {};
 
-  function show(popupId) {
-    let popup = $(popupId);
-    let [visible, close, shadow] = popup.data('options').split(':');
+  function loadOptions(popupId) {
+    let optionsString = $(popupId).data('options');
+    let visible, close, isShadow;
 
-    visible = visible === '' ? 'active' : visible;
-    close = close === '' ? 'close' : close;
-    shadow = shadow === '' || 'true';
-
-    popup.addClass(visible);
-
-    if (shadow === true) {
-      overlay.addClass(overlayVisible);
+    if (typeof optionsString !== 'undefined') {
+      [visible, close, isShadow] = optionsString.split(':');
+      visible = visible === '' ? 'active' : visible;
+      close = close === '' ? 'close' : close;
+      shadow = shadow === '' || 'true';
+    } else {
+      [visible, close, isShadow] = ['visible', 'close', true];
     }
 
-    close = popup.find(close);
-
-    function closePopup() {
-      popup.removeClass(visible);
-      overlay.removeClass(overlayVisible);
-      close.off('click');
-      overlay.off('click');
-    }
-
-    close.click((event) => {
-      event.preventDefault();
-      event.stopPropagation();
-      closePopup();
-    });
-
-    overlay.click((event) => {
-      closePopup();
-    });
+    return {visible, close, isShadow};
   }
 
-  return show;
-
+  return function showPopup(popupId) {
+    if (typeof genericPopups[popupId] === 'undefined') {
+      let options = loadOptions(popupId);
+      let {visible, close, isShadow} = options;
+      genericPopups[popupId] = initPopup(popupId, {visible, close}, isShadow);
+    }
+    genericPopups[popupId]();
+  }
 });
 
-
 /**
- * Всплывающее окно для записи на курсы. Расширяет generic popup
+ * Всплывающее окно для записи на курсы.
+ * Инструкция к использованию:
+ * showPopup('course', 'popupId');
+ * Вместо 'popupId' - написать id попапа без знака "#"
  */
 
 registerPopup('course', function() {
-  const popupId = '#sing-in-popup';
-  let source = $(popupId).find('[name="source"]');
+  let coursePopups = {};
 
-  function show(courseId) {
-    source.val(courseId);
-    showPopup('generic', popupId);
+  let classes = {
+    visible: 'active',
+    close: 'close'
+  };
+
+  $('.course-popup').each((index, self) => {
+    let id = $(self).attr('id');
+    coursePopups[id] = initPopup(`#${id}`, classes, false);
+  });
+
+  function showPopup(courseId) {
+    coursePopups[courseId]();
   }
 
-  return show;
+  return showPopup;
 });
 
 
@@ -137,6 +173,13 @@ registerPopup('svg', function() {
   const popupId = '#svg-modal';
   const epsilon = (1000 / 60 / duration) / 4;
   const easing = bezier(0.63, 0.35, 0.48, 0.92, epsilon);
+
+  let classes = {
+    visible: 'active',
+    close: 'close'
+  };
+
+  let parentShow = initPopup(popupId, classes, false);
 
   let path = [1, 2, 3].map((id, index) => Snap(`#svg-modal-path-${index}`));
 
@@ -152,11 +195,9 @@ registerPopup('svg', function() {
     });
   }
 
-  function show(content) {
+  return function showPopup(content) {
     loadContent(content);
-    showPopup('generic', popupId);
+    parentShow();
     animateBackground('open');
   }
-
-  return show;
 });
