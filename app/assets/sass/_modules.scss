@@ -1,6 +1,6 @@
 // header
 .logo {
-	color: #000000; font-size: 27px; font-family: $font-zz !important; text-transform: uppercase; letter-spacing: 0.2px; line-height: 1;
+	color: #000000; font-size: 27px; font-family: $font-zz !important; text-transform: uppercase; letter-spacing: 0.2px; line-height: 1;  @extend %fixfont;
 	padding: 10px 0 0 85px; margin-right: 82px; float: left; height: 52px;
 	position: absolute; right: 0; top: -60px; z-index: 9;
 	background: url('../img/logo-eye.png') 0 center no-repeat;
@@ -581,6 +581,7 @@
 
 				p {
 					color: #504c4c; font-size: 16px; line-height: 26px;
+					-webkit-font-smoothing: subpixel-antialiased; -moz-osx-font-smoothing: auto;
 					margin: 0 0 .75em;
 
 					@include respond-to(xs) {
@@ -627,7 +628,7 @@
 }
 
 .subscribe-item {
-	padding: 72px 0;
+	padding: 80px 0;
 
 	&:after {
 		content: '';
@@ -640,7 +641,8 @@
 	}
 
 	p {
-		color: rgba(255, 255, 255, 0.5); font-size: 18px; line-height: 26px;
+		color: rgba(255, 255, 255, 0.6); font-size: 18px; line-height: 26px;
+		-webkit-font-smoothing: subpixel-antialiased; -moz-osx-font-smoothing: auto;
 		float: left; margin: 0 0 .75em;
 
 		@include respond-to(xs) {
@@ -1053,7 +1055,7 @@
 }
 .heading-line {
 	font-size: 16px;
-	position: relative; margin-bottom: 20px;
+	position: relative; margin: 10px 0 30px 0;
 
 	.short-line, .long-line {
 		display: inline-block; position: relative; height: 3px; margin-right: 10px;
@@ -1099,7 +1101,7 @@
 			margin-bottom: 0;
 		}
 		li {
-			position: relative; margin-bottom: 6px;
+			position: relative; margin-bottom: 20px;
 			background: #ffffff; border-radius: 50px;
 			transition: all .3s ease;
 
@@ -1126,11 +1128,6 @@
 								opacity: 0;
 							}
 						}
-
-						&:first-child,
-						&:last-child {
-							color: #4cc2c0;
-						}
 					}
 				}
 
@@ -1140,7 +1137,7 @@
 			}
 
 			a {
-				font-size: 18px;
+				font-size: 17px;
 				display: table; padding: 25px 30px; width: 100%;
 				transition: all .3s ease;
 
@@ -1158,18 +1155,16 @@
 				}
 
 				span {
-					display: table-cell; vertical-align: middle;
 					transition: all .3s ease;
 
 					&:first-child {
 						color: #cccccc; font-size: 20px;
-						position: relative; padding-right: 30px; width: 57px;
+						position: relative; padding-right: 30px; width: 60px; top: 2px;
 						opacity: 1;
 					}
 
 					&:last-child {
-						color: #2f2c2c;
-						padding-left: 30px;
+						color: #2f2c2c; font-size: 17px;
 
 						@include respond-to(sm) {
 							padding-left: 10px;
@@ -1195,8 +1190,8 @@
 	&-items {
 		margin-bottom: 80px;
 		li {
-			font-size: 18px; letter-spacing: 0.2px; line-height: 1.5; font-weight: 400;
-			position: relative; padding-left: 42px; margin-bottom: 18px;
+			font-size: 18px; letter-spacing: 0.2px; line-height: 1.5; font-weight: 400; @extend %fixfont;
+			position: relative; padding-left: 42px; margin-bottom: 20px;
 			transition: all .3s ease;
 
 			@include respond-to(sm) {
@@ -1241,7 +1236,7 @@
 // advantages
 .advantage-items {
 	text-align: center;
-	position: relative; margin-top: 50px; margin-bottom: 60px; padding: 80px 35px 40px;
+	position: relative; margin-top: 50px; margin-bottom: 40px; padding: 80px 35px 40px;
 	background: #ffffff;
 
 	@include respond-to(md) {
@@ -1345,7 +1340,7 @@
 	}
 
 	a {
-		color: #ccc; font-size: 16px;
+		color: #ccc; font-size: 16px; @extend %fixfont;
 		float: none; display: block; padding: 0; margin: 0;
 		border-left: none;
 		transition: all 0.15s linear;
@@ -1371,7 +1366,7 @@
 	}
 
 	p {
-		color: #fff; font-size: 24px; line-height: 1.3;
+		color: #fff; font-size: 24px; line-height: 1.3; font-family: $font-bold; letter-spacing: -0.4px;
 		margin: 0;
 	}
 }
@@ -1396,9 +1391,8 @@
 		}
 
 		&:hover {
-			h5 {color: #4cc2c0;}
-
-			.btn {background: #4cc2c0;}
+			> h5 {color: #4cc2c0;}
+			> a.btn {background: #4cc2c0;}
 		}
 
 		// &:nth-child(1),
@@ -1427,7 +1421,7 @@
 		ul {
 			margin-bottom: 21px;
 			li {
-				color: #acacac; font-size: 16px; line-height: 1.5; letter-spacing: 0.2px;
+				color: #acacac; font-size: 16px; line-height: 1.5; letter-spacing: 0.2px; @extend %fixfont;
 				margin-bottom: 5px;
 
 				&.gold {color: #fcb03b;}
@@ -1441,20 +1435,17 @@
 
 		p {
 			color: #4cc2c0; font-size: 24px; line-height: 1.5;
-			margin-bottom: 31px;
+			margin-bottom: 30px;
 		}
-
-		strike {p {margin-bottom: 0;}}
 
 		canvas {position: absolute; top: 0; left: 0; z-index: 8;}
 		> figure,
 		> h5,
 		> ul li,
-		> strike,
 		> p,
 		> a {position: relative; z-index: 9;}
 
-		.btn {
+		> a.btn {
 			padding: 23px 31px;
 			background: #2f2c2c;
 		}
@@ -1481,13 +1472,13 @@
 				}
 			}
 
-			p {color: #2f2c2c;}
+			p {color: #2f2c2c; -webkit-font-smoothing: subpixel-antialiased; -moz-osx-font-smoothing: auto;}
 
-			.btn {border: 2px solid #ffffff; display: block;}
+			a.btn {border: 2px solid #ffffff; display: block;}
 
 			&:hover {
-				h5 {color: #2f2c2c;}
-				.btn {background-color: #2f2c2c !important; border: 2px solid #2f2c2c;}
+				> h5 {color: #2f2c2c;}
+				> a.btn {background-color: #2f2c2c !important; border: 2px solid #2f2c2c;}
 			}
 
 
@@ -1496,12 +1487,12 @@
 				&:after {display: none;}
 			}
 
-			&.blue {background-color: #4cc2c0; .btn {background-color: #4cc2c0;}}
-			&.red {background-color: #f15b26; .btn {background-color: #f15b26;}}
+			&.blue {background-color: #4cc2c0; > a.btn {background-color: #4cc2c0;}}
+			&.red {background-color: #f15b26; > a.btn {background-color: #f15b26;}}
 			&.yellow {
 				background-color: #fcb03b;
 
-				.btn {background-color: #fcb03b;
+				> a.btn {background-color: #fcb03b;
 
 					.semicircle:after {border-color: #fcb03b;}
 
@@ -1553,7 +1544,7 @@
 			}
 
 			span {
-				color: #2f2c2c; font-size: 18px; line-height: 26px; letter-spacing: 0.2px;
+				color: #2f2c2c; font-family: $font-bold; font-size: 18px; line-height: 26px; letter-spacing: 0.2px; @extend %fixfont;
 
 				@include respond-to(xs) {
 					font-size: 14px; line-height: 22px;
@@ -1574,7 +1565,7 @@
 			}
 
 			li {
-				color: #acacac; font-size: 14px; line-height: 80px;
+				color: #acacac; font-size: 14px; line-height: 80px; @extend %fixfont;
 				position: relative; margin-bottom: 40px; padding-left: 100px; height: 70px;
 
 				@include respond-to(sm) {
@@ -1595,7 +1586,7 @@
 				}
 
 				a {
-					color: #2f2c2c;
+					color: #2f2c2c; font-family: $font-bold; @extend %fixfont;
 				}
 			}
 		}
@@ -1635,7 +1626,7 @@
 
 		h4 {
 			color: #2f2c2c; font-size: 36px; line-height: 1.5; letter-spacing: 0.2px;
-			position: relative; margin-bottom: 20px;
+			position: relative; margin-bottom: 0;
 
 			@include respond-to(xs) {
 				font-size: 28px;
@@ -1655,16 +1646,17 @@
 			}
 		}
 
-		a {
-			color: #4cc2c0; font-size: 16px;
-			display: inline-block;
-
-			@include respond-to(md) {
-				display: block; margin-bottom: 20px;
-			}
-		}
 		.raiting {
 			@include respond-to(md) {margin: 0; display: block;}
+
+			& + a {
+				color: #4cc2c0; font-size: 16px;
+				display: inline-block;
+
+				@include respond-to(md) {
+					display: block; margin-bottom: 30px;
+				}
+			}
 		}
 
 		a.btn {
@@ -1747,7 +1739,7 @@
 // description
 .description {
 	&-tab_control {
-		float: left; margin-top: -77px; margin-bottom: 85px;
+		float: left; margin-top: -75px; margin-bottom: 80px;
 
 		@include respond-to(sm) {
 			margin-top: -92px;
@@ -1788,7 +1780,7 @@
 
 				&:before {
 					content: '';
-					position: absolute; top: 0; left: 50%; display: block; width: 60%; height: 2px; transform: translate(-50%, 0);
+					position: absolute; display: block; height: 2px;
 					background-color: #4cc2c0;
 					opacity: 0;
 				}
@@ -1837,14 +1829,14 @@
 
 		p {
 			color: #acacac; font-size: 18px; line-height: 26px; letter-spacing: 0.2px;
-			margin-bottom: 0.75em;
+			margin-bottom: 20px;
 
 			@include respond-to(xs) {
 				font-size: 16px; line-height: 24px;
 			}
 
 			span {
-				color: #2f2c2c;font-size: 18px; line-height: 26px; letter-spacing: 0.2px;
+				color: #2f2c2c; font-family: $font-bold; font-size: 18px; line-height: 26px; letter-spacing: 0.2px;
 
 				@include respond-to(xs) {
 					font-size: 16px; line-height: 24px;
@@ -1873,21 +1865,24 @@
 		}
 
 		ul.comments {
+			margin-bottom: 50px;
+
 			li {
-				padding-left: 100px; position: relative; margin-bottom: 40px;
+				padding: 0 0 20px 100px; margin-bottom: 40px;
+				position: relative;
 				border-bottom: 2px solid #f1f3f3;
 
 				@include respond-to(xs) {padding-left: 0;}
 
 				figure {
-					position: absolute; left: 0; top: 0;
+					position: absolute; left: 0; top: 7px;
 
 					@include respond-to(xs) {
 						position: static; float: left; margin-right: 20px;
 					}
 				}
 				ul.raiting {
-					display: block; margin: 0;
+					display: block; margin: 0 0 10px 0;
 					li {
 						font-size: 16px; line-height: 1.5; letter-spacing: 0.2px;
 						padding: 0; margin: 0;
@@ -1896,7 +1891,7 @@
 				}
 
 				a {
-					display: inline-block; margin-bottom: 15px;
+					display: inline-block; margin-bottom: 20px;
 					transition: all 0.15s linear;
 
 					@include respond-to(xs) {
@@ -1917,7 +1912,7 @@
 
 				p {
 					color: #acacac; font-size: 18px; line-height: 26px; letter-spacing: 0.2px;
-					margin: 0 0 .75em;
+					margin: 0 0 20px 0;
 
 					@include respond-to(xs) {font-size: 16px; line-height: 24px;}
 
@@ -1930,7 +1925,7 @@
 		}
 
 		h4 {
-			color: #acacac; font-size: 16px; line-height: 1.5; letter-spacing: 0.2px;
+			color: #acacac; font-size: 16px; line-height: 1.5; letter-spacing: 0.2px; @extend %fixfont;
 			display: inline-block; margin-left: 40px;
 
 			@include respond-to(xs) {
@@ -1992,7 +1987,7 @@
 		padding-top: 20px;
 
 		.img_new {
-			position: absolute; left: 15%; top: 300px; width: 414px; z-index: 999;
+			position: absolute; left: 184px; top: 282px; width: 414px; z-index: 999;
 
 			@include respond-to(md) {
 				position: relative; top: 0; left: 0;
@@ -2002,7 +1997,7 @@
 		@include respond-to(md) {text-align: center;}
 		h1 {
 			color: #2f2c2c; font-size: 48px; font-family: ArialRoundedMTProCyrBold,sans-serif; font-weight: 900; line-height: 1;
-			position: relative; top: 25px; margin: 0;
+			position: relative; top: 20px; margin: 0;
 
 			@include respond-to(lg) {top: 0;}
 			@include respond-to(md) {text-align: center;}
@@ -2020,7 +2015,8 @@
 			span, b, em, u {z-index: 999; position: relative;}
 		}
 		h2 {
-			padding-left: 465px;
+			padding-left: 500px; position: relative; top: 15px;
+
 			@include respond-to(md) {
 				text-align: center;
 				padding-left: 0;

@@ -104,16 +104,16 @@ gulp.task('browser-sync', () => {
 
 /* [TASK] Компилируем SASS */
 gulp.task('sass', () => {
-  return gulp.src(`${path.src}/assets/sass/**/*.scss`)
+  return gulp.src(`${path.src}/assets/sass/**/*.*`)
   .pipe(sass.sync().on('error', sass.logError))
   .pipe(gulp.dest(`${path.dest}/css`));
 });
 
 /* [TASK] Копирование CSS */
-gulp.task('css', () => {
-  gulp.src(`${path.src}/css/*.css`)
-  .pipe(gulp.dest(`${path.dest}/css`));
-});
+// gulp.task('css', () => {
+//   gulp.src(`${path.src}/css/*.css`)
+//   .pipe(gulp.dest(`${path.dest}/css`));
+// });
 
 /* [TASK] Слияние файлов JSON */
 gulp.task('merge', () => {
@@ -171,7 +171,7 @@ gulp.task('libs', () => {
 });
 
 /* [TASK] Сборка с отслеживанием изменения для удобной разработки */
-gulp.task('watch', ['css', 'libs', 'browser-sync', 'handlebars', 'sass', 'scripts'], () => {
+gulp.task('watch', ['libs', 'browser-sync', 'handlebars', 'sass', 'scripts'], () => {
   gulp.watch(`${path.src}/assets/tpl/**/*.{hbs,handlebars}`, ['handlebars', reload]);
 	// gulp.watch(`${path.dest}/*.html`, reload);
   gulp.watch(`${path.src}/assets/sass/**/*.+(scss|sass)`, ['sass', reload]);
@@ -179,4 +179,4 @@ gulp.task('watch', ['css', 'libs', 'browser-sync', 'handlebars', 'sass', 'script
 });
 
 /* [TASK] Сборка без отслеживания (Сборка в продакшен) */
-gulp.task('default', ['css', 'libs', 'handlebars', 'sass', 'scripts']);
+gulp.task('default', ['libs', 'handlebars', 'sass', 'scripts']);

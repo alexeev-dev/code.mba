@@ -53,19 +53,29 @@ export default function showPopup(name, options) {
  * @param selector - id или класс всплывающего окна в разметке
  * @param classes - хэш с именами классов для стейта visible и селектор
  * для элемента закрывающего попап
+ * @param animation – хэш с именами классов для анимации попапав
  * @param isShadow - отображать ли затенение под всплывающем окном
  */
 
-function initPopup(selector, classes, isShadow) {
+function initPopup(selector, classes, animation, isShadow) {
   const overlayVisible = 'shadow-overlay--visible';
+  let target = $('[data-options$="'+selector+'"]');
   let overlay = $('.shadow-overlay');
-  let {visible, close} = classes;
   let popup = $(selector);
+  let {visible, close} = classes;
+  let {aminationIn, aminationOut} = animation;
+  let animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
 
+  
   function closePopup() {
     overlay.removeClass(overlayVisible);
-    popup.removeClass(visible);
-    overlay.off('click');
+    popup.addClass(aminationOut).one(animationEnd, function() {
+      $(this).removeClass(aminationOut);
+      $(this).removeClass(visible);
+    });
+    overlay.off('click'); // зачем тут .off если .on у тебя нигде не используется? в коде ты исполуешь .click()
+    target.removeClass('hideIt');
+    return false; // вместо твоего .off()
   }
 
   popup.find(`.${close}`).click((event) => {
@@ -75,7 +85,11 @@ function initPopup(selector, classes, isShadow) {
   });
 
   return function showPopup() {
+    target.addClass('hideIt');
     popup.addClass(visible);
+    popup.addClass(aminationIn).one(animationEnd, function() {
+      $(this).removeClass(aminationIn);
+    });
     if (isShadow) {
       overlay.addClass(overlayVisible);
       overlay.click((event) => {
@@ -93,7 +107,7 @@ function initPopup(selector, classes, isShadow) {
  *    и видимого состояния. Там же можно прописать анимации
  * 3) Добавьте к всплывающему окну опции, использую html5 аттрибут
  *    data-options. Синтаксис опций следующий:
- *    data-options="visible:close:shadow",
+ *    data-options="visible:close:aminationIn:aminationOut:shadow",
  *    где visible - класс добавляемый при открытии окна,
  *    close - имя класса элемента, при клике на который вы хотите чтобы
  *    закрывалось окно, shadow - принимает значения true или false,
@@ -111,25 +125,27 @@ registerPopup('generic', function () {
 
   function loadOptions(popupId) {
     let optionsString = $(popupId).data('options');
-    let visible, close, isShadow;
+    let visible, close, aminationIn, aminationOut, isShadow;
 
     if (typeof optionsString !== 'undefined') {
-      [visible, close, isShadow] = optionsString.split(':');
+      [visible, close, aminationIn, aminationOut, isShadow] = optionsString.split(':');
       visible = visible === '' ? 'active' : visible;
       close = close === '' ? 'close' : close;
+      aminationIn = aminationIn === '' ? 'fadeIn' : aminationIn;
+      aminationOut = aminationOut === '' ? 'fadeOut' : aminationOut;
       isShadow = isShadow === '' || 'true';
     } else {
-      [visible, close, isShadow] = ['visible', 'close', true];
+      [visible, close, aminationIn, aminationOut, isShadow] = ['visible', 'close', 'fadeIn', 'fadeOut', true];
     }
 
-    return {visible, close, isShadow};
+    return {visible, close, aminationIn, aminationOut, isShadow};
   }
 
   return function showPopup([popupId]) {
     if (typeof genericPopups[popupId] === 'undefined') {
       let options = loadOptions(popupId);
-      let {visible, close, isShadow} = options;
-      genericPopups[popupId] = initPopup(popupId, {visible, close}, isShadow);
+      let {visible, close, aminationIn, aminationOut, isShadow} = options;
+      genericPopups[popupId] = initPopup(popupId, {visible, close}, {aminationIn, aminationOut}, isShadow);
     }
     genericPopups[popupId]();
   }
@@ -143,20 +159,25 @@ registerPopup('generic', function () {
  */
 
 registerPopup('price', function() {
-  let coursePopups = {};
+  let pricePopups = {};
 
   let classes = {
     visible: 'active',
     close: 'close'
   };
 
+  let animation = {
+    aminationIn: '',
+    aminationOut: ''
+  };
+
   $('.price-popup').each((index, self) => {
     let id = $(self).attr('id');
-    coursePopups[`#${id}`] = initPopup(`#${id}`, classes, false);
+    pricePopups[`#${id}`] = initPopup(`#${id}`, classes, animation, false);
   });
 
-  function showPopup([courseId]) {
-    coursePopups[courseId]();
+  function showPopup([priceId]) {
+    pricePopups[priceId]();
   }
 
   return showPopup;
@@ -181,13 +202,19 @@ registerPopup('svg', function() {
     close: 'svg-modal__close'
   };
 
-  let parentShow = initPopup(popupId, classes, false);
+  let animation = {
+    aminationIn: '',
+    aminationOut: ''
+  };
+
+  let parentShow = initPopup(popupId, classes, animation, false);
 
   let path = [1, 2, 3].map((id, index) => Snap(`#svg-modal-path-${index}`));
 
   $(popupId).find(`.${classes.close}`).click((event) => {
     event.preventDefault();
     overlay.removeClass(overlayVisible);
+    $(popupId).removeClass(classes.visible);
     animateBackground('close');
   });
 

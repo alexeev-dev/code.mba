@@ -1,6 +1,6 @@
 /* base */
 html, body {height: 100%;}
-body {-webkit-font-smoothing: subpixel-antialiased; line-height: 1.5; font-size: 16px;}
+body {line-height: 1.5; font-size: 16px;}
 img {max-width: 100%;}
 textarea {resize: vertical;}
 fieldset {@extend %reset;}
@@ -10,8 +10,9 @@ button, select {-webkit-appearance: none; border: none;}
 
 /* fixes */
 %reset {margin:0; padding:0; border: none; list-style: none;}
-%inline-box {display: inline-block; vertical-align: top; display: -moz-inline-stack; zoom: 1; *display: inline;}
+%inline-box {display: inline-block; display: -moz-inline-stack; zoom: 1; *display: inline;} // раньше тут было vertical-align: top;
 %clearfix {clear: both; *zoom: 1; &:after {content: ''; display: table; line-height: 0; clear: both;}}
+%fixfont {-webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;}
 
 /* mixins */
 @mixin respond-to($media) {
@@ -105,7 +106,7 @@ body {
 	h5 {@include font($font-base, 24px, $dark, 1.2, 0.4px);}
 	h6 {@include font($font-base, 24px, $dark, 1.2, 0.4px);}
 
-	p {@include font($font-base, 14px, $gray, 1.2, 0.4px);margin: 0 0 0.75em;}
+	p {@include font($font-base, 14px, $gray, 1.2, 0.4px); margin: 0 0 0.75em; @extend %fixfont;}
 	a {@include font($font-base, 14px, $dark, 1.2, 0.4px);text-decoration: none;transition: all 0.15s linear; &:hover {text-decoration: none;} &:focus {text-decoration: none;}}
 	b {font-family: $font-zz !important; font-weight: 400;}
 	em, i, b {font-style: normal; font-weight: 400;}
@@ -153,6 +154,7 @@ body {
 	input, textarea { 
 		@extend %reset;
 		@extend %inline-box;
+		@extend %fixfont;
 		@include font($font-base, 16px, $gray, 1.2, 0.4px);
 		padding: 20px 40px; margin-bottom: 30px; width: 100%;
 		background: #f7f9f9; border-color: transparent; border-radius: 50px;
@@ -194,10 +196,17 @@ body {
 		&:after {}
 
 		&:hover {}
-		&:active {}
+		&:active {box-shadow: 0 -4px 7px 0 rgba(0, 0, 0, 0.2) inset;}
 
-		&-primary {}
-		&-secondary {}
+		&.btn-red {background: #f15b26; &:hover {background: #ff7342;}}
+		&.btn-blue {background: #4cc2c0; &:hover {background: #55d5d3;}}
+		&.btn-green {background: #3cb879; &:hover {background: #46d68d;}}
+		&.btn-gray {background: #2f2c2c; &:hover {background: #3f3f3f;}}
+	}
+
+	.divider {
+		@include font($font-base, 15px, $gray, 1.2, 0.4px); text-align: center; @extend %fixfont;
+		display: block; padding: 15px 0; 
 	}
 }
 ::selection {
