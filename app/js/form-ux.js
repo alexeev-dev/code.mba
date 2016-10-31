@@ -1,8 +1,8 @@
 export default function initFormUx() {
   let messages = {
-    name: 'Пожалуйста укажите своё имя!',
-    phone: 'Пожалуйста укажите свой номер телефона!',
-    email: 'Пожалуйста укажите Ваш E-mail!',
+    name: 'Не верно указано имя!',
+    phone: 'Не верно указан номер телефона!',
+    email: 'Не верно указан E-mail!',
     other: 'Пожалуйста, заполните это поле!'
   };
 
@@ -13,7 +13,7 @@ export default function initFormUx() {
 
       if (typeof field.data('error') === 'undefined') {
         field.data('error', true);
-        message = $('<span>');
+        message = $('<span class="err">');
         if (typeof messages[name] !== 'undefined') {
           message.text(messages[name]);
         } else {

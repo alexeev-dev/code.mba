@@ -394,10 +394,15 @@
 				@include respond-to(sm) {width: 100%;}
 			}
 
+			div.no-padding {transition: all .3s;}
+
 			&.active {
 				input {
 					box-shadow: 25px 20px 20px -15px rgba(0,0,0,0.3);
 				}
+
+				div.col-lg-8 {width:40%;}
+				div.col-lg-4 {width:60%;}
 			}
 		}
 
