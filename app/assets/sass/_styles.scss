@@ -270,8 +270,6 @@
 	&-description {
 		padding: 0;
 		background: #f7f9f9;
-
-		@include respond-to(xs) {margin-top: 80px;}
 	}
 
 	&-lessons {
@@ -637,6 +635,13 @@
 						color: #4cc2c0;
 					}
 				}
+			}
+		}
+
+		.flex-direction-nav {
+			li {
+				padding-top: 210px;
+				a {position: relative;}
 			}
 		}
 	}
