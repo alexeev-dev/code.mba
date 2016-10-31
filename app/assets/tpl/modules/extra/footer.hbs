@@ -7,7 +7,10 @@
 				<div class="subscribe-item">
 					<h4>Подпишись <small>на</small> <b>CODE<small>.mba</small></b></h4>
 					<form method="post" action="import.php">
-						<input class="email input-standard-grey input-white" name="email" required="required" placeholder="Введите ваш Email" type="email">
+						<div class="floating-placeholder">
+							<input id="fp-email_4" class="email input-standard-grey input-white" name="email" required="required" type="text">
+							<label for="fp-email_4">Введите ваш Email</label>
+						</div>
 						<button>подписаться
 							<span class="semicircle--right"></span>
 						</button>
@@ -187,11 +190,11 @@
 						<li><a href="#">Конфиденциальность</a></li>
 					</ul>
 
-					<a class="back-to-top" href="#">
+					{{!-- <a class="back-to-top" href="#">
 						<svg class="back-to-top">
 							<use xlink:href="#to-top"></use>
 						</svg>
-					</a>
+					</a> --}}
 				</div>
 			</div>
 		</div>

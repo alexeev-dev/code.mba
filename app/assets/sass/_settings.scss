@@ -182,6 +182,9 @@ body {
 	input:-ms-input-placeholder {
 		color: #acacac;
 	}
+	label {
+		@include font($font-base, 16px, $gray, 1.2, 0.4px);
+	}
 
 	/* buttons */
 	.btn {
@@ -234,6 +237,31 @@ body {
 }
 .xl-hide {
 	@media all and (min-width: 1200px) {display: none;}
+}
+.br-xs,
+.br-sm,
+.br-md,
+.br-lg,
+.br-xl {
+ display: none;
+}
+.br-xs {
+ @include respond-to(xs) {display: block;}
+}
+.br-sm {
+ @media all and (min-width: 544px) and (max-width: 767px) {display: block;}
+}
+.br-md {
+ @media all and (min-width: 768px) and (max-width: 991px) {display: block;}
+}
+.br-lg {
+ @media all and (min-width: 992px) and (max-width: 1199px) {display: block;}
+}
+.br-xl {
+ @media all and (min-width: 1200px) {display: block;}
+}
+.of-hidden {
+	overflow: hidden;
 }
 
 
