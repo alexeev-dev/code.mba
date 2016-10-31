@@ -190,16 +190,18 @@ body {
 	.btn {
 		@extend %reset;
 		@extend %inline-box;
-		@include font($font-base, 15px, $white, 1.2, 0.4px); text-transform: uppercase; text-align: center; line-height: 1; text-decoration: none;
+		@include font($font-base, 15px, $white, 1.2, 0.4px); text-transform: uppercase; text-align: center; line-height: 1; text-decoration: none; outline: none;
 		position: relative;padding: 25px 50px;
 		background: $red; border-radius: 50px;
 		transition: all .3s ease; cursor: pointer;
 
+
 		&:before {}
 		&:after {}
 
-		&:hover {}
-		&:active {box-shadow: 0 -4px 7px 0 rgba(0, 0, 0, 0.2) inset;}
+		&:hover {outline: none;}
+		&:active {box-shadow: 0 -4px 7px 0 rgba(0, 0, 0, 0.2) inset; outline: none;}
+		&:focus {outline: none;}
 
 		&.btn-red {background: #f15b26; &:hover {background: #ff7342;}}
 		&.btn-blue {background: #4cc2c0; &:hover {background: #55d5d3;}}
@@ -212,6 +214,7 @@ body {
 		display: block; padding: 15px 0; 
 	}
 }
+.btn:focus, .btn.focus, .btn:active:focus, .btn:active.focus, .btn.active:focus, .btn.active.focus {outline: none !important;}
 ::selection {
 	color: $white; text-shadow: none;
 	background: $red;

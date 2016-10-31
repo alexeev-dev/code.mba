@@ -922,6 +922,8 @@
 			position: absolute; width: 119px; height: 112px; top: -100px; left: -140px;
 			background-image: url(../img/avatar-bg.png);
 
+			img {border-radius: 100%;}
+
 			@include respond-to(sm) {
 				left: -105px; top: -27px;
 				background: none;
@@ -2008,7 +2010,7 @@
 
 				&:focus {
 					color: #4cc2c0;
-					box-shadow: 17px 0 60px #d3dcdc;
+					// box-shadow: 17px 0 60px #d3dcdc;
 					outline: none;
 				}
 			}
@@ -2021,7 +2023,7 @@
 
 				&:focus {
 					color: #4cc2c0;
-					box-shadow: 17px 0 60px #d3dcdc;
+					// box-shadow: 17px 0 60px #d3dcdc;
 					outline: none;
 				}
 			}
@@ -2154,8 +2156,8 @@
 		transform-origin: 0 0; transition: transform 160ms, color 200ms; transform: scale(1,1) rotateY(0);
 	}
 
+	input:valid,
+	textarea:valid {transform: translate(0, 10px);}
 	input:valid~label,
-	textarea:valid~label {
-		transform: scale(0.55,0.55) rotateY(0) translate(0, -20px);
-	}
+	textarea:valid~label {transform: scale(0.8) rotateY(0) translate(0, -30px); opacity: 0.6;}
 }

@@ -123,7 +123,7 @@
 									</div>
 								</div>
 							</div>
-							<button class="btn">Записаться<span class="semicircle"></span></button>
+							<button class="btn btn-green">Записаться<span class="semicircle"></span></button>
 						</form>
 					</div>
 				</div>
@@ -539,13 +539,32 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-4 col-xs-12">
-						{{>extra/title it_education.body.html.testimonials-1}}
+						<hgroup>
+							<h2>Мнения <br>Экспертов</h2>
+							<div class="heading-line">
+								<span class="short-line"></span>
+								<span class="long-line"></span>
+							</div>
+							<h3>Каждую неделю новый отзыв от авторитетных спецов</h3>
+							
+						</hgroup>
 					</div>
 					<div class="col-lg-7 offset-lg-1 col-xs-12">
 						{{#carousel testimonials.base i="1" class="js-carousel"}}
-							{{>testimonial face_top="true" class="testimonials creative"}}
+							<blockquote class="testimonials creative">
+								<figure>
+									<img src="img/avatar.png" alt="Александр Зенин">
+								</figure>
+							<p>Это действительно редкий случай, когда информация преподносится максимально доступно и интересно. Скажу как человек, который 8 лет работает в <b>IT</b> - Молодцы! Круто!</p>
+							<footer>
+								<cite>
+									<a target="_blank" href="http://webgroup.pro">Александр Зенин</a>
+									<span>Директор Webgroup.pro</span>
+								</cite>
+							</footer>
+						</blockquote>
 						{{/carousel}}
-						<ul class="carousel-dots">
+						{{!-- <ul class="carousel-dots">
 						</ul>
 						<ul class="carousel-arrows">
 							<li class="btn-prev">
@@ -554,7 +573,7 @@
 							<li class="btn-next">
 								<svg></svg>
 							</li>
-						</ul>
+						</ul> --}}
 					</div>
 				</div>
 			</div>
