@@ -1521,11 +1521,11 @@
 					display: inline-block; width: 20px; height: 20px; position: absolute; top: 0; left: 0;
 					border-radius: 100%; border-color: transparent;
 				}
-
+				
 				&:nth-child(1) {&:before {background: #4cc2c0;}}
-				&:nth-child(2) {&:before {background: #3cb878;}}
+				&:nth-child(2) {&:before {background: #f15b26;}}
 				&:nth-child(3) {&:before {background: #fcb03b;}}
-				&:nth-child(4) {&:before {background: #f15b26;}}
+				&:nth-child(4) {&:before {background: #3cb878;}}
 
 				b {
 					color: #2f2c2c;

@@ -8,12 +8,12 @@ let DonutChart = {
     ],
     datasets: [
       {
-        data: [23, 42, 17, 28],
+        data: [40, 31, 20, 9],
         backgroundColor: [
             "#4cc2c0",
-            "#3cb878",
+            "#f15b26",
             "#fcb03b",
-            "#f15b26"
+            "#3cb878"
         ]
       }
     ]
