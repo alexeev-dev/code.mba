@@ -21,7 +21,7 @@ export default function initFormUx() {
         }
         field.after(message);
       }
-      
+
       field.addClass('err').keypress((event) => {
         field.removeClass('err').off('keypress');
       });
@@ -30,5 +30,8 @@ export default function initFormUx() {
 
   $(window).on('form-sent', (event, form, data) => {
     form.addClass('sent').find('.animate').addClass('active');
+    form.find('input, textarea').each((index, item) => {
+      $(item).val('');
+    });
   });
 }
