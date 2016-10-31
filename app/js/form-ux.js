@@ -9,13 +9,20 @@ export default function initFormUx() {
   $(window).on('validation-failed', (event, form, failed) => {
     failed.forEach((item, index) => {
       let {name, field} = item;
-      let message = $('<span>');
-      if (typeof messages[name] !== 'undefined') {
-        message.text(messages[name]);
-      } else {
-        message.text(messages[other]);
+      let message;
+
+      if (typeof field.data('error') === 'undefined') {
+        field.data('error', true);
+        message = $('<span>');
+        if (typeof messages[name] !== 'undefined') {
+          message.text(messages[name]);
+        } else {
+          message.text(messages[other]);
+        }
+        field.after(message);
       }
-      field.addClass('err').after(message).keypress((event) => {
+
+      field.addClass('err').keypress((event) => {
         field.removeClass('err').off('keypress');
       });
     });
@@ -23,5 +30,8 @@ export default function initFormUx() {
 
   $(window).on('form-sent', (event, form, data) => {
     form.addClass('sent').find('.animate').addClass('active');
+    form.find('input, textarea').each((index, item) => {
+      $(item).val('');
+    });
   });
 }

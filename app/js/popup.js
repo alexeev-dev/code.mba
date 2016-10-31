@@ -82,6 +82,7 @@ function initPopup(selector, classes, animation, isShadow) {
     event.preventDefault();
     event.stopPropagation();
     closePopup();
+    $('body').removeClass('of-hidden');
   });
 
   return function showPopup() {
@@ -232,6 +233,7 @@ registerPopup('svg', function() {
   }
 
   return function showPopup(content) {
+    $('body').addClass('of-hidden');
     loadContent(content);
     overlay.addClass(overlayVisible);
     parentShow();
