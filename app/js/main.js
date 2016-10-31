@@ -7,7 +7,8 @@ import SvgPopups from './svg-popups';
 import {ReviewsCarousel} from './reviews-carousel';
 import {Counter} from './counter';
 import showPopup from './popup';
-import {Form} from './form';
+import initAllForms from './form';
+import initFormUx from './form-ux';
 
 let MainController = {
   /**
@@ -45,12 +46,13 @@ let MainController = {
 
   init() {
     //MobileMenu.init();
-    Form.init();
+    initAllForms();
     this.movePopups();
     Counter.init();
     DonutChart.init();
     AuthorSlider.init();
     ReviewsCarousel.init();
+    initFormUx();
 
     for (let module in this.modules) {
       this.modules[module]();
@@ -144,17 +146,17 @@ let MainController = {
     let product = $(event.target).attr("data-id");
     this.el.signInPopup.find("input[name=source]").val(`sign-in-${product}`);
   },
-  
+
   // initNolbAnimation() {
-    
+
   //   function cssPrefix(propertie) {
 
   //     let cssPrefixString = {};
-      
+
   //     if (cssPrefixString[propertie] || cssPrefixString[propertie] === '') return cssPrefixString[propertie] + propertie;
   //     let e = document.createElement('div');
   //     let prefixes = ['', 'Moz', 'Webkit', 'O', 'ms', 'Khtml']; // Various supports...
-      
+
   //     for (let i in prefixes) {
   //       if (typeof e.style[prefixes[i] + propertie] !== 'undefined') {
   //           cssPrefixString[propertie] = prefixes[i];
@@ -183,7 +185,7 @@ let MainController = {
 
   //   let rotateY = 0.17
   //   let rotateYone = -rotateY;
-    
+
 
   //   let cssTransform = cssPrefix('Transform'); // "MozTransform" or "WebkitTransform"
   //   if (cssTransform) {
