@@ -1,73 +1,96 @@
-let Form = (function($) {
+/**
+ * Регулярные выражения для валидации форм
+ */
 
-  let messages = {
-    name: "Пожалуйста, введите Ваше имя!",
-    phone: "Пожалуйста, введите Ваш номер телефона!",
-    email: "Пожалуйста, введите Ваш E-mail"
-  }
+let validationRegEx = {
+  name: /^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/,
+  phone: /^( +)?((\+?7|8) ?)?((\(\d{3}\))|(\d{3}))?( )?(\d{3}[\- ]?\d{2}[\- ]?\d{2})( +)?$/,
+  email: /^(\S+)@([a-z0-9-]+)(\.)([a-z]{2,4})(\.?)([a-z]{0,4})+$/
+}
 
-  /* Считываем данные из формы */
-  function readInput(form) {
-    let data = [];
+/**
+ * Валидация значения поля
+ * @param {String} value - значение поля ввода
+ * @param {RegExp} rgx - регулярное выражения для валидации
+ */
 
-    $(form).find("input, textarea").each((index, field) => {
-      let input = $(field);
-      let value = input.val();
-      let type = input.attr("name");
-      let isRequired = input.attr("required") === "required";
-      data.push({value, type, isRequired});
-    });
+function validateField(value, rgx) {
+  return rgx.test(value);
+}
 
-    return data;
-  }
+/**
+ * Производит валидацию формы
+ * @param {Object} fields - jQuery коллекция инпутов
+ * @return {Object} result - информация о результатах валидации:
+ * result.data - объект с извлечёнными данными из формы
+ * result.isValid - (true|false) - успешно ли прошла валидация
+ * result.failed - массив из полей, которые не прошли валидацию
+ */
 
-  /* Показываем сообщение об ошибке */
-  function showErrorMessage(type) {
-    alert(messages[type]);
-  }
+function validateInput(fields) {
+  let result = {
+    data: {},
+    isValid: true
+  };
 
-  /* Валидация введённых данных */
-  function validateInput(input) {
-    let data = {};
+  fields.each((index, input) => {
+    let field = $(input);
+    let name = field.attr('name');
+    let isRequired = field.hasClass('js-required');
 
-    input.forEach((field) => {
-      if (field.isRequired && field.value.length === 0) {
-        showErrorMessage(field.type);
-        return false;
+    if (isRequired && typeof validationRegEx[name] !== 'undefined') {
+      if (validateField(field.val(), validationRegEx[name]) === false) {
+        result.failed = result.failed || [];
+        result.isValid = false;
+        result.failed.push({name, field});
+        return true; /* Переходим к следующему полю */
       }
-      data[field.type] = field.value;
-    });
-
-    return data;
-  }
-
-  /* Отправляем заявку на сервер */
-  function submitForm(event) {
-    let input = readInput(event.target);
-    let result = validateInput(input);
-
-    if (result === false) {
-      return false;
     }
 
-    $.post("send-request.php", result, (data) => {
-      $(window).trigger("form-sent", data);
-    }).fail(() => {
-      $(window).trigger("sent-fail");
-    });
+    result.data[name] = field.val();
+  });
 
+  return result;
+
+}
+
+/**
+ * Отправляет данные формы на сервер
+ * @param {Object} data - данные из формы
+ */
+
+function submitForm(form, data) {
+  $.post('send-request.php', data, (result) => {
+    $(window).trigger('form-sent', {form, data});
+  });
+}
+
+/**
+ * Инициализирует форму
+ * @param {Object} form - DOM-элемент инициализируемой формы
+ */
+
+function initForm(form) {
+  let self = $(form);
+  let fields = self.find('input, textarea');
+
+  self.on('submit', (event) => {
+    let result = validateInput(fields);
+    event.preventDefault();
+    if (result.isValid === true) {
+      submitForm(self, result.data);
+    } else {
+      $(window).trigger('validation-failed', [self, result.failed]);
+    }
     return false;
-  }
+  });
+}
 
-  return {
-    init() {
-      let forms = $("form");
-      forms.each((index, form) => {
-        $(form).submit(submitForm);
-      });
-    }
-  }
+/**
+ * Экспортируем функцию инициализации модуля.
+ * Просто вывозите её - и все формы будут готовы к своей работе
+ */
 
-})(jQuery);
-
-export {Form};
+export default function initAllForms() {
+  $("form").each((index, form) => initForm(form));
+}
