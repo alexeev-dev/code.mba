@@ -8,7 +8,7 @@ import {ReviewsCarousel} from './reviews-carousel';
 import {Counter} from './counter';
 import showPopup from './popup';
 import initAllForms from './form';
-import doFormTests from './test-form';
+import initFormUx from './form-ux';
 
 let MainController = {
   /**
@@ -52,7 +52,7 @@ let MainController = {
     DonutChart.init();
     AuthorSlider.init();
     ReviewsCarousel.init();
-    doFormTests();
+    initFormUx();
 
     for (let module in this.modules) {
       this.modules[module]();
