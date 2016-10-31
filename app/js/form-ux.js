@@ -9,13 +9,20 @@ export default function initFormUx() {
   $(window).on('validation-failed', (event, form, failed) => {
     failed.forEach((item, index) => {
       let {name, field} = item;
-      let message = $('<span>');
-      if (typeof messages[name] !== 'undefined') {
-        message.text(messages[name]);
-      } else {
-        message.text(messages[other]);
+      let message;
+
+      if (typeof field.data('error') === 'undefined') {
+        field.data('error', true);
+        message = $('<span>');
+        if (typeof messages[name] !== 'undefined') {
+          message.text(messages[name]);
+        } else {
+          message.text(messages[other]);
+        }
+        field.after(message);
       }
-      field.addClass('err').after(message).keypress((event) => {
+      
+      field.addClass('err').keypress((event) => {
         field.removeClass('err').off('keypress');
       });
     });
