@@ -26,8 +26,8 @@
 
     $m = new EMail(implode("\r\n", $text)."\r\n");
     $m -> setSubject("Заявка с сайта");
-    $m -> from("no-reply@code-mba.ru");
-    $m -> sendTo("vladimir-shalaev22@yandex.ru");
+    $m -> from("alexeev@code.mba");
+    $m -> sendTo("html5css3.pro@gmail.com");
   }
 
   handle_request();
