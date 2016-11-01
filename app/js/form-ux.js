@@ -28,10 +28,10 @@ export default function initFormUx() {
     });
   });
 
-  $(window).on('form-sent', (event, form, data) => {
-    form.addClass('sent').find('.animate').addClass('active');
-    form.find('input, textarea').each((index, item) => {
-      $(item).val('');
-    });
-  });
+  // $(window).on('form-sent', (event, form, data) => {
+  //   form.addClass('sent').find('.animate').addClass('active');
+  //   form.find('input, textarea').each((index, item) => {
+  //     $(item).val('');
+  //   });
+  // });
 }

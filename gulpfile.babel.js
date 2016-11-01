@@ -116,15 +116,15 @@ gulp.task('sass', () => {
 // });
 
 /* [TASK] Слияние файлов JSON */
-// gulp.task('merge', () => {
-// 	gulp.src([
-//     `${path.src}/assets/data/**/*.json`,
-// 		!path.src + 'assets/data/all.json'
-// 	])
-// 	.pipe(plumber())
-// 	.pipe(mergeJson('all.json'))
-// 	.pipe(gulp.dest(`${path.src}/assets/data`));
-// });
+gulp.task('merge', () => {
+	// gulp.src([
+ //    `${path.src}/assets/data/**/*.json`,
+	// 	!path.src + 'assets/data/all.json'
+	// ])
+	// .pipe(plumber())
+	// .pipe(mergeJson('all.json'))
+	// .pipe(gulp.dest(`${path.src}/assets/data`));
+});
 
 /* [TASK] Обработка шаблонов Handlebars */
 gulp.task('handlebars', ['merge'], () => {

@@ -206,4 +206,26 @@ a.btn {transform: scale(1); &.hideIt {transform: scale(0);}}
 }
 
 
+form {
+	transition: all .3s;
 
+	&.sended {
+		animation:sendMe 600ms linear;
+	}
+}
+
+
+@keyframes sendMe {
+	0% {transform: scale(1);}
+	40% {transform: scale(0);}
+	50% {
+		* {display: none !important;}
+			width: 100px;
+			height: 100px;
+			background: #3cb879 url('../img/ok.png') center center no-repeat;
+			background-size: 50%;
+			margin: 0 auto;
+			border-radius: 100%;
+	}
+	100% {transform: scale(1);}
+}
