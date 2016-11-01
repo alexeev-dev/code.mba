@@ -79,6 +79,7 @@ function initForm(form) {
     event.preventDefault();
     if (result.isValid === true) {
       submitForm(self, result.data);
+      self.addClass('sended');
     } else {
       $(window).trigger('validation-failed', [self, result.failed]);
     }

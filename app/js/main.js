@@ -229,10 +229,10 @@ let MainController = {
 
   animateOrder() {
     $('.order-education input').focus(function() {
-      $('.order-education form').addClass('active');
+      $('.order-education').addClass('active');
     });
     $('.order-education input').blur(function() {
-      $('.order-education form').removeClass('active');
+      $('.order-education').removeClass('active');
     });
   }
 

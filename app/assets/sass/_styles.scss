@@ -393,15 +393,6 @@
 			}
 
 			div.no-padding {transition: all .3s;}
-
-			&.active {
-				input {
-					box-shadow: 25px 20px 20px -15px rgba(0,0,0,0.3);
-				}
-
-				div.col-lg-8 {width:40%;}
-				div.col-lg-4 {width:60%;}
-			}
 		}
 
 		.decor {
@@ -418,6 +409,15 @@
 				}
 			}
 		}
+
+		// &.active {
+		// 	input {
+		// 		box-shadow: 25px 20px 20px -15px rgba(0,0,0,0.3);
+		// 	}
+
+		// 	div.col-lg-8 {width:40%;}
+		// 	div.col-lg-4 {width:60%;}
+		// }
 	}
 	&-coaching {
 		padding: 120px 0;
@@ -652,8 +652,5 @@
 	}
 }
 
-.flex-direction-nav li a {
-	background: url('../svg/arrow-1.svg') 0 0 no-repeat;
-}
-
-
+.cd-testimonials-all.is-visible {z-index: 999999 !important;}
+.testimonials-slider.testi-2 .cd-testimonials-wrapper {height: 580px;}
