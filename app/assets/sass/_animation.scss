@@ -244,44 +244,44 @@ form {
 }
 
 
-.animatedOffer{
-	&.offer-learn_html {
-		.eye_catcher-html {
-			h1 {
-				span {
-					opacity: 1; top: 0; transition: all 0.5s linear; transition-delay: 0;
-				}
-				b {
-					opacity: 1; transition: all .5s linear; transition-delay: .5s;
-				}
-				em {
-					opacity: 1; transition: all .5s linear; transition-delay: 1s;
-				}
-			}
-			h2 {
-				em {opacity: 1; transition: all .5s linear; transition-delay: 2s;}
-				span {opacity: 1; transition: all .5s linear; transition-delay: 2.5s;}
-				strong {opacity: 1; transition: all .5s linear; transition-delay: 3s;}
-			}
-			img {
-				transform: scale(1); transition: all .5s linear; transition-delay: 1.5s;
-			}
-		}
+// .animatedOffer{
+// 	&.offer-learn_html {
+// 		.eye_catcher-html {
+// 			h1 {
+// 				span {
+// 					opacity: 1; top: 0; transition: all 0.5s linear; transition-delay: 0;
+// 				}
+// 				b {
+// 					opacity: 1; transition: all .5s linear; transition-delay: .5s;
+// 				}
+// 				em {
+// 					opacity: 1; transition: all .5s linear; transition-delay: 1s;
+// 				}
+// 			}
+// 			h2 {
+// 				em {opacity: 1; transition: all .5s linear; transition-delay: 2s;}
+// 				span {opacity: 1; transition: all .5s linear; transition-delay: 2.5s;}
+// 				strong {opacity: 1; transition: all .5s linear; transition-delay: 3s;}
+// 			}
+// 			img {
+// 				transform: scale(1); transition: all .5s linear; transition-delay: 1.5s;
+// 			}
+// 		}
 
-		.decor {
-			.lead {
-				animation: scaleInOfferDecor 1s 3.5s linear 1; transform: scale(1); transition: transform 0s; transition-delay: 3.5s;
-			}
+// 		.decor {
+// 			.lead {
+// 				animation: scaleInOfferDecor 1s 3.5s linear 1; transform: scale(1); transition: transform 0s; transition-delay: 3.5s;
+// 			}
 
-		}
-	}
-}
+// 		}
+// 	}
+// }
 
-@keyframes scaleInOfferDecor {
-	0% {transform: scale(0);}
-	40% {transform: scale(1.1);}
-	70% {transform: scale(0.9);}
-	85% {transform: scale(1.05);}
-	93% {transform: scale(0.95);}
-	100% {transform: scale(1);}
-}
+// @keyframes scaleInOfferDecor {
+// 	0% {transform: scale(0);}
+// 	40% {transform: scale(1.1);}
+// 	70% {transform: scale(0.9);}
+// 	85% {transform: scale(1.05);}
+// 	93% {transform: scale(0.95);}
+// 	100% {transform: scale(1);}
+// }

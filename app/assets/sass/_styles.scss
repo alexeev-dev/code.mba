@@ -150,7 +150,7 @@
 		}
 
 		.decor {
-			transform: scale(0); position: absolute; right: 0; top: 0;
+			position: absolute; right: 0; top: 0;
 
 			@include respond-to(md) {
 				position: absolute; padding: 0 15px; left: 0; top: -55px; width: 690px;
