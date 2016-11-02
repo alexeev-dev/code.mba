@@ -151,6 +151,9 @@ body {
 	}
 
 	/* forms */
+	form {
+		position: relative;
+	}
 	input, textarea { 
 		@extend %reset;
 		@extend %inline-box;
@@ -194,6 +197,8 @@ body {
 		position: relative;padding: 25px 50px;
 		background: $red; border-radius: 50px;
 		transition: all .3s ease; cursor: pointer;
+
+		@include respond-to(sm) {width: 100%;}
 
 
 		&:before {}
