@@ -225,9 +225,13 @@ form {
 	}
 
 	.sale-btn {
-		transform-origin: 0 50%; transform: scale(0) translateX(-50%) !important; visibility: hidden; height: 0; width: 0;position: absolute !important; top: auto; bottom: 0; left: 50%; display: block !important;
+		transform-origin: 0 0; transform: scale(0) translate(-50%, -50%) !important; visibility: hidden; position: absolute !important; top: 50%; left: 50%; display: block !important;
 		transition: transform .6s linear 5s, background .6s linear 0s;
 		border: none !important;
+
+		.price-item-2 & {
+			transform: scale(0) translate(-50%, 50%) !important;
+		}
 	}
 
 	&.sended {
@@ -243,19 +247,42 @@ form {
 		.sent-letter {
 			transform: scale(1) translate(-50%,-50%); opacity: 1; display: block; visibility: visible;
 			img {
-				opacity: 0;transition-delay: 5s;
+				opacity: 0;transition-delay: 4.2s;
+			}
+
+			.order-education & {
+				transform: scale(1) translate(-250%, -50%); animation: movingSentLetterLeft 4s .6s linear 1;
+			}
+
+			.price-item-2 & {
+				transform: scale(1) translate(-50%, -100%); animation: movingSentLetterTop 4s .6s linear 1;
 			}
 		}
 
 		.sale-btn {
-			transform: scale(1) translateX(0) !important; visibility: visible; height: auto; width: auto;
-			transition: transform .3s linear 5s, background .3s linear 0s;
-			&+.sent-letter {
-				top: 40%;
+			transform: scale(1) translate(-50%, -50%) !important; visibility: visible;
+			transition: transform .4s ease-out 4.6s, background .3s linear 0s;
+
+			.price-item-2 & {
+				transform: scale(1) translate(-50%, 50%) !important;
 			}
 		}
 	}
 }
+
+@keyframes movingSentLetterLeft {
+	0% {transform: scale(0) translate(-50%, -50%);}
+	10% {transform: scale(1) translate(-50%, -50%);}
+	90% {transform: scale(1) translate(-50%, -50%);}
+	100% {transform: scale(1) translate(-250%, -50%);}
+}
+@keyframes movingSentLetterTop {
+	0% {transform: scale(0) translate(-50%, -50%);}
+	10% {transform: scale(1) translate(-50%, -50%);}
+	90% {transform: scale(1) translate(-50%, -50%);}
+	100% {transform: scale(1) translate(-50%, -100%);}
+}
+
 
 .offer-learn_html {
 
@@ -277,13 +304,16 @@ form {
 			strong {opacity: 0;}
 		}
 		img {
-			transform: scale(0);
+			opacity: 0;
 		}
 	}
 
 	.decor {
 		.lead {
-			transform: scale(0);
+			&:first-child,
+			&:last-child {
+				transform: scale(0); transform-origin: 50% 50%;
+			}
 		}
 	}
 
@@ -301,33 +331,24 @@ form {
 				}
 			}
 			h2 {
-				em {opacity: 1; transition: all .5s linear 3s;}
-				span {opacity: 1; transition: all .5s linear 3.5s;}
-				strong {opacity: 1; transition: all .5s linear 4s;}
+				em {opacity: 1; transition: all .5s linear 3.2s;}
+				span {opacity: 1; transition: all .5s linear 3.4s;}
+				strong {opacity: 1; transition: all .5s linear 3.6s;}
 			}
 			img {
-				transform: scale(1); transition: all .5s linear 2.5s;
+				opacity: 1; transition: all .5s linear 3s;
 			}
 		}
 
 		.decor {
 			.lead {
 				&:first-child {
-					animation: scaleInOfferDecor 1s 4.5s linear 1; transform: scale(1); transition: transform 0s linear 4.5s;
+					transform: scale(1); transition: transform .5s linear 4.2s;
 				}
 				&:last-child {
-					animation: scaleInOfferDecor 1s 5.5s linear 1; transform: scale(1); transition: transform 0s linear 5.5s;
+					transform: scale(1); transition: transform .5s linear 4.9s;
 				}
 			}
 		}
 	}
-}
-
-@keyframes scaleInOfferDecor {
-	0% {transform: scale(0);}
-	40% {transform: scale(1.1);}
-	70% {transform: scale(0.9);}
-	85% {transform: scale(1.05);}
-	93% {transform: scale(0.95);}
-	100% {transform: scale(1);}
 }

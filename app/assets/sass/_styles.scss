@@ -166,16 +166,18 @@
 
 			.lead {
 				color: $white; @extend %fixfont;
-				margin-bottom: 20px;
+				margin-bottom: 20px; padding-top: 11px;
 				
 				i {
 					font-size: 50px; color: #252222;
+					position: absolute; left: 0; top: 0;
 
 					@include respond-to(md) {float: left;}
 					@include respond-to(sm) {font-size: 44px;}
 				}
 				b {
 					font-size: 36px; color: $white; font-weight: 100;
+					padding-left: 54px;
 
 					@include respond-to(md) {float: left; padding-left: 5px;}
 				}
@@ -188,7 +190,7 @@
 				}
 				
 				& + .lead {
-					margin-bottom: 0;
+					margin-bottom: 0; padding-top: 21px;
 
 					@include respond-to(md) {top: 0; right: 0;}
 
@@ -198,8 +200,6 @@
 						@include respond-to(sm) {font-size: 44px;}
 					}
 					strong {
-						position: relative; top: -60px;
-
 						@include respond-to(md) {top: 6px;}
 					}
 				}
@@ -449,15 +449,29 @@
 
 		.decor {
 			img {
-				position: absolute;
+				position: absolute; opacity: 0;
 				&:nth-child(1) {
-					top: -10px; left: 50%; transform: translate(-50%, 0);
+					top: -100px; left: 50%; transform: translate(-50%, 0);
 				}
 				&:nth-child(2), &:nth-child(3) {
-					bottom: 0; left: 50%; transform: translate(-50%, 0);
+					bottom: -100%; left: 50%; transform: translate(-50%, 0);
 				}
 				&:nth-child(3) {
 					@include respond-to(md) {display: none;}
+				}
+			}
+		}
+
+		&.decorAnimated {
+			img {
+				&:nth-child(1) {
+					top: -10px; opacity: 1; transition: all .4s ease-out 0s;
+				}
+				&:nth-child(2) {
+					bottom: 0;  opacity: 1; transition: all .5s ease-out 0.3s;
+				}
+				&:nth-child(3) {
+					bottom: 0;  opacity: 1; transition: all .6s ease-out 0.45s;
 				}
 			}
 		}
@@ -657,6 +671,7 @@
 		}
 	}
 	&.testi-2 {
+		padding: 120px 0 40px;
 		background: url('../img/bg-boxed-dark.jpg') center center repeat;
 
 		.flex-viewport {
@@ -672,7 +687,14 @@
 			}
 
 			.cd-see-all {
+				color: #4cc2c0;
 				bottom: -80px;
+				padding: 0 0 5px;
+				background: none; border-bottom: dotted 2px #4cc2c0; border-radius: 0;
+
+				&:hover {
+					border-color: transparent;
+				}
 			}
 		}
 		
@@ -694,9 +716,41 @@
 		}
 
 		.flex-direction-nav {
+			position: relative;
 			li {
-				padding-top: 210px;
-				a {position: relative;}
+				height: 64px; width: 64px; top: -85px;
+
+				&:first-child {
+					left: 50px;
+				}
+				&:last-child {
+					right: 50px;
+					a {
+						top: -24px;
+					}
+				}
+				a {
+					position: relative; overflow: visible;
+
+					&:before,
+					&:after {display: none;}
+
+					&:hover {
+						svg {
+							path {
+								fill: #4cc2c0;
+							}
+						}
+					}
+
+					svg {
+						overflow: visible; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+						path {
+							fill: #4a4240; stroke: inherit;
+							transition: all .2s ease-in;
+						}
+					}
+				}
 			}
 		}
 	}
