@@ -4,6 +4,9 @@ jQuery(document).ready(function($){
 		selector: ".cd-testimonials > li",
 		animation: "slide",
 		controlNav: false,
+		// directionNav: true,
+		// prevText: "<img src='svg/arrow-1.svg'>",
+		// nextText: "<img src='svg/arrow-2.svg'>",
 		slideshow: false,
 		smoothHeight: true,
 		start: function(){

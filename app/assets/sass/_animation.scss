@@ -216,12 +216,18 @@ form {
 	.sent-letter {
 		transition: transform .3s linear; transition-delay: .6s;
 		width: 100px; height: 100px; display: block;position: absolute; left: 50%; top: 50%; transform-origin: 0% 0%; transform: scale(0) translate(-50%,-50%);
-		background: #3cb879 url('../img/ok.png') center center no-repeat; background-size: 50%; border-radius: 100%; overflow: hidden; opacity: 1;
+		background: #3cb879 url('../img/ok.png') center center no-repeat; background-size: 50%; border-radius: 50%; overflow: hidden; opacity: 1;
 
 		img {
 			width: 150px; max-width: 150px; position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
-			 transition: opacity .3s linear;
+			transition: opacity .3s linear;
 		}
+	}
+
+	.sale-btn {
+		transform-origin: 0 50%; transform: scale(0) translateX(-50%) !important; visibility: hidden; height: 0; width: 0;position: absolute !important; top: auto; bottom: 0; left: 50%; display: block !important;
+		transition: transform .6s linear 5s, background .6s linear 0s;
+		border: none !important;
 	}
 
 	&.sended {
@@ -240,47 +246,88 @@ form {
 				opacity: 0;transition-delay: 5s;
 			}
 		}
+
+		.sale-btn {
+			transform: scale(1) translateX(0) !important; visibility: visible; height: auto; width: auto;
+			transition: transform .3s linear 5s, background .3s linear 0s;
+			&+.sent-letter {
+				top: 40%;
+			}
+		}
 	}
 }
 
-// .animatedOffer{
-// 	&.offer-learn_html {
-// 		.eye_catcher-html {
-// 			h1 {
-// 				span {
-// 					opacity: 1; top: 0; transition: all 0.5s linear; transition-delay: 0;
-// 				}
-// 				b {
-// 					opacity: 1; transition: all .5s linear; transition-delay: .5s;
-// 				}
-// 				em {
-// 					opacity: 1; transition: all .5s linear; transition-delay: 1s;
-// 				}
-// 			}
-// 			h2 {
-// 				em {opacity: 1; transition: all .5s linear; transition-delay: 2s;}
-// 				span {opacity: 1; transition: all .5s linear; transition-delay: 2.5s;}
-// 				strong {opacity: 1; transition: all .5s linear; transition-delay: 3s;}
-// 			}
-// 			img {
-// 				transform: scale(1); transition: all .5s linear; transition-delay: 1.5s;
-// 			}
-// 		}
+.offer-learn_html {
 
-// 		.decor {
-// 			.lead {
-// 				animation: scaleInOfferDecor 1s 3.5s linear 1; transform: scale(1); transition: transform 0s; transition-delay: 3.5s;
-// 			}
+	.eye_catcher-html {
+		h1 {
+			span {
+				opacity: 0; top: -20px;
+			}
+			b {
+				opacity: 0;
+			}
+			em {
+				opacity: 0;
+			}
+		}
+		h2 {
+			em {opacity: 0;}
+			span {opacity: 0;}
+			strong {opacity: 0;}
+		}
+		img {
+			transform: scale(0);
+		}
+	}
 
-// 		}
-// 	}
-// }
+	.decor {
+		.lead {
+			transform: scale(0);
+		}
+	}
 
-// @keyframes scaleInOfferDecor {
-// 	0% {transform: scale(0);}
-// 	40% {transform: scale(1.1);}
-// 	70% {transform: scale(0.9);}
-// 	85% {transform: scale(1.05);}
-// 	93% {transform: scale(0.95);}
-// 	100% {transform: scale(1);}
-// }
+	&.animatedOffer {
+		.eye_catcher-html {
+			h1 {
+				span {
+					opacity: 1; top: 0; transition: all 0.5s linear 1s;
+				}
+				b {
+					opacity: 1; transition: all .5s linear 1.5s;
+				}
+				em {
+					opacity: 1; transition: all .5s linear 2s;
+				}
+			}
+			h2 {
+				em {opacity: 1; transition: all .5s linear 3s;}
+				span {opacity: 1; transition: all .5s linear 3.5s;}
+				strong {opacity: 1; transition: all .5s linear 4s;}
+			}
+			img {
+				transform: scale(1); transition: all .5s linear 2.5s;
+			}
+		}
+
+		.decor {
+			.lead {
+				&:first-child {
+					animation: scaleInOfferDecor 1s 4.5s linear 1; transform: scale(1); transition: transform 0s linear 4.5s;
+				}
+				&:last-child {
+					animation: scaleInOfferDecor 1s 5.5s linear 1; transform: scale(1); transition: transform 0s linear 5.5s;
+				}
+			}
+		}
+	}
+}
+
+@keyframes scaleInOfferDecor {
+	0% {transform: scale(0);}
+	40% {transform: scale(1.1);}
+	70% {transform: scale(0.9);}
+	85% {transform: scale(1.05);}
+	93% {transform: scale(0.95);}
+	100% {transform: scale(1);}
+}

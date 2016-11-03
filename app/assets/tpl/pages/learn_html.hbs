@@ -62,8 +62,8 @@
 									<span class="long-line"></span>
 								</div>
 							</hgroup>
---}}
-<hgroup class="align-left">
+							--}}
+							<hgroup class="align-left">
 								<h2>Чему меня научат?</h2>
 								<div class="heading-line">
 									<span class="short-line"></span>
@@ -75,7 +75,7 @@
 
 							{{!--<p>Имея дизайн сайта в <b>Photoshop</b>, необходимо через Редактор Кода повторить <small>его</small> <b>1</b><em>- в -</em><b>1</b> <small>в</small> Браузере <b>—</b> <span>преобразовать картинку в код.</span> <br>Каждый элемент дизайна описывается кодом. Делая замеры в <b>Photoshop</b>, все значения подставляются в Код. <br><span>Результат <b>—</b> сверстаный сайт</span>.</p>--}}
 
-							<p>Пройдя курс, Вы сможете самостоятельно верстать адаптивные сайты практически любой сложности и <span>создавать свои собственные сайты</span>, получите все необходимые навыки для прохождения собеседования и <span>устроитва на работу в <b>IT-</b>компанию</span>. В бонус <b>+1<b> навык <b>–<b> Вы освоите технику создания сайтов на шаблонах и <span>как на этом зарабатывать</span>!</p>
+							<p>Пройдя курс, Вы сможете самостоятельно верстать адаптивные сайты практически любой сложности и <span>создавать свои собственные сайты</span>, получите все необходимые навыки для прохождения собеседования и <span>устроитва на работу в <b>IT-</b>компанию</span>. В бонус <b>+1</b> навык <b>–</b> Вы освоите технику создания сайтов на шаблонах и <span>как на этом зарабатывать</span>!</p>
 
 
 
@@ -107,6 +107,7 @@
 				<div class="row">
 					<div class="col-lg-8 offset-lg-2 col-xs-12">
 						{{>extra/title order_education}}
+						<h3>Запишитесь! Старт нового потока — 14 ноября, 2016г.<br><a href="#">Перейти к тарифам</a></h3>
 						<form>
 							<div class="row">
 								<div class="col-lg-8 no-padding">
@@ -353,7 +354,7 @@
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-4 col-md-6 col-xs-12">
-						<div class="price-item flat blue" id="particle1-js">
+						<div class="price-item price-item-1 flat blue" id="particle1-js">
 							<figure>
 								<img src="img/pricing1.png">
 							</figure>
@@ -372,7 +373,7 @@
 								<li class="min"><em>&nbsp;</em>-<em>&nbsp;</em></li>
 							</ul>
 							<p><b>9.900</b> <small>руб.</small></p>
-							<a href="https://api.gdonate.ru/pay?public_key=4d26d-3054&sum=9900&account=demo&desc=Купить+доступ+к+курсу+Профессия+HTML-верстальщик" class="btn" target="_blank">Купить сейчас<span class="semicircle"></span></a>
+							<a href="#" class="btn js-show-popup js-select-product" data-options="generic:#price-sale-now">Купить<span class="semicircle"></span></a>
 							<img src="img/pricing-dots.png" class="dots">
 						</div>
 					</div>
@@ -1186,6 +1187,31 @@
 					</div>
 
 					<button class="btn btn-gray">Записаться<span class="semicircle"></span></button>
+					<a href="https://api.gdonate.ru/pay?public_key=4d26d-3054&sum=9900&account=demo&desc=Купить+доступ+к+курсу+Профессия+HTML-верстальщик" target="_blank" class="btn btn-gray sale-btn">Оплатить<span class="semicircle"></span></a>
+					{{!-- <span class="divider">--- или ---</span>
+					<a href="#" class="btn btn-green">Записаться и оплатить<span class="semicircle"></span></a> --}}
+
+					<div class="sent-letter">
+						<img src="img/sended.gif">
+					</div>
+				</form>
+			</div>
+			<a href="#" class="close"><span></span><span></span></a>
+		</div>
+		<div id="price-sale-now" class="popup price-popup generic animated" data-options="active:close:zoomIn:zoomOut:false:true">
+			<div class="popup-body">
+				<form>
+					<input name="source" type="hidden" value="sign-in">
+					<div class="floating-placeholder">
+						<input id="fp-name_4" name="name" type="text" required="required">
+						<label for="fp-name_4">Ваше Имя</label>
+					</div>
+					<div class="floating-placeholder">
+						<input id="fp-email_5" name="email" type="text" required="required">
+						<label for="fp-email_5">Ваш Email</label>
+					</div>
+
+					<a href="https://api.gdonate.ru/pay?public_key=4d26d-3054&sum=9900&account=demo&desc=Купить+доступ+к+курсу+Профессия+HTML-верстальщик" target="_blank" class="btn btn-gray">Оплатить<span class="semicircle"></span></a>
 					{{!-- <span class="divider">--- или ---</span>
 					<a href="#" class="btn btn-green">Записаться и оплатить<span class="semicircle"></span></a> --}}
 

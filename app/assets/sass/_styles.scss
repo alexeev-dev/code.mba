@@ -150,7 +150,7 @@
 		}
 
 		.decor {
-			position: absolute; right: 0; top: 0;
+			position: absolute; right: 0; top: -60px;
 
 			@include respond-to(md) {
 				position: absolute; padding: 0 15px; left: 0; top: -55px; width: 690px;
@@ -166,7 +166,7 @@
 
 			.lead {
 				color: $white; @extend %fixfont;
-				position: absolute; top: -60px; right: 0;
+				margin-bottom: 20px;
 				
 				i {
 					font-size: 50px; color: #252222;
@@ -188,7 +188,7 @@
 				}
 				
 				& + .lead {
-					top: 78px; right: 16px;
+					margin-bottom: 0;
 
 					@include respond-to(md) {top: 0; right: 0;}
 
@@ -367,6 +367,39 @@
 
 		@extend .title--order;
 
+		h3 {
+			color: #797676; font-size: 24px; line-height: 30px; letter-spacing: 0.5px; text-align: center;
+			margin: 0 0 20px;
+
+			@include respond-to(xs) {
+				font-size: 18px; line-height: 24px;
+			}
+
+			a {
+				color: #797676; font-size: 24px; line-height: 30px; letter-spacing: 0.5px; text-align: center;
+				position: relative;
+
+				@include respond-to(xs) {
+					font-size: 18px; line-height: 24px;
+				}
+
+				&:after {
+					content: '';
+					position: absolute; left: 100%; right: 0; top: 100%;
+					border-bottom: 2px solid #4cc2c0;
+					transition: all 0.4s;
+				}
+
+				&:hover {
+					color: #4cc2c0;
+
+					&:after {
+						left: 0;
+					}
+				}
+			}
+		}
+
 		form {
 			text-align: center;
 			position: relative; z-index: 5;
@@ -429,14 +462,16 @@
 			}
 		}
 
-		// &.active {
-		// 	input {
-		// 		box-shadow: 25px 20px 20px -15px rgba(0,0,0,0.3);
-		// 	}
+		&.active {
+			form {
+				input {
+					box-shadow: 25px 20px 20px -15px rgba(0,0,0,0.3);
+				}
 
-		// 	div.col-lg-8 {width:40%;}
-		// 	div.col-lg-4 {width:60%;}
-		// }
+				div.col-lg-8 {width:40%;}
+				div.col-lg-4 {width:60%;}
+			}
+		}
 	}
 	&-coaching {
 		padding: 120px 0;
@@ -638,10 +673,6 @@
 
 			.cd-see-all {
 				bottom: -80px;
-				background: transparent;
-				&:hover {
-					color: #ffffff;
-				}
 			}
 		}
 		

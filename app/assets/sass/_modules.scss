@@ -1145,7 +1145,7 @@
 
 			&:after {
 				content: '';
-				display: block; width: 1px; height: 35px; position: absolute; left: 70px; top: 50%; transform: translate(0, -50%);
+				display: block; width: 1px; position: absolute; left: 70px; top: 20px; bottom: 20px;
 				background-color: #cccccc;
 				transition: all .5s linear;
 
@@ -1156,7 +1156,7 @@
 
 			&.active {
 				&:after {
-					height: 80%;
+					top: 30px; bottom: 30px;
 				}
 
 				a {
@@ -1230,7 +1230,7 @@
 				transition: all .6s; /*transition: padding .6s, max-height .6s;*/
 
 				p {
-					padding: 10px 20px 30px 102px;
+					padding: 0px 40px 30px 92px; margin: 0;
 
 					@include respond-to(sm) {
 						font-size: 14px;
@@ -2241,7 +2241,6 @@
 }
 
 .testimonials-slider.testi-2 .cd-testimonials-wrapper .cd-see-all {
-	background: #4cc2c0 !important;
 	width: auto !important;
 	height: auto !important;
 	margin: 0 auto !important;

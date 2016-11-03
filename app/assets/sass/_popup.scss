@@ -49,6 +49,16 @@ Generic запускается с одной опцией - id попапа. О�
 			width: 290px;
 		}
 
+		.price-item-1 & {
+			left: 0; margin: 0;
+			@include respond-to(sm) {
+				width: 450px; left: 50%; transform: translateX(-50%);
+			}
+			@include respond-to(xs) {
+				width: 290px;
+			}
+		}
+
 		.popup-body {
 			padding: 5px 30px 0 55px; margin-right: 30px; max-height: 480px; overflow-y: auto;
 
