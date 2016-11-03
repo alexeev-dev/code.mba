@@ -75,6 +75,7 @@ function initPopup(selector, classes, animation, isShadow) {
     });
     overlay.off('click'); // зачем тут .off если .on у тебя нигде не используется? в коде ты исполуешь .click()
     target.removeClass('hideIt');
+    popup.find('form').removeClass('sended');
     return false; // вместо твоего .off()
   }
 
