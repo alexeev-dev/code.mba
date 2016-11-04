@@ -107,7 +107,7 @@
 				<div class="row">
 					<div class="col-lg-8 offset-lg-2 col-xs-12">
 						{{>extra/title order_education}}
-						<h3>Запишитесь! Старт нового потока — 14 ноября, 2016г.<br><a href="#">Перейти к тарифам</a></h3>
+						<h3>Запишитесь! Старт нового потока через <span class="js-countdown"></span><br><a href="#">Перейти к тарифам</a></h3>
 						<form>
 							<div class="row">
 								<div class="col-lg-8 no-padding">
@@ -125,8 +125,12 @@
 								</div>
 							</div>
 							<button class="btn btn-green">Записаться<span class="semicircle"></span></button>
-							<a href="https://api.gdonate.ru/pay?public_key=4d26d-3054&sum=9900&account=demo&desc=Купить+доступ+к+курсу+Профессия+HTML-верстальщик" target="_blank" class="btn btn-green sale-btn">Оплатить участие<span class="semicircle"></span></a>
-
+							<div class="sale-btn">
+								<a href="https://api.gdonate.ru/pay?public_key=4d26d-3054&sum=14500&account=promo&desc=%D0%9E%D0%BF%D0%BB%D0%B0%D1%82%D0%B0+%D1%83%D1%87%D0%B0%D1%81%D1%82%D0%B8%D1%8F+14+%D0%BD%D0%BE%D1%8F%D0%B1%D1%80%D1%8F" target="_blank" class="btn btn-green">Оплатить участие<span class="semicircle"></span></a><br>
+								<input id="accept-1" type="checkbox">
+								<label for="accept-1" class="checkbox-block"><span></span></label>
+								<label for="accept-1">Я ознакомился(-ась) с условиями</label>
+							</div>
 							{{!-- SENDED --}}
 							<div class="sent-letter">
 								<img src="img/sended.gif">
@@ -399,7 +403,7 @@
 							</ul>
 							<p style="margin-bottom:0;">
 								<b><strike>16.800</strike></b> <small>руб.</small><i class="fa fa-exclamation-triangle" aria-hidden="true"></i>
-								<span>Предложение доступно только сегодня!</span>
+								<span>Цена может измениться!</span>
 							</p>
 							<p><b>14.500</b> <small>руб.</small></p>
 							<a href="#" class="btn js-show-popup js-select-product" data-options="generic:#price-sale">Забронировать<span class="semicircle"></span></a>
@@ -1188,7 +1192,12 @@
 					</div>
 
 					<button class="btn btn-gray">Записаться<span class="semicircle"></span></button>
-					<a href="https://api.gdonate.ru/pay?public_key=4d26d-3054&sum=9900&account=demo&desc=Купить+доступ+к+курсу+Профессия+HTML-верстальщик" target="_blank" class="btn btn-green sale-btn">Оплатить участие<span class="semicircle"></span></a>
+					<div class="sale-btn">
+						<a href="https://api.gdonate.ru/pay?public_key=4d26d-3054&sum=9900&account=demo&desc=Купить+доступ+к+курсу+Профессия+HTML-верстальщик" target="_blank" class="btn btn-green">Оплатить участие<span class="semicircle"></span></a><br>
+						<input id="accept-2" type="checkbox">
+						<label for="accept-2" class="checkbox-block"><span></span></label>
+						<label for="accept-2">Я ознакомился(-ась) с условиями</label>
+					</div>
 					{{!-- <span class="divider">--- или ---</span>
 					<a href="#" class="btn btn-green">Записаться и оплатить<span class="semicircle"></span></a> --}}
 
@@ -1211,8 +1220,12 @@
 						<input id="fp-email_5" name="email" type="text" required="required">
 						<label for="fp-email_5">Ваш Email</label>
 					</div>
-
 					<a href="https://api.gdonate.ru/pay?public_key=4d26d-3054&sum=9900&account=demo&desc=Купить+доступ+к+курсу+Профессия+HTML-верстальщик" target="_blank" class="btn btn-gray">Оплатить<span class="semicircle"></span></a>
+					<div class="sale-btn">
+						<input id="accept-2" type="checkbox">
+						<label for="accept-2" class="checkbox-block"><span></span></label>
+						<label for="accept-2">Я ознакомился(-ась) с условиями</label>
+					</div>
 					{{!-- <span class="divider">--- или ---</span>
 					<a href="#" class="btn btn-green">Записаться и оплатить<span class="semicircle"></span></a> --}}
 

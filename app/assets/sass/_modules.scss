@@ -677,7 +677,7 @@
 			top: 18px;
 		}
 
-		button {
+		button, input[type='submit'] {
 			color: #fff; font-size: 15px; text-transform: uppercase; text-align: center;
 			display: inline-block; position: relative; height: 56px; width: 33%; padding: 17px 0;
 			background-color: #2f2c2c; border-radius: 0 50px 50px 0;
@@ -1503,7 +1503,7 @@
 
 			span {
 				color: #ffffff; font-size: 14px;
-				position: absolute; top: -46px; right: -149px; display: block; padding: 5px 10px; width: 230px; display: none;
+				position: absolute; bottom: 44px; right: -149px; display: block; padding: 5px 10px; width: 230px; display: none;
 				background: #2f2c2c; border-radius: 5px;
 
 				@include respond-to(md) {

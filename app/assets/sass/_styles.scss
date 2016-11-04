@@ -398,6 +398,10 @@
 					}
 				}
 			}
+
+			span {
+				color: #797676; font-size: 24px; line-height: 30px; letter-spacing: 0.5px; text-align: center;
+			}
 		}
 
 		form {
@@ -463,15 +467,17 @@
 		}
 
 		&.decorAnimated {
-			img {
-				&:nth-child(1) {
-					top: -10px; opacity: 1; transition: all .4s ease-out 0s;
-				}
-				&:nth-child(2) {
-					bottom: 0;  opacity: 1; transition: all .5s ease-out 0.3s;
-				}
-				&:nth-child(3) {
-					bottom: 0;  opacity: 1; transition: all .6s ease-out 0.45s;
+			.decor {
+				img {
+					&:nth-child(1) {
+						top: -10px; opacity: 1; transition: all .4s ease-out 0s;
+					}
+					&:nth-child(2) {
+						bottom: 0;  opacity: 1; transition: all .5s ease-out 0.3s;
+					}
+					&:nth-child(3) {
+						bottom: 0;  opacity: 1; transition: all .6s ease-out 0.45s;
+					}
 				}
 			}
 		}
