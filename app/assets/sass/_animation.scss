@@ -225,22 +225,60 @@ form {
 	}
 
 	.sale-btn {
-		transform-origin: 0 0; transform: scale(0) translate(-50%, -50%) !important; visibility: hidden; position: absolute !important; top: 50%; left: 50%; display: block !important;
+		transform-origin: 0 0; transform: scale(0) translate(-50%, -50%) !important; visibility: hidden; opacity: 0; position: absolute !important; top: 50%; left: 50%; display: block !important;
 		transition: transform .6s linear 5s, background .6s linear 0s;
 		border: none !important;
+
+		input {
+			display: none;
+		}
+		label {
+			font-size: 14px !important; line-height: 24px;
+			margin: 0 0 0 10px;
+			cursor: pointer;
+
+			&.checkbox-block {
+				display: inline-block; margin: 0; height: 24px; width: 46px; position: relative; float: left; overflow: hidden; transition: all .6s ease;
+				background: #3f3f3f; border-radius: 12px; box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.2);
+
+				span {
+					display: block; position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; transition: all .6s ease;
+					background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);; border-radius: 50%;
+				}
+			}
+		}
+		input:checked~label {
+			&.checkbox-block {
+				background: #3cb879;
+				span {
+					left: 24px;
+				}
+			}
+		}
 
 		.price-item-2 & {
 			transform: scale(0) translate(-50%, 50%) !important;
 		}
+
+		.price-item-1 & {
+			position: relative !important; top: 0; left: 0;
+			transform: scale(1) translate(0, 0) !important; visibility: visible; opacity: 1;
+
+			label {
+				&.checkbox-block {
+					position: relative; top: 7px; float: none;
+				}
+			}
+		}
 	}
 
 	&.sended {
-		.row, div, input, textarea {
+		>.row, >div, >input, >textarea {
 			opacity: 0;
 			visibility: hidden;
 		}
 
-		.btn, button {
+		>.btn, >button {
 			transform:scale(0);
 		}
 
@@ -255,16 +293,22 @@ form {
 			}
 
 			.price-item-2 & {
-				transform: scale(1) translate(-50%, -100%); animation: movingSentLetterTop 4s .6s linear 1;
+				transform: scale(1) translate(-50%, -150%); animation: movingSentLetterTop 4s .6s linear 1;
 			}
 		}
 
 		.sale-btn {
-			transform: scale(1) translate(-50%, -50%) !important; visibility: visible;
+			transform: scale(1) translate(-50%, -50%) !important; visibility: visible; opacity: 1;
 			transition: transform .4s ease-out 4.6s, background .3s linear 0s;
 
+			.btn {
+				transform: scale(1); margin-bottom: 15px;
+			}
+
 			.price-item-2 & {
-				transform: scale(1) translate(-50%, 50%) !important;
+				transform: scale(1) translate(-50%, 0%) !important;
+
+				
 			}
 		}
 	}
@@ -280,7 +324,7 @@ form {
 	0% {transform: scale(0) translate(-50%, -50%);}
 	10% {transform: scale(1) translate(-50%, -50%);}
 	90% {transform: scale(1) translate(-50%, -50%);}
-	100% {transform: scale(1) translate(-50%, -100%);}
+	100% {transform: scale(1) translate(-50%, -150%);}
 }
 
 

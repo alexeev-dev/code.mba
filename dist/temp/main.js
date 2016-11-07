@@ -49,4 +49,9 @@ jQuery(document).ready(function($){
 		},
 		offset: '75%'
 	});
+
+	// CONTDOWN
+	$('.js-countdown').countdown('2016/11/14', function(event) {
+		$(this).html(event.strftime('%D дней %H:%M:%S'));
+	});
 });

@@ -24,6 +24,7 @@
     "particles.js": "^2.0.0",
     "Snap.svg": "snap.svg#^0.4.1",
     "waypoints": "^4.0.1",
-    "animate.css": "^3.5.2"
+    "animate.css": "^3.5.2",
+    "jquery.countdown": "^2.2.0"
   }
 }
