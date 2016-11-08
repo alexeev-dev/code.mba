@@ -74,11 +74,13 @@ button, select {-webkit-appearance: none; border: none;}
 /* fonts */
 @include font-face(arial_rounded, ArialRoundedMTProCyr, ArialRoundedMTProCyr);
 @include font-face(arial_rounded, ArialRoundedMTProCyrBold, ArialRoundedMTProCyrBold);
+@include font-face(Savoye_LET, SavoyeLetPlain, Savoye);
 @import 'https://fonts.googleapis.com/css?family=Varela+Round';
 @import 'https://fonts.googleapis.com/css?family=Rubik&subset=cyrillic';
 
 $font-base: ArialRoundedMTProCyr, sans-serif;
 $font-bold: ArialRoundedMTProCyrBold, sans-serif;
+$font-Sav: Savoye, sans-serif;
 $font-second: 'Rubik', sans-serif;
 $font-zz: 'Varela Round', sans-serif;
 
