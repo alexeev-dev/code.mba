@@ -396,3 +396,53 @@ form {
 		}
 	}
 }
+
+
+
+
+.order-education {
+	form div.row {transition: transform .3s;}
+	form button.btn {transition: transform .3s;}
+	form .sent-letter {z-index: 9; transition: transform .4s ease;}
+	form .sent-letter img {transition: all .6s;}
+	
+	// section.buy_me {display: none; opacity: 0; transform: translateY(50px);}
+	// form .sale-btn {display: none !important;}
+
+	&.scaled {
+		form {
+			div.row {transform: scale(0); opacity: 0;}
+			button.btn {transform: scale(0); opacity: 0;}
+			.sale-btn {}
+			.sent-letter {transform: scale(1) translate(-50%, -50%);}
+		}
+		
+	}
+
+	&.scaled_full {
+		form {
+			.sent-letter {
+				img {opacity: 0;}
+			}
+		}
+	}
+
+	// &.big_show {
+	// 	width: 100%; height: 100%; position: fixed; top: 0; left: 0; z-index: 9999;
+	// 	background: url('../img/bg-buy_me.jpg') 0 0 repeat;
+
+	// 	> div {display: none;}
+
+	// 	section.buy_me {
+	// 		display: block; opacity: 1; transform: translateY(0);
+
+	// 		a.close {position: absolute; top: 20px; right: 20px; width: 50px; height: 50px; background: #fff; border-radius: 50%; display: block;}
+	// 	}
+	// }
+}
+
+
+
+
+
+

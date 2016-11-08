@@ -75,6 +75,8 @@ let MainController = {
     this.animateAcc();
     this.animateOrder();
 
+    // this.superClose();
+
   },
 
   initSearch() {
@@ -235,6 +237,22 @@ let MainController = {
       $('.order-education').removeClass('active');
     });
   }
+
+  // superClose() {
+  //   let animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+
+  //   $('.js-super_close').click(function() {
+
+  //       $('.order-education').addClass('animated zoomOut').one(animationEnd, function() {
+  //         $(this).removeClass('animated zoomOut');
+  //         $('.order-education form').removeClass('sended');
+  //         $(this).removeClass('big_show');
+  //         $('body').removeClass('of-hidden');
+  //       });
+        
+  //       return false;
+  //   });
+  // }
 
 }
 

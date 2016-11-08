@@ -80,6 +80,40 @@ function initForm(form) {
     if (result.isValid === true) {
       submitForm(self, result.data);
       self.addClass('sended');
+
+      if (self.find('button').hasClass('js-big_show')) {
+
+          self.removeClass('sended');
+          $('.order-education').addClass('scaled');
+
+          setTimeout(function() {
+            $('body').addClass('of-hidden');
+            $('.order-education').addClass('scaled_full');
+
+            setTimeout(function() {
+              $('.cd-transition-layer').addClass('visible opening');
+
+              var delay = (
+                $('.no-cssanimations').length > 0 ) ? 0 : 800;
+              
+                setTimeout(function(){
+                  $('.cd-modal').addClass('visible');
+                  $('.cd-transition-layer').removeClass('opening');
+                }, delay
+              );
+
+              setTimeout(function() {
+                $('.order-education').removeClass('scaled_full');
+                $('.order-education').removeClass('scaled');
+                $('.order-education form').removeClass('sended');
+              }, 1000);
+
+            }, 800);
+
+          }, 2600);
+
+      }
+
     } else {
       $(window).trigger('validation-failed', [self, result.failed]);
     }
