@@ -2251,8 +2251,9 @@
 
 
 
-// НОВЫЙ БЛОК-ПОПАП. ВЫБОР ФОРМЫ ОБУЧЕНИЯ
-.order-education {
+.modules-map-popup {
+	padding-top: 100px; padding-bottom: 65px; min-width: 992px;
+	background: #1b1b19;
 
 	.floating-block {
 		&:after {
@@ -2262,10 +2263,10 @@
 	}
 
 	.app-sended {
-		width: 360px; float: left; padding-top: 14px;
+		width: 360px; float: left;
 		h3 {
 			color: #ffffff; font-size: 48px; letter-spacing: 0; text-align: left;
-			margin-bottom: 28px;
+			margin-bottom: 14px;
 		}
 		p {
 			font-size: 24px; letter-spacing: 0; line-height: 38px;
@@ -2283,8 +2284,19 @@
 		}
 	}
 	.choose-your-module {
-		width: 633px; float: left; margin-left: 43px;
+		width: 631px; float: left; margin-left: 43px; position: relative;
 		border: solid 1px #6c6154; background: #1f211c;
+
+		&:before {
+			content: '';
+			display: block; width: 100%; height: 6px; position: absolute; left: 0; top: 0;
+			background: url('../img/choose-module-decor-bg.png') 0 0 repeat-x;
+		}
+		&:after {
+			content: '';
+			display: block; width: 210px; height: 6px; position: absolute; right: -1px; bottom: 0;
+			background: url('../img/choose-module-decor-bg.png') 0 0 repeat-x;
+		}
 
 		.choose-module-block {
 			padding: 40px 25px 17px;
@@ -2293,7 +2305,7 @@
 
 		.decor-text {
 			color: #ffffff; font-family: $font-Sav; font-size: 48px; letter-spacing: 1.3px; font-style: italic;
-			position: absolute; top: -76px; right: 117px; margin: 0;
+			position: absolute; top: -76px; right: 26px; margin: 0;
 
 			img {
 				position: absolute; right: -100px; top: 32px;
@@ -2303,8 +2315,8 @@
 		.info {
 			width: 250px; float: left;
 			h3 {
-				color: #cacaca; font-size: 72px; font-family: $font-bold; text-align: left; letter-spacing: -2px;
-				position: relative; margin-bottom: 15px; margin-top: 10px;
+				color: #cacaca; font-size: 72px; font-family: $font-bold; text-align: left; letter-spacing: -2px; line-height: 50px;
+				position: relative; margin-bottom: 1px;
 
 				em {
 					font-size: 40px; letter-spacing: -1px;
@@ -2313,7 +2325,7 @@
 
 				span {
 					color: #655a4f; font-size: 26.4px; letter-spacing: -0.5px;
-					position: absolute; top: -24px; right: 42px;
+					position: absolute; top: -15px; right: 42px;
 				}
 
 				img {
@@ -2322,7 +2334,7 @@
 			}
 
 			p {
-				color: #716153; font-size: 13px; letter-spacing: 0; line-height: 18px;
+				color: #716153; font-size: 13px; letter-spacing: 0; line-height: 19px;
 				padding-left: 4px; margin-bottom: 13px;
 
 				&:last-child {margin-bottom: 0;}
@@ -2500,7 +2512,7 @@
 						}
 					}
 				}
-				
+
 				em {
 					font-size: 11px;
 					position: absolute; top: -10px; left: 20px;
@@ -2647,10 +2659,22 @@
 			color: #0d1306; font-family: $font-bold;
 			margin-left: 92px; top: 22px;
 			background: #00ad00;
+			transition: all .3s linear;
+
+			&:hover {
+				color: #00ad00;
+				background: #0d1306;
+				.semicircle {
+					&:after {
+						border-color: #00ad00;
+					}
+				}
+			}
 
 			.semicircle {
 				&:after {
 					border-color: #0d1306;
+					transition: border .3s linear;
 				}
 			}
 		}
@@ -2667,205 +2691,209 @@
 			}
 		}
 	}
-}
 
-.modules-map {
-	position: relative;
-	img {
-		transition: opacity .3s linear;
-		&.map {
-			&-default {
-				width: 1260px; max-width: none; position: relative; right: 42px;
+	.modules-map {
+		position: relative; padding: 75px 0 100px;
+		img {
+			transition: opacity .3s linear;
+			&.map {
+				&-default {
+					max-width: none; position: relative; left: 182px;
+				}
+				&-intensive {
+					position: absolute; top: 75px; left: 171px;
+					opacity: 0;
+				}
+				&-lvl_up {
+					position: absolute; top: 66px; right: -22px;
+					opacity: 0;
+				}
+				&-couching {
+					position: absolute; top: 318px; right: -27px;
+					opacity: 0;
+				}
 			}
+		}
+
+		&.include {
 			&-intensive {
-				position: absolute; top: 75px; left: 171px;
-				opacity: 0;
+				img.map {
+					&-intensive {
+						opacity: 1;
+					}
+				}
+				.text {
+					&-metodology,
+					&-intensive {
+						opacity: 1;
+					}
+				}
 			}
 			&-lvl_up {
-				position: absolute; top: 66px; right: -22px;
-				opacity: 0;
+				img.map {
+					&-intensive,
+					&-metodology,
+					&-lvl_up {
+						opacity: 1;
+					}
+				}
+				.text {
+					&-metodology,
+					&-intensive,
+					&-metodology_2,
+					&-lvl_up {
+						opacity: 1;
+					}
+				}
 			}
 			&-couching {
-				position: absolute; top: 318px; right: -27px;
+				img.map {
+					&-intensive,
+					&-metodology,
+					&-couching {
+						opacity: 1;
+					}
+				}
+				.text {
+					&-metodology,
+					&-intensive,
+					&-couching {
+						opacity: 1;
+					}
+				}
+			}
+			&-all {
+				img.map {
+					&-intensive,
+					&-metodology,
+					&-lvl_up,
+					&-couching {
+						opacity: 1;
+					}
+				}
+				.text {
+					&-metodology,
+					&-intensive,
+					&-metodology_2,
+					&-lvl_up,
+					&-couching {
+						opacity: 1;
+					}
+				}
+			}
+		}
+
+		.text {
+			&-metodology,
+			&-basic_web,
+			&-webinar,
+			&-intensive,
+			&-metodology_2,
+			&-lvl_up,
+			&-couching {
+				position: absolute;
 				opacity: 0;
-			}
-		}
-	}
+				transition: opacity .3s linear;
+				h4 {
+					font-size: 14px; font-family: $font-bold; letter-spacing: -0.3px;
+					position: relative; margin-bottom: 9px;
 
-	&.include {
-		&-intensive {
-			img.map {
-				&-intensive {
-					opacity: 1;
+					b {
+						font-size: 16.5px;
+					}
 				}
-			}
-			.text {
-				&-metodology,
-				&-intensive {
-					opacity: 1;
-				}
-			}
-		}
-		&-lvl_up {
-			img.map {
-				&-intensive,
-				&-metodology,
-				&-lvl_up {
-					opacity: 1;
-				}
-			}
-			.text {
-				&-metodology,
-				&-intensive,
-				&-metodology_2,
-				&-lvl_up {
-					opacity: 1;
-				}
-			}
-		}
-		&-couching {
-			img.map {
-				&-intensive,
-				&-metodology,
-				&-couching {
-					opacity: 1;
-				}
-			}
-			.text {
-				&-metodology,
-				&-intensive,
-				&-couching {
-					opacity: 1;
-				}
-			}
-		}
-		&-all {
-			img.map {
-				&-intensive,
-				&-metodology,
-				&-lvl_up,
-				&-couching {
-					opacity: 1;
-				}
-			}
-			.text {
-				&-metodology,
-				&-intensive,
-				&-metodology_2,
-				&-lvl_up,
-				&-couching {
-					opacity: 1;
-				}
-			}
-		}
-	}
+				p {
+					color: #535352; font-size: 11px; line-height: 14px;
 
-	.text {
-		&-metodology,
-		&-basic_web,
-		&-webinar,
-		&-intensive,
-		&-metodology_2,
-		&-lvl_up,
-		&-couching {
-			position: absolute;
-			opacity: 0;
-			transition: opacity .3s linear;
-			h4 {
-				font-size: 14px; font-family: $font-bold; letter-spacing: -0.3px;
-				position: relative; margin-bottom: 9px;
+					em {
+						letter-spacing: 0;
+					}
+				}
 
-				b {
-					font-size: 16.5px;
+				span {
+					display: block; text-align: right;
+				}
+
+				&.left {
+					h4 {
+						text-align: right;
+						right: -10px;
+					}
+					p {
+						text-align: right;
+					}
+				}
+				&.right {
+					h4 {
+						text-align: left;
+						left: -10px;
+					}
+					p {
+						text-align: left;
+					}
 				}
 			}
+			&-metodology {
+				top: 126px; left: 10px;
+
+				h4 {
+					color: #d05126;
+				}
+			}
+			&-basic_web {
+				opacity: 1;
+				top: 370px; left: 13px;
+				h4 {
+					color: #0e68ae;
+				}
+			}
+			&-webinar {
+				opacity: 1;
+				top: 481px; left: 100px;
+				h4 {
+					color: #e08a00;
+				}
+			}
+			&-intensive {
+				top: 302px; left: 557px;
+				h4 {
+					color: #d05126;
+				}
+			}
+			&-metodology_2 {
+				top: 112px; left: 728px;
+				h4 {
+					color: #8221a1;
+				}
+			}
+			&-lvl_up {
+				top: 302px; left: 788px;
+				h4 {
+					color: #8221a1;
+				}
+			}
+			&-couching {
+				top: 465px; left: 821px;
+				h4 {
+					color: #5f9106;
+				}
+			}
+		}
+
+		.you-here {
+			position: absolute; left: 351px; bottom: -24px;
 			p {
-				color: #535352; font-size: 11px; line-height: 14px;
-
-				em {
-					letter-spacing: 0;
-				}
+				color: #ffffff; font-family: $font-Sav; font-size: 48px; letter-spacing: 1.3px; font-style: italic;
+				margin: 0;
 			}
 
-			span {
-				display: block; text-align: right;
-			}
-
-			&.left {
-				h4 {
-					text-align: right;
-					right: -10px;
-				}
-				p {
-					text-align: right;
-				}
-			}
-			&.right {
-				h4 {
-					text-align: left;
-					left: -10px;
-				}
-				p {
-					text-align: left;
-				}
-			}
-		}
-		&-metodology {
-			top: 126px; left: 10px;
-
-			h4 {
-				color: #d05126;
-			}
-		}
-		&-basic_web {
-			opacity: 1;
-			top: 370px; left: 13px;
-			h4 {
-				color: #0e68ae;
-			}
-		}
-		&-webinar {
-			opacity: 1;
-			top: 481px; left: 100px;
-			h4 {
-				color: #e08a00;
-			}
-		}
-		&-intensive {
-			top: 302px; left: 557px;
-			h4 {
-				color: #d05126;
-			}
-		}
-		&-metodology_2 {
-			top: 112px; left: 728px;
-			h4 {
-				color: #8221a1;
-			}
-		}
-		&-lvl_up {
-			top: 302px; left: 788px;
-			h4 {
-				color: #8221a1;
-			}
-		}
-		&-couching {
-			top: 465px; left: 821px;
-			h4 {
-				color: #5f9106;
+			img {
+				position: absolute; left: 93px; bottom: -24px;
 			}
 		}
 	}
+}
 
-	.you-here {
-		position: absolute; left: 351px; bottom: -24px;
-		p {
-			color: #ffffff; font-family: $font-Sav; font-size: 48px; letter-spacing: 1.3px; font-style: italic;
-			margin: 0;
-		}
-
-		img {
-			position: absolute; left: 93px; bottom: -24px;
-		}
-	}
+.cd-modal .modal-content {
+	padding: 0 !important;
 }
