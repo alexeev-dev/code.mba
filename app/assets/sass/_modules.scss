@@ -2252,8 +2252,10 @@
 
 
 .modules-map-popup {
-	padding-top: 100px; padding-bottom: 65px; min-width: 992px;
+	padding-top: 100px; padding-bottom: 65px; overflow: hidden;
 	background: #1b1b19;
+
+	@include respond-to(lg) {padding-top: 130px;}
 
 	.floating-block {
 		&:after {
@@ -2264,13 +2266,25 @@
 
 	.app-sended {
 		width: 360px; float: left;
+
+		@include respond-to(lg) {
+			width: 240px;
+		}
 		h3 {
 			color: #ffffff; font-size: 48px; letter-spacing: 0; text-align: left;
 			margin-bottom: 14px;
+
+			@include respond-to(lg) {
+				font-size: 40px;
+			}
 		}
 		p {
 			font-size: 24px; letter-spacing: 0; line-height: 38px;
 			margin-bottom: 18px;
+
+			@include respond-to(lg) {
+				font-size: 18px; line-height: 26px;
+			}
 
 			&:nth-of-type(odd) {
 				color: #716153;
@@ -2296,6 +2310,211 @@
 			content: '';
 			display: block; width: 210px; height: 6px; position: absolute; right: -1px; bottom: 0;
 			background: url('../img/choose-module-decor-bg.png') 0 0 repeat-x;
+		}
+
+		&.include {
+			&-intensive {
+				.choose-module-block {
+					.modules-block {
+						li {
+							&:nth-child(3) {
+								background: #ef501d;
+
+								&:after {
+									background: url('../img/li_after-orange.png') 0 0 no-repeat;
+								}
+
+								span {
+									color: #ef501d;
+								}
+							}
+						}
+					}
+				}
+				.time-and-price {
+					.module-price {
+						&.default {display: none;}
+						&.intensive {display: block;}
+					}
+					.module-time {
+						.tm {
+							img {
+								.tm-arrow {
+									transform: rotate(-34deg);
+								}
+							}
+							span {
+								left: 47px; top: -39px;
+							}
+						}
+					}
+				}
+			}
+			&-lvl_up {
+				.choose-module-block {
+					.modules-block {
+						li {
+							&:nth-child(3) {
+								background: #ef501d;
+
+								&:after {
+									background: url('../img/li_after-orange.png') 0 0 no-repeat;
+								}
+
+								span {
+									color: #ef501d;
+								}
+							}
+							&:nth-child(4) {
+								background: #6f2875;
+
+								&:before {
+									background: url('../img/li_after-purple.png') 0 0 no-repeat;
+								}
+
+								strong {
+									background: #6f2875;
+								}
+
+								span {
+									color: #ae49b6;
+								}
+							}
+						}
+					}
+				}
+				.time-and-price {
+					.module-price {
+						&.default {display: none;}
+						&.lvl_up {display: block;}
+					}
+					.module-time {
+						.tm {
+							.tm-arrow {
+								transform: rotate(53deg);
+							}
+							span {
+								left: 110px; top: -36px;
+							}
+						}
+					}
+				}
+			}
+			&-coaching {
+				.choose-module-block {
+					.modules-block {
+						li {
+							&:nth-child(3) {
+								background: #ef501d;
+
+								&:after {
+									background: url('../img/li_after-orange.png') 0 0 no-repeat;
+								}
+
+								span {
+									color: #ef501d;
+								}
+							}
+							&:nth-child(5) {
+								background: #3d9500;
+
+								&:after {
+									background: url('../img/li_after-green.png') 0 0 no-repeat;
+								}
+
+								strong {
+									background: #3d9500;
+								}
+
+								span {
+									color: #3d9500;
+								}
+							}
+						}
+					}
+				}
+				.time-and-price {
+					.module-price {
+						&.default {display: none;}
+						&.coaching {display: block;}
+					}
+					.module-time {
+						.tm {
+							.tm-arrow {
+								transform: rotate(-5deg);
+							}
+							span {
+								left: 70px; top: -43px;
+							}
+						}
+					}
+				}
+			}
+			&-all {
+				.choose-module-block {
+					.modules-block {
+						li {
+							&:nth-child(3) {
+								background: #ef501d;
+
+								&:after {
+									background: url('../img/li_after-orange.png') 0 0 no-repeat;
+								}
+
+								span {
+									color: #ef501d;
+								}
+							}
+							&:nth-child(4) {
+								background: #6f2875;
+
+								&:before {
+									background: url('../img/li_after-purple.png') 0 0 no-repeat;
+								}
+
+								strong {
+									background: #6f2875;
+								}
+
+								span {
+									color: #ae49b6;
+								}
+							}
+							&:nth-child(5) {
+								background: #3d9500;
+
+								&:after {
+									background: url('../img/li_after-green.png') 0 0 no-repeat;
+								}
+
+								strong {
+									background: #3d9500;
+								}
+
+								span {
+									color: #3d9500;
+								}
+							}
+						}
+					}
+				}
+				.time-and-price {
+					.module-price {
+						&.default {display: none;}
+						&.all {display: block;}
+					}
+					.module-time {
+						.tm {
+							.tm-arrow {
+								transform: rotate(82deg);
+							}
+							span {
+								left: auto; right: 28px; top: -30px;
+							}
+						}
+					}
+				}
+			}
 		}
 
 		.choose-module-block {
@@ -2536,16 +2755,27 @@
 				position: absolute; bottom: 0px;
 
 				.tm {
-					position: absolute; bottom: 0; left: 8px;
+					position: absolute; bottom: -3px; left: 8px; width: 186px; height: 97px;
 
-					.tm-arrow {
-						position: absolute; left: 86px; bottom: 1px; transform-origin: 50% 93.25843%;
-						transition: transform .6s ease;
+					img {
+						position: absolute; left: 0; top: 0;
+
+						&.intensive,
+						&.lvl_up,
+						&.coaching,
+						&.all {
+							display: none;
+						}
+
+						&.tm-arrow {
+							left: 86px; top: auto; bottom: -4px; transform-origin: 49% 92.97753%; transform: rotate(-76deg);
+							transition: transform .6s ease;
+						}
 					}
 
 					span {
 						color: #ffffff; font-size: 10px; text-align: center;
-						display: block; width: 36px; height: 36px; position: absolute; right: 28px; top: -30px;
+						display: block; width: 36px; height: 36px; position: absolute; left: 24px; top: -29px;
 						background: #716153; border-radius: 15px;
 
 						&:after {
@@ -2574,16 +2804,49 @@
 			}
 			.module-price {
 				text-align: center;
-				margin-left: 228px; position: relative;
+				margin-left: 228px; position: relative; height: 68px;
+
+				&.intensive,
+				&.lvl_up,
+				&.coaching,
+				&.all {
+					display: none;
+				}
+
+				&.default {
+					text-align: right;
+				}
+				&.intensive {
+					&>span {
+						color: #f79a00; font-size: 11px;
+						position: absolute; left: 24px; top: 4px;
+						em {
+							color: #d05126; font-size: 13px;
+						}
+					}
+				}
 
 				img {
 					position: absolute;
 
+					&.clock {
+						left: 15px; top: 31px;
+					}
 					&.coins {
-						left: 18px; top: 31px;
+						left: 33px; top: 41px;
 					}
 					&.rub-big {
-						right: 10px; top: -4px;
+						right: 29px; top: 7px;
+					}
+				}
+
+				strong {
+					color: #00c300; font-size: 48px; font-family: $font-base; font-weight: 400;
+					margin-right: 82px; position: relative; top: -1px;
+
+					small {
+						font-size: 18px;
+						margin-left: 5px;
 					}
 				}
 
@@ -2617,9 +2880,14 @@
 	}
 	.agreement {
 		text-align: left;
-		margin-left: 403px; padding-top: 8px; margin-bottom: 47px;
+		margin-left: 403px; padding-top: 30px; margin-bottom: 47px;
+
+		@include respond-to(lg) {
+			margin-left: 283px;
+		}
+
 		.floating-block {
-			display: inline-block;
+			display: inline-block; position: relative; top: 7px;
 		}
 
 		input {
@@ -2657,7 +2925,7 @@
 
 		.btn {
 			color: #0d1306; font-family: $font-bold;
-			margin-left: 92px; top: 22px;
+			margin-left: 92px;
 			background: #00ad00;
 			transition: all .3s linear;
 
@@ -2699,18 +2967,32 @@
 			&.map {
 				&-default {
 					max-width: none; position: relative; left: 182px;
+
+					@include respond-to(lg) {width: 760px;}
 				}
 				&-intensive {
 					position: absolute; top: 75px; left: 171px;
 					opacity: 0;
+
+					@include respond-to(lg) {
+						width: 303px; top: 75px; left: 173px;
+					}
 				}
 				&-lvl_up {
 					position: absolute; top: 66px; right: -22px;
 					opacity: 0;
+
+					@include respond-to(lg) {
+						width: 526px; top: 68px; right: -12px;
+					}
 				}
-				&-couching {
+				&-coaching {
 					position: absolute; top: 318px; right: -27px;
 					opacity: 0;
+
+					@include respond-to(lg) {
+						width: 347px; top: 269px; right: -16px;
+					}
 				}
 			}
 		}
@@ -2746,18 +3028,18 @@
 					}
 				}
 			}
-			&-couching {
+			&-coaching {
 				img.map {
 					&-intensive,
 					&-metodology,
-					&-couching {
+					&-coaching {
 						opacity: 1;
 					}
 				}
 				.text {
 					&-metodology,
 					&-intensive,
-					&-couching {
+					&-coaching {
 						opacity: 1;
 					}
 				}
@@ -2767,7 +3049,7 @@
 					&-intensive,
 					&-metodology,
 					&-lvl_up,
-					&-couching {
+					&-coaching {
 						opacity: 1;
 					}
 				}
@@ -2776,7 +3058,7 @@
 					&-intensive,
 					&-metodology_2,
 					&-lvl_up,
-					&-couching {
+					&-coaching {
 						opacity: 1;
 					}
 				}
@@ -2790,13 +3072,17 @@
 			&-intensive,
 			&-metodology_2,
 			&-lvl_up,
-			&-couching {
+			&-coaching {
 				position: absolute;
 				opacity: 0;
 				transition: opacity .3s linear;
 				h4 {
 					font-size: 14px; font-family: $font-bold; letter-spacing: -0.3px;
 					position: relative; margin-bottom: 9px;
+
+					@include respond-to(lg) {
+						font-size: 13px;
+					}
 
 					b {
 						font-size: 16.5px;
@@ -2805,13 +3091,34 @@
 				p {
 					color: #535352; font-size: 11px; line-height: 14px;
 
+					@include respond-to(lg) {
+						font-size: 10px;
+					}
+
 					em {
 						letter-spacing: 0;
 					}
 				}
 
 				span {
-					display: block; text-align: right;
+					color: #aeaeae; font-size: 13px;  text-align: right;
+					display: block; position: relative;
+
+					@include respond-to(lg) {
+						font-size: 12px;
+					}
+
+					em {
+						color: #ffffff; text-align: center; line-height: 22px;
+						display: block; width: 22px; height: 22px; position: absolute; left: 19px; bottom: -25px;
+						background: #d05126; border-radius: 9px;
+
+						&:after {
+							content: '';
+							display: block; position: absolute; top: -3px; right: -2px; transform: rotate(45deg);
+							border-bottom: solid 8px #d05126; border-right: solid 3px transparent; border-left: solid 3px transparent;
+						}
+					}
 				}
 
 				&.left {
@@ -2836,6 +3143,10 @@
 			&-metodology {
 				top: 126px; left: 10px;
 
+				@include respond-to(lg) {
+					top: 100px; left: 30px;
+				}
+
 				h4 {
 					color: #d05126;
 				}
@@ -2843,6 +3154,11 @@
 			&-basic_web {
 				opacity: 1;
 				top: 370px; left: 13px;
+
+				@include respond-to(lg) {
+					left: 26px; top: 293px;
+				}
+
 				h4 {
 					color: #0e68ae;
 				}
@@ -2850,30 +3166,55 @@
 			&-webinar {
 				opacity: 1;
 				top: 481px; left: 100px;
+
+				@include respond-to(lg) {
+					top: 389px; left: 89px;
+				}
+
 				h4 {
 					color: #e08a00;
 				}
 			}
 			&-intensive {
 				top: 302px; left: 557px;
+
+				@include respond-to(lg) {
+					top: 240px; left: 475px;
+				}
+
 				h4 {
 					color: #d05126;
 				}
 			}
 			&-metodology_2 {
 				top: 112px; left: 728px;
+
+				@include respond-to(lg) {
+					top: 94px; left: 617px;
+				}
+
 				h4 {
 					color: #8221a1;
 				}
 			}
 			&-lvl_up {
 				top: 302px; left: 788px;
+
+				@include respond-to(lg) {
+					top: 245px; left: 663px;
+				}
+
 				h4 {
 					color: #8221a1;
 				}
 			}
-			&-couching {
+			&-coaching {
 				top: 465px; left: 821px;
+
+				@include respond-to(lg) {
+					top: 383px; left: 693px;
+				}
+
 				h4 {
 					color: #5f9106;
 				}
@@ -2882,6 +3223,11 @@
 
 		.you-here {
 			position: absolute; left: 351px; bottom: -24px;
+
+			@include respond-to(lg) {
+				left: 300px;
+			}
+
 			p {
 				color: #ffffff; font-family: $font-Sav; font-size: 48px; letter-spacing: 1.3px; font-style: italic;
 				margin: 0;
@@ -2889,6 +3235,10 @@
 
 			img {
 				position: absolute; left: 93px; bottom: -24px;
+
+				@include respond-to(lg) {
+					left: 73px;
+				}
 			}
 		}
 	}
