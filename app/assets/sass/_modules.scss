@@ -2253,9 +2253,12 @@
 
 .modules-map-popup {
 	padding-top: 100px; padding-bottom: 65px; overflow: hidden;
-	background: #1b1b19;
+	background: #1b1b19 url('../img/cloud.png') 58.3% 90.3% no-repeat; 
 
-	@include respond-to(lg) {padding-top: 130px;}
+	@include respond-to(lg) {
+		padding-top: 130px;
+		background-size: 1008px; background-position: 50% 89.3%;
+	}
 
 	.floating-block {
 		&:after {
@@ -2339,12 +2342,17 @@
 					.module-time {
 						.tm {
 							img {
-								.tm-arrow {
-									transform: rotate(-34deg);
+								&.tm-arrow {
+									transform: rotate(-28deg);
+								}
+								&.default {display: none;}
+								&.intensive {
+									display: block;
 								}
 							}
 							span {
-								left: 47px; top: -39px;
+								display: block; left: 34px; top: -37px;
+								// animation: scalingPopupItem .4s 0s linear 1; transform: scale(1);
 							}
 						}
 					}
@@ -2390,11 +2398,18 @@
 					}
 					.module-time {
 						.tm {
-							.tm-arrow {
-								transform: rotate(53deg);
+							img {
+								&.tm-arrow {
+									transform: rotate(43deg);
+								}
+								&.default {display: none;}
+								&.lvl_up {
+									display: block;
+								}
 							}
 							span {
-								left: 110px; top: -36px;
+								display: block; left: 142px; top: -18px;
+								// animation: scalingPopupItem .4s 0s linear 1; transform: scale(1);
 							}
 						}
 					}
@@ -2440,11 +2455,18 @@
 					}
 					.module-time {
 						.tm {
-							.tm-arrow {
-								transform: rotate(-5deg);
+							img {
+								&.tm-arrow {
+									transform: rotate(-5deg);
+								}
+								&.default {display: none;}
+								&.coaching {
+									display: block;
+								}
 							}
 							span {
-								left: 70px; top: -43px;
+								display: block; left: 74px; top: -46px;
+								// animation: scalingPopupItem .4s 0s linear 1; transform: scale(1);
 							}
 						}
 					}
@@ -2505,11 +2527,22 @@
 					}
 					.module-time {
 						.tm {
-							.tm-arrow {
-								transform: rotate(82deg);
+							img {
+								&.tm-arrow {
+									transform: rotate(67deg);
+								}
+								&.default {display: none;}
+								&.all {
+									display: block;
+								}
 							}
 							span {
-								left: auto; right: 28px; top: -30px;
+								display: block; left: auto; right: -35px; top: 27px;
+								// animation: scalingPopupItem .4s 0s linear 1; transform: scale(1);
+
+								&:after {
+									transform: translateX(-50%) rotate(45deg); left: 3%; bottom: -1px;
+								}
 							}
 						}
 					}
@@ -2775,8 +2808,9 @@
 
 					span {
 						color: #ffffff; font-size: 10px; text-align: center;
-						display: block; width: 36px; height: 36px; position: absolute; left: 24px; top: -29px;
+						display: none; width: 36px; height: 36px; position: absolute; left: 24px; top: -29px;
 						background: #716153; border-radius: 15px;
+						transition: transform .4s linear;
 
 						&:after {
 							content: '';
@@ -2962,6 +2996,7 @@
 
 	.modules-map {
 		position: relative; padding: 75px 0 100px;
+
 		img {
 			transition: opacity .3s linear;
 			&.map {
@@ -3244,6 +3279,15 @@
 	}
 }
 
-.cd-modal .modal-content {
-	padding: 0 !important;
+.cd-modal {
+	.modal-content {
+		padding: 0 !important;
+	}
+	.modal-close {
+		&:before,
+		&:after {
+			height: 4px !important; top: calc(50% - 2px) !important;
+			background: #1b1b19 !important; border-radius: 2px;
+		}
+	}
 }
