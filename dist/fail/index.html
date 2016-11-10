@@ -3,8 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="eng" lang="eng">
 <head>
 	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<title>Подтвердите свой e-mail</title>
-	<link href="https://fonts.googleapis.com/css?family=Lobster&amp;subset=cyrillic" rel="stylesheet">
+	<title>НЕуспешно!</title>
+	<link href='http://fonts.googleapis.com/css?family=Bangers&amp;v2' rel='stylesheet' type='text/css' />	
 	<link rel="stylesheet" type="text/css" href="styles/reset.css" />
 	<link rel="stylesheet" type="text/css" href="styles/main.css" />	
 	<script src="scripts/jquery-1.6.2.js" type="text/javascript"></script>
@@ -15,23 +15,18 @@
 				$('#astronaut')
 					.sprite({fps: 30, no_of_frames: 1})
 					.spRandom({top: 30, bottom: 200, left: 30, right: 200})
-				$('#space').pan({fps: 40, speed: 3, dir: 'right', depth: 50});
+				$('#space').pan({fps: 40, speed: 50, dir: 'right', depth: 50});
 			});
 		})(jQuery);	
 	</script>
 </head>
 <body>
 
+
 <div id="container">
 	<div id="stage" class="stage">
 		<div id="space" class="stage"></div>
-		<div id="astronaut" class="stage">
-		<form action="mailme.php" method="POST" class="myform">
-			<input type="text" name="email" placeholder="Введите ваш Email" required="required">
-			<button>отправить</button>
-		</form>
-		<p>Поздравляю! Оплата прошла успешно! <span style="color:#0099ff; margin-top: 3px; display: block;">Введите e-mail</span> на который выслать доступ к вашему курсу.</p>
-		</div>
+		<a href="http://code.mba"><div id="astronaut" class="stage"></div></a>
 	</div>
 </div>
 

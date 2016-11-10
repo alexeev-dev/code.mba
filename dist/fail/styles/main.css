@@ -3,11 +3,9 @@
 	padding: 0;
 }
 body {
-	font-family: 'Lobster', cursive;
 	background: #0c122a;
 	width: auto;
 	height: 100%;
-	font-weight: 400;
 }
 a, a:visited {
 	color: #6d6c6c;
@@ -19,7 +17,6 @@ a:hover {
 a img {
 	border: 0;
 }
-p {font-weight: 400;}
 #container  {
 	min-width:900px;
 	height:100%;
@@ -48,54 +45,18 @@ p {font-weight: 400;}
 	margin-left: 50px;
 	top: 20%;
 }
-#astronaut form {
-	position: absolute; left: 78px; top: 50px; width: 300px; height: 36px;
-	-webkit-transform: rotate(-5.5deg);
-	-moz-transform: rotate(-5.5deg);
-	-o-transform: rotate(-5.5deg);
-	-ms-transform: rotate(-5.5deg);
-	transform: rotate(-5.5deg);
-	border: none;
-}
-#astronaut form input {
-	background: #eee;
-padding:10px;
- border-radius:5px 0 0 5px;
--moz-border-radius:5px 0 0 5px;
--webkit-border-radius:5px 0 0 5px;
--o-border-radius:5px 0 0 5px;
-border:0 none;
-width:160px;
-}
-#astronaut form button {
-	background:#0099ff;
-	color:white;
-	padding:10px 20px;
-	border-radius:0 5px 5px 0;
-	-moz-border-radius:0 5px 5px 0;
-	-webkit-border-radius:0 5px 5px 0;
-	-o-border-radius:0 5px 5px 0;
-	border:0 none;
-	font-weight:bold;
-}
-#astronaut form input:focus {
-	outline: none;
-}
-#astronaut p {
-	font-size: 24px;
-	position: absolute; top: 118px; right: 125px; width: 245px; max-height: 120px;
-}
 #space {
-	background: transparent url(../images/space.jpg) repeat-x 0 0 fixed;
+	background: transparent url(../images/space.jpg) repeat 0 0 fixed;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
 	background-size: cover;
+	opacity: 0.1;
 }
 
 /* Text */
 #text_1 {
-	font-family: 'Lobster', cursive;
+	font-family: 'Bangers', cursive;
 	font-size: 30px;
 	color: #393939;
 	line-height: 28px;
@@ -105,7 +66,7 @@ width:160px;
 }
 
 #text_2 {
-	font-family: 'Lobster', cursive;
+	font-family: 'Bangers', cursive;
 	font-size: 90px;
 	color: #2d2d2d;
 	width: 380px;
@@ -116,7 +77,7 @@ width:160px;
 }
 
 #text_3 {
-	font-family: 'Lobster', cursive;
+	font-family: 'Bangers', cursive;
 	font-size: 40px;
 	color: #393939;
 	line-height: 32px;

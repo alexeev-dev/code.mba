@@ -5,8 +5,7 @@
 let validationRegEx = {
   name: /^.{2,50}$/,
   phone: /^.{2,50}$/,
-  email: /^.{2,50}@.{2,50}$/,
-  EMAIL: /^.{2,50}@.{2,50}$/
+  email: /^.{2,50}@.{2,50}$/
 }
 
 /**
@@ -63,16 +62,7 @@ function validateInput(fields) {
 
 function submitForm(form, data) {
   let url = form.attr('action');
-
-  console.log(form);
-  console.log(url);
-  
-  if (url === 'undefined') {
-    url = 'send-request.php';
-  }
-
-  console.log(form);
-  console.log(url);
+  url = 'send-request.php';
 
   $.post(url, data, (result) => {
     $(window).trigger('form-sent', {form, data});

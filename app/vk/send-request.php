@@ -25,7 +25,7 @@
     }
 
     $m = new EMail(implode("\r\n", $text)."\r\n");
-    $m -> setSubject("CODE.mba => ".$_POST['source']);
+    $m -> setSubject("START.CODE.mba => ".$_POST['source']);
     $m -> from("alex@code.mba");
     $m -> sendTo("alexeev@code.mba");
   }
