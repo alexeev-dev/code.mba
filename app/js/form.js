@@ -61,7 +61,13 @@ function validateInput(fields) {
  */
 
 function submitForm(form, data) {
-  $.post('send-request.php', data, (result) => {
+  let url = form.attr('action');
+
+  if (url.length < 1) {
+    url = 'send-request.php';
+  }
+
+  $.post(url, data, (result) => {
     $(window).trigger('form-sent', {form, data});
   });
 }
