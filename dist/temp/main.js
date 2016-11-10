@@ -52,6 +52,13 @@ jQuery(document).ready(function($){
 
 	// CONTDOWN
 	$('.js-countdown').countdown('2016/11/14', function(event) {
-		$(this).html(event.strftime('%Dд. %Hч. %Mм. %Sс.'));
+		$(this).html(event.strftime('%D<small>д.</small> %H<small>ч.</small> %M<small>м.</small> %S<small>с.</small>'));
 	});
+
+	// validation
+	// $('.form').feelform({
+	// 	notificationType: 'class',
+	// 	gravity: 'bottom',
+	// 	clearAfterSubmit: true
+	// });
 });

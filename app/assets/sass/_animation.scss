@@ -224,37 +224,12 @@ form {
 		}
 	}
 
+	h4.verify_email {opacity: 0; visibility: hidden; position: absolute; top: 18px; left: 122px; font-size: 24px; transition: all .4s linear; transition-delay: 5s;}
+
 	.sale-btn {
 		transform-origin: 0 0; transform: scale(0) translate(-50%, -50%) !important; visibility: hidden; opacity: 0; position: absolute !important; top: 50%; left: 50%; display: block !important;
 		transition: transform .6s linear 5s, background .6s linear 0s;
 		border: none !important;
-
-		input {
-			display: none;
-		}
-		label {
-			font-size: 14px !important; line-height: 24px;
-			margin: 0 0 0 10px;
-			cursor: pointer;
-
-			&.checkbox-block {
-				display: inline-block; margin: 0; height: 24px; width: 46px; position: relative; float: left; overflow: hidden; transition: all .6s ease;
-				background: #3f3f3f; border-radius: 12px; box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.2);
-
-				span {
-					display: block; position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; transition: all .6s ease;
-					background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);; border-radius: 50%;
-				}
-			}
-		}
-		input:checked~label {
-			&.checkbox-block {
-				background: #3cb879;
-				span {
-					left: 24px;
-				}
-			}
-		}
 
 		.price-item-2 & {
 			transform: scale(0) translate(-50%, 50%) !important;
@@ -293,9 +268,21 @@ form {
 			}
 
 			.price-item-2 & {
-				transform: scale(1) translate(-50%, -150%); animation: movingSentLetterTop 4s .6s linear 1;
+				transform: scale(1) translate(-50%, -115%); animation: movingSentLetterTop 4s .6s linear 1;
+			}
+
+			.description-author & {
+				transform: scale(1) translate(0, -50%);
+				left: 150px;
+			}
+
+			.subscribe-item & {
+				transform: scale(1) translate(0, -50%);
+				left: 55px;
 			}
 		}
+
+		h4.verify_email {opacity: 1; visibility: visible;}
 
 		.sale-btn {
 			transform: scale(1) translate(-50%, -50%) !important; visibility: visible; opacity: 1;
@@ -306,13 +293,45 @@ form {
 			}
 
 			.price-item-2 & {
-				transform: scale(1) translate(-50%, 0%) !important;
-
-				
+				transform: scale(1) translate(-50%, 15%) !important;
 			}
 		}
 	}
 }
+
+
+.check_me {
+	text-align: left; left: 40px; top: 0; margin-bottom: 40px; position: relative;
+
+	input {
+		display: none;
+	}
+	label {
+		font-size: 14px !important; line-height: 24px;
+		margin: 0 0 0 10px;
+		cursor: pointer;
+
+		&.checkbox-block {
+			display: inline-block; margin: 0; height: 24px; width: 46px; position: relative; float: left; overflow: hidden; transition: all .6s ease;
+			background: #3f3f3f; border-radius: 12px; box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.2);
+
+			span {
+				display: block; position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; transition: all .6s ease;
+				background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);; border-radius: 50%;
+			}
+		}
+	}
+	input:checked~label {
+		&.checkbox-block {
+			background: #3cb879;
+			span {
+				left: 24px;
+			}
+		}
+	}
+}
+
+
 
 @keyframes movingSentLetterLeft {
 	0% {transform: scale(0) translate(-50%, -50%);}
@@ -348,7 +367,7 @@ form {
 			strong {opacity: 0;}
 		}
 		img {
-			opacity: 0;
+			transform: scale(0);
 		}
 	}
 
@@ -365,32 +384,34 @@ form {
 		.eye_catcher-html {
 			h1 {
 				span {
-					opacity: 1; top: 0; transition: all 0.5s linear 1s;
+					opacity: 1; top: 0; transition: all .5s linear .1s;
 				}
 				b {
-					opacity: 1; transition: all .5s linear 1.5s;
+					opacity: 1; transition: all .5s linear .5s;
 				}
 				em {
-					opacity: 1; transition: all .5s linear 2s;
+					opacity: 1; transition: all .5s linear 1s;
 				}
 			}
 			h2 {
-				em {opacity: 1; transition: all .5s linear 3.2s;}
-				span {opacity: 1; transition: all .5s linear 3.4s;}
-				strong {opacity: 1; transition: all .5s linear 3.6s;}
+				em {opacity: 1; transition: all .5s linear 2.2s;}
+				span {opacity: 1; transition: all .5s linear 2.4s;}
+				strong {opacity: 1; transition: all .5s linear 2.6s;}
 			}
 			img {
-				opacity: 1; transition: all .5s linear 3s;
+				transform: scale(1); transform-origin: top center; transition: all .5s linear 2s;
 			}
 		}
 
 		.decor {
 			.lead {
+				transform-origin: bottom center;
+
 				&:first-child {
-					transform: scale(1); transition: transform .5s linear 4.2s;
+					transform: scale(1); transition: transform .5s linear 3.2s;
 				}
 				&:last-child {
-					transform: scale(1); transition: transform .5s linear 4.9s;
+					transform: scale(1); transition: transform .5s linear 3.5s;
 				}
 			}
 		}
@@ -446,6 +467,9 @@ form {
 // 	0% {transform: scale(0);}
 // 	100% {transform: scale(1);}
 // }
+
+
+
 
 
 

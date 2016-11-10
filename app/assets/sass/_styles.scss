@@ -400,7 +400,8 @@
 			}
 
 			span {
-				color: #797676; font-size: 24px; line-height: 30px; letter-spacing: 0.5px; text-align: center;
+				color: #f7f9f9; font-size: 24px; line-height: 30px; letter-spacing: 0.5px; text-align: center;
+				small {opacity: 0.64; font-size: 68%; margin-left: 3px; position: relative; bottom: -2px;}
 			}
 		}
 
@@ -764,3 +765,30 @@
 
 .cd-testimonials-all.is-visible {z-index: 999999 !important;}
 .testimonials-slider.testi-2 .cd-testimonials-wrapper {height: 580px;}
+
+
+
+figure.testimonials-vk {
+	display: block; margin-top: 4em; width: 100%; text-align: center;
+	img {vertical-align: top;}
+}
+
+
+.students-works {
+	margin-top: 15px;
+
+	a {margin: 0 10px 0 0;}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

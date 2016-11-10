@@ -116,24 +116,28 @@ Main components
   vertical-align: middle;
 }
 .cd-author img {
-  width: 32px;
-  height: 32px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  margin-right: 5px;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3);
+  margin-right: 10px;
 }
 .cd-author .cd-author-info {
   text-align: left;
-  line-height: 1.2;
 }
-.cd-author .cd-author-info li:first-child {
-  font-size: 14px;
-  font-size: 0.875rem;
+.cd-author .cd-author-info li {
+  font-family: 'BlinkMacSystemFont','Roboto','Open Sans','Helvetica Neue',sans-serif !important;
+  font-size: 13px !important;
+  direction: ltr;
+  white-space: nowrap;
+  color: #000 !important;
+  line-height: 19px !important;
+  font-weight: 400 !important;
 }
 .cd-author .cd-author-info li:last-child {
-  font-size: 12px;
-  font-size: 0.75rem;
-  color: #6b6b70;
+  color: #42648b !important;
+  font-weight: 700 !important;
+  line-height: 16px !important;
+  
 }
 @media only screen and (min-width: 768px) {
   .cd-author img {
@@ -264,7 +268,7 @@ Main components
   left: 0;
   height: 100%;
   width: 100%;
-  background-color: #ffffff;
+  background-color: #edeeef;
   z-index: 2;
   visibility: hidden;
   opacity: 0;
@@ -307,14 +311,21 @@ Main components
 }
 .cd-testimonials-all p {
   position: relative;
-  background: #79b6e4;
-  color: #ffffff;
-  padding: 2em;
+  padding: 15px 15px 20px 30px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  line-height: 1.4;
-  border-radius: 0.25em;
+  border-radius: 2px !important;
   margin-bottom: 1em;
+
+  font-family: 'BlinkMacSystemFont','Roboto','Open Sans','Helvetica Neue',sans-serif !important;
+  font-size: 13px;
+  direction: ltr;
+  color: #000 !important;
+  line-height: 19px;
+  font-weight: 400;
+  background: #fff !important;
+
+  box-shadow: 0 1px 0 0 #d7d8db, 0 0 0 1px #e3e4e8;
 }
 .cd-testimonials-all p::after {
   /* creating the triangle in css */
@@ -325,11 +336,11 @@ Main components
   height: 0;
   width: 0;
   border: 8px solid transparent;
-  border-top-color: #79b6e4;
+  border-top-color: #fff !important;
 }
 .cd-testimonials-all .cd-author {
   text-align: left;
-  margin-left: 1.5em;
+  margin-left: 15px;
 }
 .cd-testimonials-all .cd-author img {
   box-shadow: 0 0 0 transparent;
@@ -358,7 +369,7 @@ Main components
     margin: 0 2% 3em;
   }
   .cd-testimonials-all .cd-author {
-    margin-left: 1em;
+    margin-left: 10px;
   }
 }
 @media only screen and (min-width: 1170px) {

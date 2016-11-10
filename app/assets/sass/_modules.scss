@@ -1147,7 +1147,7 @@
 				content: '';
 				display: block; width: 1px; position: absolute; left: 70px; top: 20px; bottom: 20px;
 				background-color: #cccccc;
-				transition: all .5s linear;
+				transition: all .6s linear;
 
 				@include respond-to(sm) {
 					left: 60px;
@@ -1227,7 +1227,8 @@
 				color: #acacac; font-size: 15px; line-height: 1.3;
 				padding: 0; margin: 0; display: block; max-height: 0; opacity: 0; transform: translateY(20px); overflow: hidden;
 				border-radius: 0 0 50px 50px;
-				transition: all .6s; /*transition: padding .6s, max-height .6s;*/
+				/* transition: all .6s; transition: padding .6s, max-height .6s;*/
+				transition: max-height 1s linear, transform .6s, opacity .4s;
 
 				p {
 					padding: 0px 40px 30px 92px; margin: 0;
@@ -1498,13 +1499,13 @@
 			}
 
 			i {
-				color: #ffffff; position: absolute; top: 7px; right: 15px;
+				color: #ffffff; position: absolute; top: 5px; right: 18px; font-size: 18px;
 			}
 
 			span {
-				color: #ffffff; font-size: 14px;
-				position: absolute; bottom: 44px; right: -149px; display: block; padding: 5px 10px; width: 230px; display: none;
-				background: #2f2c2c; border-radius: 5px;
+				color: #ffffff; font-size: 14px; text-align: left; font-style: italic; line-height: 18px;
+				position: absolute; bottom: 44px; right: -149px; display: block; padding: 14px 0 12px 30px; width: 230px; display: none;
+				background: #2f2c2c; border-radius: 5px; @extend %fixfont;
 
 				@include respond-to(md) {
 					right: 0;
@@ -1572,7 +1573,15 @@
 			}
 
 			&.blue {background-color: #4cc2c0; > a.btn {background-color: #4cc2c0;}}
-			&.red {background-color: #f15b26; > a.btn {background-color: #f15b26;}}
+			&.red {
+				background-color: #f15b26; > a.btn {background-color: #f15b26;}
+
+				&:before {
+					content: '';
+					width: 82px; height: 56px; display: block; background: url('../img/crown.png') 0 0 no-repeat;
+					position: absolute; top: -56px; right: 56px;
+				}
+			}
 			&.yellow {
 				background-color: #fcb03b;
 
@@ -1606,7 +1615,7 @@
 
 			li {
 				color: #acacac; font-size: 14px; line-height: 1.5;
-				position: relative; margin-bottom: 20px; padding-left: 40px;
+				position: relative; margin-bottom: 20px; padding-left: 30px;
 
 				&:before {
 					content: '';
@@ -1689,8 +1698,18 @@
 .author {
 	&-slider {
 		text-align: center;
-		position: relative; padding: 80px 100px 130px; margin-bottom: 30px;
-		background-color: #f7f9f9; box-shadow: 0 25px 40px rgba(0, 0, 0, 0.3);
+		position: relative; padding: 80px 100px 130px; margin-bottom: 30px; margin-top: 110px;
+		background-color: #f7f9f9; box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+
+		&:before {
+			content: '';
+			width: 461px;
+			height: 151px;
+			background: url('../img/try_mitsu.png') 0 0 no-repeat;
+			display: block;
+			position: absolute; top: -222px; right: -14px;
+			margin-top: 120px;
+		}
 
 		@include respond-to(lg) {
 			padding: 80px 60px 100px;
