@@ -2586,12 +2586,15 @@
 		.info {
 			width: 250px; float: left;
 			h3 {
-				color: #cacaca; font-size: 72px; font-family: $font-bold; text-align: left; letter-spacing: -2px; line-height: 50px;
-				position: relative; margin-bottom: 1px;
+				position: relative;
+				.salary {
+					color: #cacaca; font-size: 72px; font-family: $font-bold; text-align: left; letter-spacing: -2px; line-height: 50px;
+					position: relative; margin-bottom: 1px; top: 0; right: 0;
 
-				em {
-					font-size: 40px; letter-spacing: -1px;
-					margin-left: 7px; position: relative; top: -11px;
+					em, span {
+						color: #cacaca; font-size: 40px; font-family: $font-bold; letter-spacing: -1px;
+						margin-left: 7px; position: relative; top: -11px; right: 0;
+					}
 				}
 
 				span {
@@ -2604,9 +2607,11 @@
 				}
 			}
 
-			p {
+			p, span {
 				color: #716153; font-size: 13px; letter-spacing: 0; line-height: 19px;
 				padding-left: 4px; margin-bottom: 13px;
+
+				span {padding: 0;}
 
 				&:last-child {margin-bottom: 0;}
 
@@ -2950,11 +2955,11 @@
 		label {
 			color: #716153; font-size: 13px; line-height: 25px;
 			float: left; margin: 0 0 0 20px;
-			cursor: pointer;
 
 			&.checkbox-block {
 				display: inline-block; width: 47px; height: 25px; position: relative; margin: 0;
 				background: #1f211c; border: solid 1px #6c6154; border-radius: 13px;
+				cursor: pointer;
 				span {
 					display: block; width: 23px; height: 23px; position: absolute; left: 0; top: 0; overflow: hidden;
 					background: linear-gradient(to bottom, #cacaca 0%, #8e8e8e 50%, #7c7c7c 100%); border: solid 1px #1d1d1b; border-radius: 50%;
@@ -2977,13 +2982,18 @@
 		}
 
 		.btn {
-			color: #0d1306; font-family: $font-bold;
+			.text {
+				color: #0d1306; font-family: $font-bold;
+				transition: all .3s linear;
+			}
 			margin-left: 92px;
 			background: #00ad00;
 			transition: all .3s linear;
 
 			&:hover {
-				color: #00ad00;
+				.text {
+					color: #00ad00;
+				}
 				background: #0d1306;
 				.semicircle {
 					&:after {
@@ -3303,10 +3313,16 @@
 		padding: 0 !important;
 	}
 	.modal-close {
+		opacity: 0.7 !important;
+		transition: opacity .4s linear;
 		&:before,
 		&:after {
 			height: 4px !important; top: calc(50% - 2px) !important;
 			background: #1b1b19 !important; border-radius: 2px;
+		}
+
+		&:hover {
+			opacity: 1 !important;
 		}
 	}
 }
