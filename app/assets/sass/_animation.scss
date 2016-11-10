@@ -301,7 +301,7 @@ form {
 
 
 .check_me {
-	text-align: left; left: 40px; top: 0; margin-bottom: 40px; position: relative;
+	text-align: left; top: 0; margin-bottom: 40px; padding-left: 40px; position: relative;
 
 	input {
 		display: none;
@@ -309,16 +309,22 @@ form {
 	label {
 		font-size: 14px !important; line-height: 24px;
 		margin: 0 0 0 10px;
-		cursor: pointer;
 
 		&.checkbox-block {
 			display: inline-block; margin: 0; height: 24px; width: 46px; position: relative; float: left; overflow: hidden; transition: all .6s ease;
-			background: #3f3f3f; border-radius: 12px; box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.2);
+			background: #ff0000; border-radius: 12px; box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5), 0px 1px 0px rgba(255, 255, 255, 0.2);
+			cursor: pointer;
 
 			span {
 				display: block; position: absolute; top: 2px; left: 2px; width: 20px; height: 20px; transition: all .6s ease;
 				background: linear-gradient(to bottom, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);; border-radius: 50%;
 			}
+		}
+
+		a {
+			text-decoration: underline;
+
+			&:hover {text-decoration: none;}
 		}
 	}
 	input:checked~label {
