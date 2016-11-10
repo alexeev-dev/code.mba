@@ -64,9 +64,15 @@ function validateInput(fields) {
 function submitForm(form, data) {
   let url = form.attr('action');
 
-  if (url !== 'undefined') {
+  console.log(form);
+  console.log(url);
+  
+  if (url == 'undefined') {
     url = 'send-request.php';
   }
+
+  console.log(form);
+  console.log(url);
 
   $.post(url, data, (result) => {
     $(window).trigger('form-sent', {form, data});

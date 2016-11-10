@@ -24,38 +24,42 @@ export default function initDetails() {
   let stateInfo = [
     {
       className: NONE,
-      salary: '62<span>000</span>',
-      post: '<b>MIDDLE FRONT-END</b> разработчик',
-      term: '<b>6</b>мес',
-      button: ['подтвердить участие', '/path/to/action#1']
+      salary: '28<span>000</span>',
+      post: '<b>НАПОЛНЕНИЕ САЙТА</b> на подработке',
+      term: '<b>2</b>ч. + <b>1</b> неделя',
+      button: ['подтвердить участие', '/registred']
     },
     {
       className: 0,
-      salary: '62<span>001</span>',
-      post: '<b>MIDDLE FRONT-END 1</b> разработчик',
-      term: '<b>61</b>мес',
-      button: ['оплатить участие', '/path/to/action#2']
+      salary: '64<span>000</span>',
+      post: '<b>SENIOR HTML</b>-верстальщик',
+      term: '<b>2</b> месяца',
+      time: '2',
+      button: ['оплатить участие', 'https://api.gdonate.ru/pay?public_key=4d26d-3054&sum=14500&account=promo_popup&desc=Оплата+участия+в+интенсиве+Профессия+HTML-версильщик']
     },
     {
       className: 1,
-      salary: '62<span>002</span>',
-      post: '<b>MIDDLE FRONT-END 2</b> разработчик',
-      term: '<b>62</b>мес',
-      button: ['оплатить участие', '/path/to/action#3']
+      salary: '92<span>000</span>',
+      post: '<b>MIDDLE FRONT-END</b> разработчик',
+      term: '<b>5</b> месяцев',
+      time: '5',
+      button: ['оплатить участие', 'https://api.gdonate.ru/pay?public_key=4d26d-3054&sum=39270&account=promo_popup&desc=Оплата+участия+в+интенсиве+Профессия+HTML-версильщик+3+месяца+FRONT-END+разработчик']
     },
     {
       className: 2,
-      salary: '62<span>003</span>',
-      post: '<b>MIDDLE FRONT-END 3</b> разработчик',
-      term: '<b>63</b>мес',
-      button: ['оплатить участие', '/path/to/action#4']
+      salary: '79<span>000</span>',
+      post: '<b>ДИЗАЙНЕР-ВЕРСТАЛЬЩИК</b> сайтов',
+      term: '<b>3</b> месяца',
+      time: '3',
+      button: ['оплатить участие', 'https://api.gdonate.ru/pay?public_key=4d26d-3054&sum=27020&account=promo_popup&desc=Оплата+участия+в+интенсиве+Профессия+HTML-версильщик+1-месяц+Коучинга']
     },
     {
       className: 3,
-      salary: '62<span>004</span>',
-      post: '<b>MIDDLE FRONT-END 4</b> разработчик',
-      term: '<b>64</b>мес',
-      button: ['оплатить участие', '/path/to/action#5']
+      salary: '120<span><small>т.</small></span>',
+      post: '<b>FULL-STACK</b> разработчик',
+      term: '<b>6</b> месяцев',
+      time: '6',
+      button: ['оплатить участие', 'https://api.gdonate.ru/pay?public_key=4d26d-3054&sum=45660&account=promo_popup&desc=Оплата+участия+в+интенсиве+Профессия+HTML-версильщик+3+месяца+FRONT-END+разработчик+1-месяц+Коучинга']
     }
   ];
 
@@ -103,6 +107,7 @@ export default function initDetails() {
     $('.choose-your-module .salary').html(state.salary);
     $('.choose-your-module .post').html(state.post);
     $('.choose-your-module .term').html(state.term);
+    $('.choose-your-module .time').html(state.time);
     $('.agreement .submit-button .text').text(state.button[0]);
     $('.agreement .submit-button').attr('href', state.button[1]);
   }

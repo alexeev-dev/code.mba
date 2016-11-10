@@ -2272,7 +2272,7 @@
 
 .modules-map-popup {
 	padding-top: 100px; padding-bottom: 65px; overflow: hidden;
-	background: #1b1b19 url('../img/cloud.png') 58.3% 90.3% no-repeat; 
+	background: url('../img/cloud.png') 58.3% 90.3% no-repeat; 
 
 	@include respond-to(lg) {
 		padding-top: 130px;

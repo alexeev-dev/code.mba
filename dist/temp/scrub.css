@@ -16,7 +16,7 @@
   height: 100%;
   overflow-y: auto;
   padding: 3em 5%;
-  background: #262C2C;
+  background: url('../img/bg-buy_me.jpg') 0 0 repeat;
 }
 
 .cd-modal .modal-close {

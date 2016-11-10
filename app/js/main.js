@@ -76,6 +76,7 @@ let MainController = {
     this.animateAd1();
     this.animateAcc();
     this.animateOrder();
+    this.toggleClassMe();
 
     // this.superClose();
 
@@ -246,6 +247,12 @@ let MainController = {
     });
     $('.order-education input').blur(function() {
       $('.order-education').removeClass('active');
+    });
+  },
+
+  toggleClassMe() {
+    $('.modules-block li:eq(2), .modules-block li:eq(3), .modules-block li:eq(4)').click(function() {
+      $('.modules-map-popup').toggleClass('roll ball');
     });
   }
 
