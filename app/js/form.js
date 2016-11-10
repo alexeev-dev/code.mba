@@ -67,7 +67,7 @@ function submitForm(form, data) {
   console.log(form);
   console.log(url);
   
-  if (url == 'undefined') {
+  if (url === 'undefined') {
     url = 'send-request.php';
   }
 
@@ -141,5 +141,5 @@ function initForm(form) {
  */
 
 export default function initAllForms() {
-  $("form").each((index, form) => initForm(form));
+  $(".form").each((index, form) => initForm(form));
 }
