@@ -9,6 +9,7 @@ import {Counter} from './counter';
 import showPopup from './popup';
 import initAllForms from './form';
 import initFormUx from './form-ux';
+import initDetails from './details-logic';
 
 let MainController = {
   /**
@@ -53,6 +54,7 @@ let MainController = {
     AuthorSlider.init();
     ReviewsCarousel.init();
     initFormUx();
+    initDetails();
 
     for (let module in this.modules) {
       this.modules[module]();
@@ -249,7 +251,7 @@ let MainController = {
   //         $(this).removeClass('big_show');
   //         $('body').removeClass('of-hidden');
   //       });
-        
+
   //       return false;
   //   });
   // }
