@@ -79,6 +79,15 @@ let MainController = {
 
     // this.superClose();
 
+    $('.check_me').each((index, self) => {
+      let checkGroup = $(self);
+      let checkBox = checkGroup.find('.checkbox-block');
+      let button = checkGroup.siblings('button');
+      checkBox.click((event) => {
+        button.toggleClass('disabled');
+      })
+    });
+
   },
 
   initSearch() {
