@@ -11,16 +11,16 @@ export default function initFormUx() {
       let {name, field} = item;
       let message;
 
-      if (typeof field.data('error') === 'undefined') {
-        field.data('error', true);
-        message = $('<span class="err">');
-        if (typeof messages[name] !== 'undefined') {
-          message.text(messages[name]);
-        } else {
-          message.text(messages[other]);
-        }
-        field.after(message);
-      }
+      // if (typeof field.data('error') === 'undefined') {
+      //   field.data('error', true);
+      //   message = $('<span class="err">');
+      //   if (typeof messages[name] !== 'undefined') {
+      //     message.text(messages[name]);
+      //   } else {
+      //     message.text(messages[other]);
+      //   }
+      //   field.after(message);
+      // }
 
       field.addClass('err').keypress((event) => {
         field.removeClass('err').off('keypress');

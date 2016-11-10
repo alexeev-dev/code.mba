@@ -2251,7 +2251,7 @@
 	input:valid,
 	textarea:valid {transform: translate(0, 10px);}
 	input:valid~label,
-	textarea:valid~label {transform: scale(0.8) rotateY(0) translate(0, -30px); opacity: 0.6;}
+	textarea:valid~label {transform: scale(0.8) rotateY(0) translate(0, -30px); opacity: 0.5;}
 }
 
 

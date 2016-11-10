@@ -165,18 +165,12 @@ body {
 		background: #f7f9f9; border-color: transparent; border-radius: 50px;
 		transition: all .3s ease;
 
-		&:focus {color: gray; outline: none;}
+		&:focus {color: $gray; outline: none;}
 
 		&.err {
-			color: #fff !important;
-			background: #f15b26 !important;
+			box-shadow: inset 0px 0px 0px 2px rgba(241,91,38,1);
 			animation: invalid-input 2s linear 1;
-
-			&::-webkit-input-placeholder,
-			&:-ms-input-placeholder,
-			&:-moz-placeholder {
-				color: #fff !important;
-			}
+			color: #f26522 !important;
 		}
 	}
 	textarea::-webkit-input-placeholder,

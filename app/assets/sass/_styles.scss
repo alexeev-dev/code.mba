@@ -487,6 +487,8 @@
 			form {
 				input {
 					box-shadow: 25px 20px 20px -15px rgba(0,0,0,0.3);
+
+					&.err {box-shadow: 25px 20px 20px -15px rgba(241,91,38,0.3);}
 				}
 
 				div.col-lg-8 {width:40%;}
