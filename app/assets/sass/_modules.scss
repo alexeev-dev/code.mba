@@ -2958,19 +2958,21 @@
 
 			&.checkbox-block {
 				display: inline-block; width: 47px; height: 25px; position: relative; margin: 0;
-				background: #1f211c; border: solid 1px #6c6154; border-radius: 13px;
+				background: #ff0000; border: solid 1px #6c6154; border-radius: 13px;
 				cursor: pointer;
+				transition: background .2s linear;
+
 				span {
 					display: block; width: 23px; height: 23px; position: absolute; left: 0; top: 0; overflow: hidden;
 					background: linear-gradient(to bottom, #cacaca 0%, #8e8e8e 50%, #7c7c7c 100%); border: solid 1px #1d1d1b; border-radius: 50%;
 					transition: left .2s linear, overflow 0s linear;
 
-					em {
-						width: 23px; height: 23px; display: block;position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
-						background: linear-gradient(to bottom, #95b45c 0%, #619304 50%, #568404 100%); border-radius: 50%;
-						opacity: 0;
-						transition: opacity .2s linear;
-					}
+					// em {
+					// 	width: 23px; height: 23px; display: block;position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%);
+					// 	background: linear-gradient(to bottom, #95b45c 0%, #619304 50%, #568404 100%); border-radius: 50%;
+					// 	opacity: 0;
+					// 	transition: opacity .2s linear;
+					// }
 				}
 			}
 
@@ -2985,6 +2987,9 @@
 			.text {
 				color: #0d1306; font-family: $font-bold;
 				transition: all .3s linear;
+			}
+			&.disabled{
+			    background: #52534e !important;
 			}
 			margin-left: 92px;
 			background: #00ad00;
@@ -3012,6 +3017,7 @@
 
 		input:checked+label {
 			&.checkbox-block {
+				background: #00ad00;
 				span {
 					left: 22px;
 
