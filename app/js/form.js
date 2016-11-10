@@ -3,9 +3,9 @@
  */
 
 let validationRegEx = {
-  // name: /^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/,
-  // phone: /^( +)?((\+?7|8) ?)?((\(\d{3}\))|(\d{3}))?( )?(\d{3}[\- ]?\d{2}[\- ]?\d{2})( +)?$/,
-  // email: /^(\S+)@([a-z0-9-]+)(\.)([a-z]{2,4})(\.?)([a-z]{0,4})+$/
+  name: /^.{2,50}$/,
+  phone: /^.{2,50}$/,
+  email: /^.{2,50}@.{2,50}$/
 }
 
 /**
@@ -15,6 +15,7 @@ let validationRegEx = {
  */
 
 function validateField(value, rgx) {
+  console.log(value, rgx, rgx.test(value));
   return rgx.test(value);
 }
 
@@ -60,7 +61,13 @@ function validateInput(fields) {
  */
 
 function submitForm(form, data) {
-  $.post('send-request.php', data, (result) => {
+  let url = form.attr('action');
+
+  if (url.length < 1) {
+    url = 'send-request.php';
+  }
+
+  $.post(url, data, (result) => {
     $(window).trigger('form-sent', {form, data});
   });
 }
@@ -95,7 +102,7 @@ function initForm(form) {
 
               var delay = (
                 $('.no-cssanimations').length > 0 ) ? 0 : 800;
-              
+
                 setTimeout(function(){
                   $('.cd-modal').addClass('visible');
                   $('.cd-transition-layer').removeClass('opening');
