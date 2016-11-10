@@ -63,7 +63,7 @@ function validateInput(fields) {
 function submitForm(form, data) {
   let url = form.attr('action');
 
-  if (url.length < 1) {
+  if (url !== 'undefined') {
     url = 'send-request.php';
   }
 
