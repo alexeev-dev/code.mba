@@ -208,6 +208,8 @@ body {
 		&.btn-blue {background: #4cc2c0; &:hover {background: #55d5d3;}}
 		&.btn-green {background: #3cb879; &:hover {background: #46d68d;}}
 		&.btn-gray {background: #2f2c2c; &:hover {background: #3f3f3f;}}
+
+		&.disabled {pointer-events: none;}
 	}
 
 	.divider {

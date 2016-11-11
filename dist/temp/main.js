@@ -51,8 +51,13 @@ jQuery(document).ready(function($){
 	});
 
 	// CONTDOWN
-	$('.js-countdown').countdown('2016/11/14', function(event) {
+	$('.js-countdown').countdown('2016/11/22', function(event) {
 		$(this).html(event.strftime('%D<small>д.</small> %H<small>ч.</small> %M<small>м.</small> %S<small>с.</small>'));
+	});
+
+	// TEXTILLATE
+	$('.text-tlt_1').textillate({
+		loop: true
 	});
 
 	// validation

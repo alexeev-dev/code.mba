@@ -698,7 +698,7 @@
 			.cd-see-all {
 				color: #4cc2c0;
 				bottom: -80px;
-				padding: 0 0 5px;
+				padding: 0 0 2px;
 				background: none; border-bottom: dotted 2px #4cc2c0; border-radius: 0;
 
 				&:hover {
@@ -728,12 +728,20 @@
 			position: relative;
 			li {
 				height: 64px; width: 64px; top: -85px;
+				transition: all .3s ease-out;
 
 				&:first-child {
 					left: 50px;
+
+					&:active {
+						left: 40px;
+					}
 				}
 				&:last-child {
 					right: 50px;
+					&:active {
+						right: 40px;
+					}
 					a {
 						top: -24px;
 					}
@@ -772,25 +780,38 @@
 
 figure.testimonials-vk {
 	display: block; margin-top: 4em; width: 100%; text-align: center;
-	img {vertical-align: top;}
+	img {
+		vertical-align: top;
+		transform: scale(0.4);
+		transition: all .3s linear;
+
+		.is-visible & {
+			transform: scale(1);
+		}
+	}
 }
 
 
 .students-works {
 	margin-top: 15px;
 
-	a {margin: 0 10px 0 0;}
+	&:hover {
+		a {
+			img {
+				opacity: 0.7; transform: scale(0.95);
+			}
+		}
+	}
+
+	a {
+		margin: 0 10px 0 0;
+
+		img {
+			transition: all .3s ease;
+			&:hover {
+				opacity: 1; transform: scale(1.05);
+			}
+		}
+	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
