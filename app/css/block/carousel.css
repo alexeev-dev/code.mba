@@ -1,0 +1,33 @@
+.carousel__content {
+  width: 100%;
+  transition: all ease-out 0.8s; }
+  .carousel__content::after {
+    display: table;
+    content: " ";
+    clear: both; }
+
+.carousel-item {
+  width: 100%;
+  float: left;
+  opacity: 1;
+  transition: all ease-out 0.3s; }
+  .carousel-item figure {
+    transition: all ease-out 0.1s; }
+  .carousel-item p {
+    transition: all ease-out 0.1s; }
+  .carousel-item cite a, .carousel-item cite span {
+    transition: all ease-out 0.5s; }
+  .carousel-item--gone {
+    opacity: 0; }
+    .carousel-item--gone figure {
+      opacity: 0; }
+    .carousel-item--gone p {
+      transform: translateX(0%); }
+    .carousel-item--gone cite a {
+      transform: translateX(0%); }
+    .carousel-item--gone cite span {
+      transform: translateX(0%); }
+
+.carousel-dots {
+  position: relative;
+  z-index: 2; }
